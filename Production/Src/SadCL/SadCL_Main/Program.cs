@@ -9,6 +9,11 @@ namespace SadCL
     class Program
     {
         static void Main(string[] args) {
+
+            Target.TargetManager targMan = Target.TargetManager.Instance;
+
+
+
         }
     }
 }
