@@ -8,5 +8,6 @@ namespace SadCL
 {
     class MissileManager
     {
+
     }
 }
