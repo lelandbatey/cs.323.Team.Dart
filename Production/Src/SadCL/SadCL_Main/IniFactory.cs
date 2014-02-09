@@ -7,7 +7,7 @@ using System.Linq;
 namespace Target
 {
 	// TargetFactory is similar in spirit to a factory
-	public class IniTargetFactory
+	public class IniBuilder
 	{
 
 		private string joiner(string thing1, object thing2) {
@@ -21,7 +21,7 @@ namespace Target
 
 		// Method to help de-clutter the fileReader loop.
 		private static void route(string tempLine, mutableTarget tempTarget) {
-			IniTargetFactory iniFactory = new IniTargetFactory();
+			IniBuilder iniFactory = new IniBuilder();
 			string[] words = tempLine.Split('=');
 
 			iniFactory.router[words[0]](words[1], tempTarget);
@@ -30,7 +30,7 @@ namespace Target
 		// Will be used to make our lookups nice and short
 		private Dictionary<string, Action<string, mutableTarget>> router;
 
-		public IniTargetFactory() {
+		public IniBuilder() {
 			// Here we instantiate our dictionary 'router'. We have to do it here instead of in the declaration because otherwise the compiler whines at us.
 			router = new Dictionary<string,Action<string,mutableTarget>>() {
 				{ "name", setName },
