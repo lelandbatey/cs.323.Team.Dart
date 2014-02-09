@@ -36,7 +36,7 @@ namespace Target
         // Public method declarations
         public void load(string filepath) { // Given a filepath, loads the data into a master-list of targets
             currentFilePath = filepath;
-            masterList = IniBuilder.ProductBuilder(filepath);
+            masterList = TargetFactory.GetBuilder(filepath).ProductBuilder(filepath);
         }
 
         public List<Target> find(string name) { // Searches for all targets that have a given name
