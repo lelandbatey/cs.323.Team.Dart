@@ -7,7 +7,7 @@ using System.Linq;
 namespace Target
 {
 	// TargetFactory is similar in spirit to a factory
-	public class IniBuilder
+	public class IniBuilder : TargetBuilder
 	{
 
 		private string joiner(string thing1, object thing2) {
@@ -44,7 +44,7 @@ namespace Target
 		}
 
 		// Reads the given file, returns a list of targets
-		public static List<Target> ProductBuilder(string fileLocation) {
+		override public List<Target> ProductBuilder(string fileLocation) {
 			StreamReader myFile = new StreamReader(@fileLocation);
 
 			string tempLine = "";
