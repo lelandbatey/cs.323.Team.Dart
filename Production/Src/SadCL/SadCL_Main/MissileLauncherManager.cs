@@ -22,8 +22,27 @@ namespace SadCL
 
     }
 
-    public class MissileLauncherAdapter
+    public class MissileLauncherAdapter : MissileLauncherHardware, IMissileLauncher
     {
+        public void fire()
+        {
+            System.Console.WriteLine("Pew, pew, pew, pew.");
+        }
+
+        public void moveBy()
+        {
+            System.Console.WriteLine("I'mma movin' my truck.");
+        }
+
+        public void reload()
+        {
+            System.Console.WriteLine("Insert Sound of Shotgun Reloading.");
+        }
+
+        public void status()
+        {
+            System.Console.WriteLine("My status is that I have no status.");
+        }
 
     }
 
