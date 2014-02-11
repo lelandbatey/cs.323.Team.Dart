@@ -22,6 +22,8 @@ namespace SadCL
 
     }
 
+
+
     interface IMissileLauncher
     {
         void fire();
