@@ -22,6 +22,12 @@ namespace SadCL
 
     }
 
+    public enum LauncherTypes
+    {
+        Mock = 0,
+        DreamCheeky = 1
+    }
+
     public class MissileLauncherFactory
     {
 
