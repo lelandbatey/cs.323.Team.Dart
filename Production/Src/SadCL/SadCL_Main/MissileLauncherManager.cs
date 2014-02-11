@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SadCL
 {
-    class MissileLauncherManager
+    public class MissileLauncherManager
     {
         //Tells when the MissileLauncher to "Fire".
         //Tells how much the MissileLauncher should "MoveBy".
@@ -22,6 +22,10 @@ namespace SadCL
 
     }
 
+    public class MissileLauncherAdapter
+    {
+
+    }
 
 
     interface IMissileLauncher
