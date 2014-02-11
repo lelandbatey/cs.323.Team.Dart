@@ -22,11 +22,16 @@ namespace SadCL
 
     }
 
+    public class MissileLauncherFactory
+    {
+
+    }
+
     public class MissileLauncherAdapter : MissileLauncherHardware, IMissileLauncher
     {
         public void fire()
         {
-            System.Console.WriteLine("Pew, pew, pew, pew.");
+            command_Fire();
         }
 
         public void moveBy()
