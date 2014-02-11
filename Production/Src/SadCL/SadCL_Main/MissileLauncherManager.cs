@@ -22,7 +22,22 @@ namespace SadCL
 
     }
 
+    public class DreamCheekyLauncher : MissileLauncherAdapter, IDreamLauncher
+    {
+        public string launcherName { get; set; }
+        public int launcherAmmo { get; set; }
 
+        public DreamCheekyLauncher(string newName, int baseAmmo)
+        {
+            launcherName = newName;
+            launcherAmmo = baseAmmo;
+        }
+
+        public void battleCry()
+        {
+            System.Console.WriteLine("HULK SMASH!!!");
+        }
+    }
 
     public class MissileLauncherFactory
     {
@@ -34,17 +49,15 @@ namespace SadCL
 
         public MissileLauncherAdapter create_Launcher(LauncherTypes RocketProduct)
         {
-            MissileLauncherAdapter producedObject;
             if (RocketProduct == LauncherTypes.DreamCheeky)
-                producedObject = new DreamCheekyLauncher;
-            else if (RocketProduct == LauncherTypes.Mock)
-                producedObject = new Mock;
+                return new DreamCheekyLauncher("HULK", 4);
+            //else if (RocketProduct == LauncherTypes.Mock)
+            //    producedObject = new Mock;
             else
                 System.Console.WriteLine("Unknown enumeration passed to factory.");
 
-            return producedObject;
+            return new DreamCheekyLauncher("Sauron", 1);
         }
-
     }
 
     public class MissileLauncherAdapter : MissileLauncherHardware, IMissileLauncher
@@ -78,5 +91,10 @@ namespace SadCL
         void moveBy();
         void reload();
         void status();
+    }
+
+    interface IDreamLauncher : IMissileLauncher
+    {
+        void battleCry();
     }
 }
