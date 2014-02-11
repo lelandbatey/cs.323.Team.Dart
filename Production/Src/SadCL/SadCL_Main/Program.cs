@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +11,40 @@ namespace SadCL
     {
         static void Main(string[] args) {
 
-            Target.TargetManager targMan = Target.TargetManager.Instance;
+            Target.TargetManager tMan = Target.TargetManager.Instance;
 
+            bool doneFlag = false;
 
-            //List<string> paths = Target.TargetFactory.getTestPaths();
+            string inLine, givenAct, givenMod; // Input-line, given-action, given-modifier
 
-            //foreach (var item in paths) {
-            //    Console.WriteLine(item);
-            //    Target.TargetBuilder testBuilder = Target.TargetFactory.GetBuilder(item);
-            //    Console.WriteLine(testBuilder is Target.TargetBuilder);
-            //}
+            while (!doneFlag) {
+
+                // Get the line and do some string transforms
+                inLine = Console.ReadLine();
+                givenAct = inLine.Split(' ')[0].ToLower();
+                if (inLine.Split(' ').Length > 1 ) 
+                    givenMod = inLine.Substring(inLine.IndexOf(' '));
+                else 
+                    givenMod = "";
+                
+                // Giant hairy if-elseif statement
+                if (givenAct == "load"){
+
+                    if (File.Exists(givenMod))
+                        tMan.load(givenMod);
+                    else
+                        Console.WriteLine("File specified doesn't exist.");
+                    
+                } else if (givenAct == "scoundrels" ) {
+                    tMan.printEnemies();
+                } else if (givenAct == "friends" ) {
+                    tMan.printFriends();
+                } else if (givenAct == "exit") { // Peace yo, we out
+                    return;
+                }
+
+            }
+
 
         }
     }

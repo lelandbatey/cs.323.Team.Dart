@@ -60,8 +60,8 @@ namespace Target
             return tempTarg;
         }
 
-        public void printEnemies() { }
-        public void printFriends() { }
+        public void printEnemies() { print(listEnemies()); }
+        public void printFriends() { print(listFriends()); }
 
         // Private method declarations
         private void print(List<Target> targList ) {
