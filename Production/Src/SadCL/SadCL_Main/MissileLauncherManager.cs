@@ -22,14 +22,28 @@ namespace SadCL
 
     }
 
-    public enum LauncherTypes
-    {
-        Mock = 0,
-        DreamCheeky = 1
-    }
+
 
     public class MissileLauncherFactory
     {
+        public enum LauncherTypes
+        {
+            Mock = 0,
+            DreamCheeky = 1
+        }
+
+        public MissileLauncherAdapter create_Launcher(LauncherTypes RocketProduct)
+        {
+            MissileLauncherAdapter producedObject;
+            if (RocketProduct == LauncherTypes.DreamCheeky)
+                producedObject = new DreamCheekyLauncher;
+            else if (RocketProduct == LauncherTypes.Mock)
+                producedObject = new Mock;
+            else
+                System.Console.WriteLine("Unknown enumeration passed to factory.");
+
+            return producedObject;
+        }
 
     }
 
