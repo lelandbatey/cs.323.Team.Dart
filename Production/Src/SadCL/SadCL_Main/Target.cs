@@ -22,6 +22,7 @@ namespace Target
                 Name = inTarget.Name;
                 X = inTarget.X;
                 Y = inTarget.Y;
+                Z = inTarget.Z;
                 Friend = inTarget.Friend;
                 Points = inTarget.Points;
                 FlashRate = inTarget.FlashRate;
