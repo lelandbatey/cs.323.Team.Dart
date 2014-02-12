@@ -22,9 +22,11 @@ namespace Target
                 Name = inTarget.Name;
                 X = inTarget.X;
                 Y = inTarget.Y;
+                Z = inTarget.Z;
                 Friend = inTarget.Friend;
                 Points = inTarget.Points;
                 FlashRate = inTarget.FlashRate;
+                dead = inTarget.isDead;
             } else {
                 throw new InvalidOperationException("Not enough target attributes specified for at least one of your targets.");
             }
@@ -37,7 +39,7 @@ namespace Target
         public bool Friend { get; private set; }
         public int Points { get; private set; }
         public int FlashRate { get; private set; }
-        public bool finished { get; private set; }
+        public bool dead { get; private set; }
         
         // Makes printing these blasted things much easier.
         public override string ToString() {
@@ -45,30 +47,7 @@ namespace Target
             tmpStr = String.Format(tmpStr, Name, X, Y, Z, Friend, Points, FlashRate);
             return tmpStr;
         }
-        public string pigPrint() {
-            string tmpStr = "[argettay]\namenay={0}\nXay={1}\nYway={2}\nZay={3}\nriendFay={4}\nointsPay={5}\nlashRateFay={6}\n\n";
-            tmpStr = String.Format(tmpStr, pigConvert(Name), X, Y, Z, Friend, Points, FlashRate);
-            return tmpStr;
-        }
-
-        public static string pigConvert(string inString) {
-            // Converts a string to it's piglatin representation.
-            string toReturn = "";
-            bool vowelBegin = false;
-            inString = inString.Trim();
-
-            // Check if our string begins with a vowel
-            if ("aeiou".Contains(inString[0].ToString())) {
-                vowelBegin = true;
-            }
-
-            if (vowelBegin) {
-                toReturn = inString + "way";
-            } else {
-                toReturn = inString.Substring(1, inString.Length - 1) + inString[0] + "ay";
-            }
-            return toReturn;
-        }
+        
         
     }
 
@@ -95,6 +74,20 @@ namespace Target
         public mutableTarget() {
             finishedval = false;
             setlist = new int[7];
+            isDead = false;
+        }
+
+        public mutableTarget(Target inTarget) {
+            isDead = inTarget.dead;
+            setlist = new int[7];
+            FlashRate = inTarget.FlashRate;
+            Friend = inTarget.Friend;
+            Points = inTarget.Points;
+            X = inTarget.X;
+            Y = inTarget.Y;
+            Z = inTarget.Z;
+            Name = inTarget.Name;
+            finishedval = true;
         }
 
         // Why did I implement all of these manually....
@@ -164,15 +157,13 @@ namespace Target
             set { finishedval = value; }
         }
 
+        // Public variable to handle death.
+        public bool isDead;
+
         // Makes printing these blasted things much easier.
         public override string ToString() {
             string tmpStr = "Name={0}\nX={1}\nY={2}\nZ={3}\nFriend={4}\nPoints={5}\nFlashRate={6}\nfinished={7}\n";
             tmpStr = String.Format(tmpStr, Nameval, Xval, Yval, Zval, Friendval, Pointsval, FlashRateval, finished);
-            return tmpStr;
-        }
-        public string pigPrint() {
-            string tmpStr = "[argettay]\namenay={0}\nXay={1}\nYway={2}\nZay={3}\nriendFay={4}\nointsPay={5}\nlashRateFay={6}\n\n";
-            tmpStr = String.Format(tmpStr, pigConvert(Nameval), Xval, Yval, Zval, Friendval, Pointsval, FlashRateval);
             return tmpStr;
         }
 
