@@ -4,7 +4,7 @@ using UsbLibrary;
 
 namespace SadCL
 {
-    class MissileLauncher
+    public class MissileLauncherHardware
     {
         private bool DevicePresent;
 
@@ -21,7 +21,7 @@ namespace SadCL
 
         private UsbHidPort USB;
 
-        public MissileLauncher()
+        public MissileLauncherHardware()
         {
 
             this.UP = new byte[10];
