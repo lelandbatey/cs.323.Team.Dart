@@ -41,18 +41,4 @@ namespace SadCL
             System.Console.WriteLine("My status is that I have no status.");
         }
     }
-
-
-    interface IMissileLauncher
-    {
-        void fire();
-        void moveBy();
-        void reload();
-        void status();
-    }
-
-    interface IDreamLauncher : IMissileLauncher
-    {
-        void battleCry();
-    }
 }
