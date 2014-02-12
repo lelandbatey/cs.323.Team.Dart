@@ -24,8 +24,12 @@ namespace SadCL
 
     public class DreamCheekyLauncher : MissileLauncherAdapter, IDreamLauncher
     {
-        public string launcherName { get; set; }
-        public int launcherAmmo { get; set; }
+
+
+        public void moveBy()
+        {
+
+        }
 
         public DreamCheekyLauncher(string newName, int baseAmmo)
         {
@@ -60,16 +64,13 @@ namespace SadCL
         }
     }
 
-    public class MissileLauncherAdapter : MissileLauncherHardware, IMissileLauncher
+    public class MissileLauncherAdapter : MissileLauncherHardware
     {
+        public string launcherName { get; set; }
+        public int launcherAmmo { get; set; }
         public void fire()
         {
             command_Fire();
-        }
-
-        public void moveBy()
-        {
-            System.Console.WriteLine("I'mma movin' my truck.");
         }
 
         public void reload()
@@ -81,7 +82,6 @@ namespace SadCL
         {
             System.Console.WriteLine("My status is that I have no status.");
         }
-
     }
 
 
