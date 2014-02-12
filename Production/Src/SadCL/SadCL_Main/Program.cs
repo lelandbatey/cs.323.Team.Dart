@@ -11,17 +11,22 @@ namespace SadCL
     {
         static void Main(string[] args) {
 
+            // // Various setup stuff
             Target.TargetManager tMan = Target.TargetManager.Instance;
-
             bool doneFlag = false;
-
             string inLine, givenAct, givenMod; // Input-line, given-action, given-modifier
+
+            // // Print that we're actually ready to go!
+            Console.WriteLine("Status: OPERATIONAL");
+            Console.WriteLine("Gimme somethin' t' shoot!");
 
             while (!doneFlag) {
 
                 // Get the line and do some string transforms
                 inLine = Console.ReadLine();
                 givenAct = inLine.Split(' ')[0].ToLower();
+
+                // We have get the modifier in this way because the line may contain many spaces. This way we go from the first space till the end of the line and set that to be our modifier
                 if (inLine.Split(' ').Length > 1 ) 
                     givenMod = inLine.Substring(inLine.IndexOf(' '));
                 else 
@@ -40,7 +45,7 @@ namespace SadCL
                 } else if (givenAct == "friends" ) {
                     tMan.printFriends();
                 } else if (givenAct == "exit") { // Peace yo, we out
-                    return;
+                    doneFlag = true;
                 }
 
             }
