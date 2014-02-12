@@ -22,6 +22,11 @@ namespace SadCL.MissileLauncher
             command_Fire();
         }
 
+        public void moveBy()
+        {
+            System.Console.WriteLine("Fuel is pumping!");
+        }
+
         public void reload()
         {
             System.Console.WriteLine("Insert Sound of Shotgun Reloading.");
