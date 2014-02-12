@@ -28,7 +28,7 @@ namespace SadCL
 
                 // We have get the modifier in this way because the line may contain many spaces. This way we go from the first space till the end of the line and set that to be our modifier
                 if (inLine.Split(' ').Length > 1 ) 
-                    givenMod = inLine.Substring(inLine.IndexOf(' '));
+                    givenMod = inLine.Substring(inLine.IndexOf(' ')+1); // '+1' is so we don't include the space in the string we get
                 else 
                     givenMod = "";
                 
@@ -44,6 +44,12 @@ namespace SadCL
                     tMan.printEnemies();
                 } else if (givenAct == "friends" ) {
                     tMan.printFriends();
+                } else if (givenAct == "kill") {
+                    // RIGHT NOW JUST A STUB, EXPAND THIS LATER ONCE WE HAVE THE MISSILE LAUNCHER!
+
+                    tMan.takeAim(givenMod);
+                    tMan.printAll();
+
                 } else if (givenAct == "exit") { // Peace yo, we out
                     doneFlag = true;
                 }
