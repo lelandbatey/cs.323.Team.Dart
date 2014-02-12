@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace SadCL.MissileLauncher
 {
-    public class MissileLauncherAdapter
+    public class MissileLauncherAdapter : MissileLauncherHardware, IMissileLauncher
     {
-        public string launcherName { get; set; }
-        public int launcherAmmo { get; set; }
+        public string launcherName { get; private set; }
+        public int launcherAmmo { get; private set; }
+
+        public MissileLauncherAdapter(string passedName, int passedAmmo)
+        {
+            launcherName = passedName;
+            launcherAmmo = passedAmmo;
+        }
+
         public void fire()
         {
             command_Fire();
