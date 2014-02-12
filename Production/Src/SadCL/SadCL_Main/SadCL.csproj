@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="MissileLauncherManager.cs" />
     <Compile Include="MissileLauncher\MissileLauncher.cs" />
+    <Compile Include="MissileLauncher\MissileLauncherFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Target.cs" />
