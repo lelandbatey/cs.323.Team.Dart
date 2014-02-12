@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace SadCL.MissileLauncher
 {
+    public enum LauncherTypes
+    {
+        Mock = 0,
+        DreamCheeky = 1
+    }
     public class MissileLauncherFactory
     {
-        public enum LauncherTypes
-        {
-            Mock = 0,
-            DreamCheeky = 1
-        }
-
         public MissileLauncherAdapter create_Launcher(LauncherTypes Product)
         {
             //if (Product == LauncherTypes.DreamCheeky)
