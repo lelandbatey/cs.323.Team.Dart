@@ -14,11 +14,11 @@ namespace SadCL.MissileLauncher
             DreamCheeky = 1
         }
 
-        public MissileLauncherAdapter create_Launcher(LauncherTypes RocketProduct)
+        public MissileLauncherAdapter create_Launcher(LauncherTypes Product)
         {
-            //if (RocketProduct == LauncherTypes.DreamCheeky)
+            //if (Product == LauncherTypes.DreamCheeky)
             //    return new DreamCheekyLauncher("HULK", 4);
-            //else if (RocketProduct == LauncherTypes.Mock)
+            //else if (Product == LauncherTypes.Mock)
             //    producedObject = new Mock;
             //else
             //    System.Console.WriteLine("Unknown enumeration passed to factory.");
