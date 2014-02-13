@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace SadCL.MissileLauncher
 {
+    enum AmmoCount 
+    { 
+        EmptyAmmo = 0,
+        MaxAmmo = 4
+    }
     //The Adapter inherits from both the legacy hardware, and the current format for
     //all missile launchers (Interface).
     abstract class MissileLauncherAdapter : MissileLauncherHardware, IMissileLauncher
@@ -37,10 +42,6 @@ namespace SadCL.MissileLauncher
         public string launcherName { get; private set; }
         public int launcherAmmo { get; private set; }
 
-        //This is the max ammo across all DreamCheekys.
-        private static int MAX_AMMO = 4;
-        private static int OUT_OF_AMMO = 0;
-
         public DreamCheekyLauncher(string passedName, int passedAmmo)
         {
             launcherName = passedName;
@@ -49,7 +50,7 @@ namespace SadCL.MissileLauncher
 
         public void fire()
         {
-            if (launcherAmmo == OUT_OF_AMMO)
+            if (launcherAmmo == (int)AmmoCount.EmptyAmmo)
             {
                 System.Console.WriteLine("You must acquire more Vespene Gas! (Ammo)");
             }
@@ -62,7 +63,7 @@ namespace SadCL.MissileLauncher
 
         public void reload()
         {
-            launcherAmmo = MAX_AMMO;
+            launcherAmmo = (int)AmmoCount.MaxAmmo;
         }
 
         public void status()
