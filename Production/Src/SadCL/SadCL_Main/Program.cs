@@ -16,6 +16,15 @@ namespace SadCL
             bool doneFlag = false;
             string inLine, givenAct, givenMod; // Input-line, given-action, given-modifier
 
+            MissileLauncher.MissileLauncherManager mMan = MissileLauncher.MissileLauncherManager.Instance;
+
+            mMan.fire();
+            mMan.moveBy();
+           
+
+
+            
+
             // // Print that we're actually ready to go!
             Console.WriteLine("Status: OPERATIONAL");
             Console.WriteLine("Gimme somethin' t' shoot!");
