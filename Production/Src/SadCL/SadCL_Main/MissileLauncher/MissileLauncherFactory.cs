@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SadCL.MissileLauncher
 {
-    enum LauncherTypes
+    public enum LauncherTypes
     {
         Mock = 0,
         DreamCheeky = 1
     }
-    enum AmmoCount
+    public enum AmmoCount
     {
         EmptyAmmo = 0,
         MaxAmmo = 4
