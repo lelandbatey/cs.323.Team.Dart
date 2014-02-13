@@ -38,7 +38,7 @@ namespace SadCL
             while (!doneFlag) {
 
                 // Get the line and do some string transforms
-                System.Console.WriteLine("Enter Command:");
+                System.Console.Write("> ");
                 inLine = Console.ReadLine();
 
                 List<string> givenAct = new List<string>(inLine.Split(' '));

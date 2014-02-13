@@ -104,16 +104,5 @@ namespace SadCL_UnitTests
             return testPaths;
         }
 
-        [TestMethod]
-        public void TestGetBuilder() {
-           
-            List<string> paths = getTestPaths();
-
-            foreach (var item in paths) {
-                Console.WriteLine(item);
-                Target.TargetBuilder testBuilder = Target.TargetFactory.GetBuilder(item);
-                Assert.IsTrue(testBuilder is Target.TargetBuilder);
-            }
-        }
     }
 }
