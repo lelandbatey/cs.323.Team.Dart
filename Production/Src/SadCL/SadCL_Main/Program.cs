@@ -79,6 +79,10 @@ namespace SadCL
                 {
                     mMan.reset();
                 }
+                else
+                {
+                    System.Console.WriteLine("Unknown Command Entered.");
+                }
             }
         }
     }
