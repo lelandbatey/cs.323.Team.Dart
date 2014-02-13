@@ -18,7 +18,6 @@ namespace SadCL
 
             MissileLauncher.MissileLauncherManager mMan = MissileLauncher.MissileLauncherManager.Instance;
 
-            mMan.fire();
             mMan.moveBy();
            
 
@@ -59,7 +58,9 @@ namespace SadCL
                     tMan.takeAim(givenMod);
                     tMan.printAll();
 
-                } else if (givenAct == "exit") { // Peace yo, we out
+                } else if (givenAct == "fire") {
+                    mMan.fire();
+                }else if (givenAct == "exit") { // Peace yo, we out
                     doneFlag = true;
                 }
 
