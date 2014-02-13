@@ -7,5 +7,6 @@ namespace SadCL.MissileLauncher
         void moveBy(int phi, int theta);
         void reload();
         void status();
+        void reset();
     }
 }

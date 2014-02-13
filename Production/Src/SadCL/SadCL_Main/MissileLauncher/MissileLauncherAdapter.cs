@@ -36,5 +36,10 @@ namespace SadCL.MissileLauncher
         {
             System.Console.WriteLine("My status is that I have no status.");
         }
+
+        public void reset()
+        {
+            command_reset();
+        }
     }
 }

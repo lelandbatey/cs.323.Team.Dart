@@ -22,6 +22,8 @@ namespace SadCL
             Console.WriteLine("Status: OPERATIONAL");
             Console.WriteLine("Gimme somethin' t' shoot!");
 
+            mMan.reset();
+
             while (!doneFlag) {
 
                 // Get the line and do some string transforms
@@ -58,7 +60,7 @@ namespace SadCL
                     doneFlag = true;
                 }
                 else if (givenAct == "moveby") {
-                    mMan.moveBy();
+                    mMan.moveBy(20,20);
                 }
 
             }
