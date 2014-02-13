@@ -32,6 +32,18 @@ namespace SadCL.MissileLauncher
         {
             MissileTurret.moveBy(phi, theta);
         }
+        public void move(double phi, double theta)
+        {
+            //Math.
+        }
+        public void status()
+        {
+            MissileTurret.status();
+        }
+        public void reload()
+        {
+            MissileTurret.reload();
+        }
         public void reset()
         {
             MissileTurret.reset();
