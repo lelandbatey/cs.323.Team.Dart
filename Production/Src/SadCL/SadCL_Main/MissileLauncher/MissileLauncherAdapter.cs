@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace SadCL.MissileLauncher
 {
-    enum AmmoCount 
-    { 
-        EmptyAmmo = 0,
-        MaxAmmo = 4
-    }
+
     //The Adapter inherits from both the legacy hardware, and the current format for
     //all missile launchers (Interface).
-    abstract class MissileLauncherAdapter : MissileLauncherHardware, IMissileLauncher
+    public abstract class MissileLauncherAdapter : MissileLauncherHardware
     {
         public void moveBy(double phi, double theta)
         {
@@ -37,7 +33,7 @@ namespace SadCL.MissileLauncher
         }
     }
 
-    public class DreamCheekyLauncher : MissileLauncherAdapter
+    public class DreamCheekyLauncher : MissileLauncherAdapter, IMissileLauncher
     {
         public string launcherName { get; private set; }
         public int launcherAmmo { get; private set; }
@@ -56,6 +52,7 @@ namespace SadCL.MissileLauncher
             }
             else
             {
+                System.Console.WriteLine("PEW!");
                 command_Fire();
                 --launcherAmmo;
             }     
@@ -79,29 +76,35 @@ namespace SadCL.MissileLauncher
         }
     }
 
-    public class MockLauncher : MissileLauncherAdapter
+    public class MockLauncher : MissileLauncherAdapter, IMissileLauncher
     {
         public string launcherName { get; private set; }
         public int launcherAmmo { get; private set; }
+
+        public MockLauncher()
+        {
+            launcherName = "King Henry";
+            launcherAmmo = 5;
+        }
         public void fire()
         {
-            System.Console.WriteLine("PEW, PEW, PEW, PEW!!!");
+            System.Console.WriteLine("Cry 'God for Harry! England and Saint George!'");
         }
-        void moveBy(double phi, double theta)
+        new public void moveBy(double phi, double theta)
         {
             System.Console.WriteLine("Theta: {0}", theta);
             System.Console.WriteLine("Phi: {0}", phi);
         }
-        void reload()
+        public void reload()
         {
-            System.Console.WriteLine("Adding more arrows to your quiver!");
+            System.Console.WriteLine("Once more unto the breach, dear friends, once more.");
         }
-        void status()
+        public void status()
         {
             System.Console.WriteLine("I was once known as {0}", launcherName);
             System.Console.WriteLine("There are only {0} arrows left in my quiver!", launcherAmmo);
         }
-        void reset()
+        public void reset()
         {
             System.Console.WriteLine("To reset.  Or not to reset.  That.. is the question.");
         }
