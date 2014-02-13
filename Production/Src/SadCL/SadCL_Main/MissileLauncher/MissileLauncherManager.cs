@@ -8,8 +8,8 @@ namespace SadCL.MissileLauncher
 {
     public class MissileLauncherManager
     {
-        // SINGLETON STUFF
-        // taken from here: http://msdn.microsoft.com/en-us/library/ff650316.aspx
+        // Singleton: http://msdn.microsoft.com/en-us/library/ff650316.aspx
+        // Need to look at this later.  Some pretty wild stuff.
         private static MissileLauncherManager instance; // Our private instance of ourself
         public static MissileLauncherManager Instance
         {
@@ -23,14 +23,12 @@ namespace SadCL.MissileLauncher
             }
         }
         private IMissileLauncher MissileTurret = MissileLauncherFactory.create_Launcher(LauncherTypes.DreamCheeky);
-
-        public MissileLauncherManager() { }
         
         public void fire()
         {
             MissileTurret.fire();
         }
-        public void moveBy(int phi, int theta)
+        public void moveBy(double phi, double theta)
         {
             MissileTurret.moveBy(phi, theta);
         }

@@ -4,7 +4,7 @@ namespace SadCL.MissileLauncher
     public interface IMissileLauncher
     {
         void fire();
-        void moveBy(int phi, int theta);
+        void moveBy(double phi, double theta);
         void reload();
         void status();
         void reset();
