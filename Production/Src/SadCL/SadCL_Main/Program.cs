@@ -60,7 +60,7 @@ namespace SadCL
                     doneFlag = true;
                 }
                 else if (givenAct == "moveby") {
-                    mMan.moveBy(100,100);
+                    mMan.moveBy(-90,90);
                 }
             }
         }

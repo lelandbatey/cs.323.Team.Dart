@@ -24,8 +24,23 @@ namespace SadCL.MissileLauncher
 
         public void moveBy(int phi, int theta)
         {
-            command_Up(phi);
-            command_Right(theta);
+            if (phi < 0)
+            {
+                command_Right(phi * -1);
+            }
+            else
+            {
+                command_Left(phi);
+            }
+
+            if (theta < 0)
+            {
+                command_Down(theta * -1);
+            }
+            else
+            {
+                command_Up(theta);
+            }
         }
 
         public void reload()
