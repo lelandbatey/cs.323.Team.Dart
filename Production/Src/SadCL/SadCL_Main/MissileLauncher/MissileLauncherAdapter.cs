@@ -9,7 +9,7 @@ namespace SadCL.MissileLauncher
 
     //The Adapter inherits from both the legacy hardware, and the current format for
     //all missile launchers (Interface).
-    public abstract class MissileLauncherAdapter : MissileLauncherHardware
+    public class MissileLauncherAdapter : MissileLauncherHardware
     {
         public void moveBy(double phi, double theta)
         {
