@@ -23,17 +23,17 @@ namespace Target
         }
 
 
-        // // Field Declarations
+        // // // Field Declarations
 
-        // Public field declarations
+        // // Public field declarations
 
-        // Private field declarations
+        // // Private field declarations
         List<Target> masterList; // The "master" list of all the targets.
         string currentFilePath; // Path to the file that's currently loaded
 
-        // // Method Declarations
+        // // // Method Declarations
 
-        // Public method declarations
+        // // Public method declarations
         public void load(string filepath) { // Given a filepath, loads the data into a master-list of targets
             currentFilePath = filepath;
             masterList = TargetFactory.GetBuilder(filepath).ProductBuilder(filepath);
@@ -64,13 +64,19 @@ namespace Target
         // Returns tuple of named targets X, Y, and Z coordinates, in that order.
         public Tuple<double, double, double> takeAim(string name) {
             Target toRet = findPrey(name);
+
+            // SERIOUSLY, THIS NEXT LINE WON'T BE HERE IN THE NEXT VERSION!!!
+            setToDead(name); // TOTALLY TEMPORARY UNTIL WE HAVE A NETWORK OBJECT
+            // GONNA GET RID OF THE PREVIOUS LINE WHEN THE TIME COMES
+
             return Tuple.Create<double, double, double>(toRet.X, toRet.Y, toRet.Z);
         }
 
         public void printEnemies() { print(listEnemies()); }
         public void printFriends() { print(listFriends()); }
+        public void printAll() { print(masterList); }
 
-        // Private method declarations
+        // // Private method declarations
         private void print(List<Target> targList ) {
             foreach (var item in targList) {
                 Console.WriteLine(funnyTargetStr(item));
@@ -122,10 +128,19 @@ namespace Target
         }
 
         private void setToDead(string name) {
+            // Marks a given target as dead
             List<Target> oldList = masterList;
             List<Target> newList = masterList;
 
             int replaceIndex = masterList.FindIndex(s => s.Name == name);
+
+            // We have to create a new mutableTarget out of the old one, set it to dead, then replace the old on in the masterlist
+            // We have to do it this way because Targets are read only, so we have to destroy the old one to make a change to an existing one
+
+            Target tmpTarg = masterList[replaceIndex];
+            mutableTarget toReplace = new mutableTarget(tmpTarg);
+            toReplace.isDead = true;
+            masterList[replaceIndex] = new Target(toReplace);
         }
         
     }    
