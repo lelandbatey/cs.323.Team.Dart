@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 namespace SadCL.MissileLauncher
 {
 
-    //The Adapter inherits from both the legacy hardware, and the current format for
-    //all missile launchers (Interface).
+    //The Adapter inherits from the legacy hardware to provide necessary functionality.
     public class MissileLauncherAdapter : MissileLauncherHardware
     {
+        //Whereas the legacy hardware can move in 4 directions, the Interface provides
+        //only 2 values:  Theta and Phi.  Need to translate those coordinates into directions.
         public void moveBy(double phi, double theta)
         {
             if (phi < 0.0)
@@ -48,7 +49,7 @@ namespace SadCL.MissileLauncher
         {
             if (launcherAmmo == (int)AmmoCount.EmptyAmmo)
             {
-                System.Console.WriteLine("You must acquire more Vespene Gas! (Ammo)");
+                System.Console.WriteLine("We're out of ammunition!");
             }
             else
             {
@@ -60,6 +61,7 @@ namespace SadCL.MissileLauncher
 
         public void reload()
         {
+            System.Console.WriteLine("We're reloaded!");
             launcherAmmo = (int)AmmoCount.MaxAmmo;
         }
 
