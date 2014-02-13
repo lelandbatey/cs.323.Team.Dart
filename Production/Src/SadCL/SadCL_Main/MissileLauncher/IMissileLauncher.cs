@@ -7,6 +7,6 @@ namespace SadCL.MissileLauncher
         void moveBy(double phi, double theta);
         void reload();
         void status();
-        void reset();
+        void reset();   //Though it isn't a requirement, it's convenient to have.
     }
 }

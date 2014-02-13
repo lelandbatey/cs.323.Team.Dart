@@ -18,11 +18,12 @@ namespace SadCL
 
             MissileLauncher.MissileLauncherManager mMan = MissileLauncher.MissileLauncherManager.Instance;
 
+            //Should reset the turret before we even begin.
+            mMan.reset();
+
             // // Print that we're actually ready to go!
             Console.WriteLine("Status: OPERATIONAL");
             Console.WriteLine("Gimme somethin' t' shoot!");
-
-            mMan.reset();
 
             while (!doneFlag) {
 
@@ -60,7 +61,12 @@ namespace SadCL
                     doneFlag = true;
                 }
                 else if (givenAct == "moveby") {
+                    //This isn't currently a responsive command.  Still need to implement this.                    
                     mMan.moveBy(-90,90);
+                }
+                else if (givenAct == "reset")
+                {
+                    mMan.reset();
                 }
             }
         }

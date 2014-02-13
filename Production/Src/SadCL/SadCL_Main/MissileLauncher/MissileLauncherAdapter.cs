@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace SadCL.MissileLauncher
 {
+    //The Adapter inherits from both the legacy hardware, and the current format for
+    //all missile launchers (Interface).
     public class MissileLauncherAdapter : MissileLauncherHardware, IMissileLauncher
     {
         public string launcherName { get; private set; }
@@ -24,22 +26,22 @@ namespace SadCL.MissileLauncher
 
         public void moveBy(double phi, double theta)
         {
-            if (phi < 0)
+            if (phi < 0.0)
             {
-                command_Right(phi * -1);
+                command_Right((int)phi);
             }
             else
             {
-                command_Left(phi);
+                command_Left((int)phi);
             }
 
-            if (theta < 0)
+            if (theta < 0.0)
             {
-                command_Down(theta * -1);
+                command_Down((int)theta);
             }
             else
             {
-                command_Up(theta);
+                command_Up((int)theta);
             }
         }
 
