@@ -9,12 +9,22 @@ namespace SadCL
 {
     class Program
     {
+        enum userInput
+        {
+            userCommand,
+            userTheta,
+            userPhi
+        }
         static void Main(string[] args) {
+
+
 
             // // Various setup stuff
             Target.TargetManager tMan = Target.TargetManager.Instance;
             bool doneFlag = false;
-            string inLine, givenAct, givenMod; // Input-line, given-action, given-modifier
+            string inLine, givenMod; // Input-line, given-action, given-modifier
+
+            //List<string> givenAct; // It's a list for multi-part statements.
 
             MissileLauncher.MissileLauncherManager mMan = MissileLauncher.MissileLauncherManager.Instance;
 
@@ -28,8 +38,14 @@ namespace SadCL
             while (!doneFlag) {
 
                 // Get the line and do some string transforms
+                System.Console.WriteLine("Enter Command:");
                 inLine = Console.ReadLine();
-                givenAct = inLine.Split(' ')[0].ToLower();
+
+                List<string> givenAct = new List<string>(inLine.Split(' '));
+
+                givenAct[(int)userInput.userCommand].ToLower();
+
+                //givenAct = inLine.Split(' ')[0].ToLower();
 
                 // We have get the modifier in this way because the line may contain many spaces. This way we go from the first space till the end of the line and set that to be our modifier
                 if (inLine.Split(' ').Length > 1 ) 
@@ -38,44 +54,65 @@ namespace SadCL
                     givenMod = "";
                 
                 // Giant hairy if-elseif statement
-                if (givenAct == "load"){
+                if (givenAct[(int)userInput.userCommand] == "load"){
 
                     if (File.Exists(givenMod))
                         tMan.load(givenMod);
                     else
                         Console.WriteLine("File specified doesn't exist.");
-                    
-                } else if (givenAct == "scoundrels" ) {
+
+                }
+                else if (givenAct[(int)userInput.userCommand] == "scoundrels")
+                {
                     tMan.printEnemies();
-                } else if (givenAct == "friends" ) {
+                }
+                else if (givenAct[(int)userInput.userCommand] == "friends")
+                {
                     tMan.printFriends();
-                } else if (givenAct == "kill") {
+                }
+                else if (givenAct[(int)userInput.userCommand] == "kill")
+                {
                     // RIGHT NOW JUST A STUB, EXPAND THIS LATER ONCE WE HAVE THE MISSILE LAUNCHER!
 
                     tMan.takeAim(givenMod);
                     tMan.printAll();
 
-                } else if (givenAct == "fire") {
+                }
+                else if (givenAct[(int)userInput.userCommand] == "fire")
+                {
                     mMan.fire();
-                }else if (givenAct == "exit") { // Peace yo, we out
+                }
+                else if (givenAct[(int)userInput.userCommand] == "exit")
+                { // Peace yo, we out
                     doneFlag = true;
                 }
-                else if (givenAct == "moveby") {
-                    //This isn't currently a responsive command.  Still need to implement this.                    
-                    mMan.moveBy(-90,90);
+                else if (givenAct[(int)userInput.userCommand] == "moveby")
+                {
+                    try
+                    {
+                        double Theta = Convert.ToDouble(givenAct[(int)userInput.userTheta]);
+                        double Phi = Convert.ToDouble(givenAct[(int)userInput.userPhi]);
+                        mMan.moveBy(Theta, Phi);
+                    }
+                    catch (FormatException Error)
+                    {
+                        System.Console.WriteLine(Error.Message);
+                        System.Console.WriteLine("Need to enter both Theta and Phi, and both must be of type double.");
+                    }
                 }
-                else if (givenAct == "move") {
+                else if (givenAct[(int)userInput.userCommand] == "move")
+                {
                     System.Console.WriteLine("I'mma movin!");
                 }
-                else if (givenAct == "status")
+                else if (givenAct[(int)userInput.userCommand] == "status")
                 {
                     mMan.status();
                 }
-                else if (givenAct == "reload")
+                else if (givenAct[(int)userInput.userCommand] == "reload")
                 {
                     mMan.reload();
                 }
-                else if (givenAct == "reset")
+                else if (givenAct[(int)userInput.userCommand] == "reset")
                 {
                     mMan.reset();
                 }
