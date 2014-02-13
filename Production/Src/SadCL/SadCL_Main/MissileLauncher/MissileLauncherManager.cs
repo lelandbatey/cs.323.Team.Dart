@@ -8,6 +8,11 @@ namespace SadCL.MissileLauncher
 {
     public class MissileLauncherManager
     {
+        //Turret faces dead center, bisecting the X-axis and the Y-axis
+        //into its positive and negative components.
+        private double currentTheta = 90.0;
+        private double currentPhi = 90.0;
+
         // Singleton: http://msdn.microsoft.com/en-us/library/ff650316.aspx
         // Need to look at this later.  Some pretty wild stuff.
         private static MissileLauncherManager instance; // Our private instance of ourself
