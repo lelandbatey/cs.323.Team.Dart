@@ -8,18 +8,13 @@ namespace SadCL.MissileLauncher
 {
     public class MissileLauncherManager
     {
-        private MissileLauncherAdapter MissileTurret = null;
-        private MissileLauncherFactory Factory = new MissileLauncherFactory();
-        public MissileLauncherManager()
-        {
-            MissileTurret = Factory.create_Launcher(LauncherTypes.DreamCheeky);
-        }
+        private IMissileLauncher MissileTurret = MissileLauncherFactory.create_Launcher(LauncherTypes.DreamCheeky);
+
+        public MissileLauncherManager() { }
         
         public void fire()
         {
             MissileTurret.fire();
         }
-    }    
-
-   
+    }
 }
