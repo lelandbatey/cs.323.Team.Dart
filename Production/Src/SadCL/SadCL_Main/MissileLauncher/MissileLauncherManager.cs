@@ -30,9 +30,9 @@ namespace SadCL.MissileLauncher
         {
             MissileTurret.fire();
         }
-        public void moveBy()
+        public void moveBy(int phi, int theta)
         {
-            MissileTurret.moveBy();
+            MissileTurret.moveBy(phi, theta);
         }
     }
 }
