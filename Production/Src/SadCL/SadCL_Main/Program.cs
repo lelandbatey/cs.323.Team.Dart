@@ -88,6 +88,8 @@ namespace SadCL
                 }
                 else if (givenAct[(int)userInput.userCommand] == "moveby")
                 {
+                    //For the time being, we are assuming the Physics representation of Spherical Coordinates:
+                    //Theta is the angle from the z-axis, and phi is the angle from the postive x-axis.
                     try
                     {
                         double Theta = Convert.ToDouble(givenAct[(int)userInput.userTheta]);
