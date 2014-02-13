@@ -64,6 +64,17 @@ namespace SadCL
                     //This isn't currently a responsive command.  Still need to implement this.                    
                     mMan.moveBy(-90,90);
                 }
+                else if (givenAct == "move") {
+                    System.Console.WriteLine("I'mma movin!");
+                }
+                else if (givenAct == "status")
+                {
+                    mMan.status();
+                }
+                else if (givenAct == "reload")
+                {
+                    mMan.reload();
+                }
                 else if (givenAct == "reset")
                 {
                     mMan.reset();
