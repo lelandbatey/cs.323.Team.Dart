@@ -14,7 +14,7 @@ namespace SadCL.MissileLauncher
         //only 2 values:  Theta and Phi.  Need to translate those coordinates into directions.
         public void moveBy(double phi, double theta)
         {
-            if (phi < 0.0)
+            if (phi < 0.0)  //Don't know if magic numbers are still a thing here.
             {
                 command_Right((int)phi);
             }
@@ -75,6 +75,7 @@ namespace SadCL.MissileLauncher
         {
             System.Console.WriteLine("Please wait while we return to origin.");
             command_reset();
+            System.Console.WriteLine("Reset Complete!");
         }
     }
 
