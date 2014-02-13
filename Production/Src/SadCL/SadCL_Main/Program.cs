@@ -18,12 +18,6 @@ namespace SadCL
 
             MissileLauncher.MissileLauncherManager mMan = MissileLauncher.MissileLauncherManager.Instance;
 
-            mMan.moveBy();
-           
-
-
-            
-
             // // Print that we're actually ready to go!
             Console.WriteLine("Status: OPERATIONAL");
             Console.WriteLine("Gimme somethin' t' shoot!");
@@ -62,6 +56,9 @@ namespace SadCL
                     mMan.fire();
                 }else if (givenAct == "exit") { // Peace yo, we out
                     doneFlag = true;
+                }
+                else if (givenAct == "moveby") {
+                    mMan.moveBy();
                 }
 
             }

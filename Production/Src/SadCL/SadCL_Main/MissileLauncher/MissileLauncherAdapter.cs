@@ -24,7 +24,7 @@ namespace SadCL.MissileLauncher
 
         public void moveBy()
         {
-            System.Console.WriteLine("Fuel is pumping!");
+            command_Right(15);
         }
 
         public void reload()
