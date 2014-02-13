@@ -13,7 +13,7 @@ namespace SadCL.MissileLauncher
     }
     public class MissileLauncherFactory
     {
-        public MissileLauncherAdapter create_Launcher(LauncherTypes Product)
+        public static IMissileLauncher create_Launcher(LauncherTypes Product)
         {
             //if (Product == LauncherTypes.DreamCheeky)
             //    return new DreamCheekyLauncher("HULK", 4);

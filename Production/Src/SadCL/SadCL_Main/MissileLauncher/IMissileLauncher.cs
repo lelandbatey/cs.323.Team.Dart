@@ -1,7 +1,7 @@
 ﻿using System;
 namespace SadCL.MissileLauncher
 {
-    interface IMissileLauncher
+    public interface IMissileLauncher
     {
         void fire();
         void moveBy();
