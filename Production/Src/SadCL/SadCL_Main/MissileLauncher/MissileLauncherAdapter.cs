@@ -22,7 +22,7 @@ namespace SadCL.MissileLauncher
             command_Fire();
         }
 
-        public void moveBy()
+        public void moveBy(int phi, int theta)
         {
             command_Right(15);
         }
