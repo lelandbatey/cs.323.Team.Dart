@@ -22,7 +22,7 @@ namespace SadCL
             // // Various setup stuff
             Target.TargetManager tMan = Target.TargetManager.Instance;
             bool doneFlag = false;
-            string inLine, givenMod; // Input-line, given-action, given-modifier
+            string inLine, givenAct, givenMod; // Input-line, given-action, given-modifier
 
             //List<string> givenAct; // It's a list for multi-part statements.
 
@@ -41,11 +41,10 @@ namespace SadCL
                 System.Console.Write("> ");
                 inLine = Console.ReadLine();
 
-                List<string> givenAct = new List<string>(inLine.Split(' '));
+                //List<string> givenAct = new List<string>(inLine.Split(' '));
 
-                givenAct[(int)userInput.userCommand].ToLower();
 
-                //givenAct = inLine.Split(' ')[0].ToLower();
+                givenAct = inLine.Split(' ')[0].ToLower();
 
                 // We have get the modifier in this way because the line may contain many spaces. This way we go from the first space till the end of the line and set that to be our modifier
                 if (inLine.Split(' ').Length > 1 ) 
@@ -54,7 +53,7 @@ namespace SadCL
                     givenMod = "";
                 
                 // Giant hairy if-elseif statement
-                if (givenAct[(int)userInput.userCommand] == "load"){
+                if (givenAct == "load"){
 
                     if (File.Exists(givenMod))
                         tMan.load(givenMod);
@@ -62,15 +61,15 @@ namespace SadCL
                         Console.WriteLine("File specified doesn't exist.");
 
                 }
-                else if (givenAct[(int)userInput.userCommand] == "scoundrels")
+                else if (givenAct == "scoundrels")
                 {
                     tMan.printEnemies();
                 }
-                else if (givenAct[(int)userInput.userCommand] == "friends")
+                else if (givenAct == "friends")
                 {
                     tMan.printFriends();
                 }
-                else if (givenAct[(int)userInput.userCommand] == "kill")
+                else if (givenAct == "kill")
                 {
                     // RIGHT NOW JUST A STUB, EXPAND THIS LATER ONCE WE HAVE THE MISSILE LAUNCHER!
 
@@ -78,43 +77,62 @@ namespace SadCL
                     tMan.printAll();
 
                 }
-                else if (givenAct[(int)userInput.userCommand] == "fire")
+                else if (givenAct == "fire")
                 {
                     mMan.fire();
                 }
-                else if (givenAct[(int)userInput.userCommand] == "exit")
+                else if (givenAct == "exit")
                 { // Peace yo, we out
                     doneFlag = true;
                 }
-                else if (givenAct[(int)userInput.userCommand] == "moveby")
+                else if (givenAct == "moveby")
                 {
+
                     //For the time being, we are assuming the Physics representation of Spherical Coordinates:
                     //Theta is the angle from the z-axis, and phi is the angle from the postive x-axis.
-                    try
-                    {
-                        double Theta = Convert.ToDouble(givenAct[(int)userInput.userTheta]);
-                        double Phi = Convert.ToDouble(givenAct[(int)userInput.userPhi]);
-                        mMan.moveBy(Theta, Phi);
+
+                    bool kickOut = false;
+                    // LET'S DO SOME STRING FLOGGING, YEAH!
+                    givenMod = givenMod.Trim();
+                    
+                    if (! (givenMod.Split(' ').Length == 2) ) {
+                        Console.WriteLine("NAH MAN, ur typin ur doubles real bad man. FIX IT FIX IT FIX IT!");
+                        kickOut = true; // AAAAaaaaaand we out
                     }
-                    catch (FormatException Error)
-                    {
-                        System.Console.WriteLine(Error.Message);
-                        System.Console.WriteLine("Need to enter both Theta and Phi, and both must be of type double.");
+
+                    double Theta = 0.0, Phi = 0.0;
+
+                    // This does actual checking to see if they're actually valid doubles
+                    if (! double.TryParse(givenMod.Split(' ')[0], out Theta) ) {
+                        Console.WriteLine("Yeaaaaa.... Theta's not really a double dude. ");
+                        kickOut = true;
                     }
+
+                    if (! double.TryParse(givenMod.Split(' ')[1], out Phi)) {
+                        Console.WriteLine("Sorry man, that Phi's not a proper double");
+                        kickOut = true;
+                    }
+
+                    // If we got any trouble, we "kick out" by using the continue statement to go back to the top of the while loop
+                    if (kickOut) {
+                        continue;
+                    }
+                    mMan.moveBy(Theta, Phi);
+
                 }
-                else if (givenAct[(int)userInput.userCommand] == "move")
+                else if (givenAct == "move")
                 {
                     System.Console.WriteLine("I'mma movin!");
                 }
-                else if (givenAct[(int)userInput.userCommand] == "status")
+                else if (givenAct == "status")
                 {
                     mMan.status();
                 }
-                else if (givenAct[(int)userInput.userCommand] == "reload")
+                else if (givenAct == "reload")
                 {
                     mMan.reload();
                 }
-                else if (givenAct[(int)userInput.userCommand] == "reset")
+                else if (givenAct == "reset")
                 {
                     mMan.reset();
                 }
