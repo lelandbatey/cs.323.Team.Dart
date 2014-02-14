@@ -60,33 +60,21 @@ namespace SadCL
                     else
                         Console.WriteLine("File specified doesn't exist.");
 
-                }
-                else if (givenAct == "scoundrels")
-                {
+                } else if (givenAct == "scoundrels") {
                     tMan.printEnemies();
-                }
-                else if (givenAct == "friends")
-                {
+                } else if (givenAct == "friends") {
                     tMan.printFriends();
-                }
-                else if (givenAct == "kill")
-                {
+                } else if (givenAct == "kill") {
                     // RIGHT NOW JUST A STUB, EXPAND THIS LATER ONCE WE HAVE THE MISSILE LAUNCHER!
 
                     tMan.takeAim(givenMod);
                     tMan.printAll();
 
-                }
-                else if (givenAct == "fire")
-                {
+                } else if (givenAct == "fire") {
                     mMan.fire();
-                }
-                else if (givenAct == "exit")
-                { // Peace yo, we out
+                } else if (givenAct == "exit") { // Peace yo, we out
                     doneFlag = true;
-                }
-                else if (givenAct == "moveby")
-                {
+                } else if (givenAct == "moveby") {
 
                     //For the time being, we are assuming the Physics representation of Spherical Coordinates:
                     //Theta is the angle from the z-axis, and phi is the angle from the postive x-axis.
@@ -119,25 +107,15 @@ namespace SadCL
                     }
                     mMan.moveBy(Theta, Phi);
 
-                }
-                else if (givenAct == "move")
-                {
+                } else if (givenAct == "move") {
                     System.Console.WriteLine("I'mma movin!");
-                }
-                else if (givenAct == "status")
-                {
+                } else if (givenAct == "status") {
                     mMan.status();
-                }
-                else if (givenAct == "reload")
-                {
+                } else if (givenAct == "reload") {
                     mMan.reload();
-                }
-                else if (givenAct == "reset")
-                {
+                } else if (givenAct == "reset") {
                     mMan.reset();
-                }
-                else
-                {
+                } else {
                     System.Console.WriteLine("Unknown Command Entered.");
                 }
             }
