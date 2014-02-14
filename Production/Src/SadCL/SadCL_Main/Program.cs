@@ -35,7 +35,6 @@ namespace SadCL
                 System.Console.Write("> ");
                 inLine = Console.ReadLine();
 
-                
                 givenAct = inLine.Split(' ')[0].ToLower();
 
                 // We have get the modifier in this way because the line may contain many spaces. This way we go from the first space till the end of the line and set that to be our modifier
