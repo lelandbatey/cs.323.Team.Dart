@@ -97,7 +97,7 @@ namespace SadCL
                     if (kickOut) {
                         continue;
                     }
-                    mMan.moveBy(Theta, Phi);
+                    mMan.moveBy(Phi, Theta);
 
                 } else if (givenAct == "move") {
                     System.Console.WriteLine("I'mma movin!");
