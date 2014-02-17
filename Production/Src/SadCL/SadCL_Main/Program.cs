@@ -109,7 +109,7 @@ namespace SadCL
 
 					// Uses non-relative tick conversion
 					Phi = sphToTick(Phi);
-					Theta = sphToTick(Theta);
+					Theta = vertSphToTick(Theta);
 					
 					mMan.move(Phi,Theta);
 
@@ -166,15 +166,30 @@ namespace SadCL
 			double Theta = 0.0, Phi = 0.0;
 
 			// This does actual checking to see if they're actually valid doubles
-			if (!double.TryParse(modifier.Split(' ')[0], out Phi)) {
+			//if (!double.TryParse(modifier.Split(' ')[0], out Phi)) {
+			//	Console.WriteLine("Yeaaaaa.... Phi's not really a double dude. ");
+			//	kickOut = true;
+			//}
+
+			try {
+				double.TryParse(modifier.Split(' ')[0], out Phi);
+			}
+			catch (Exception) {
 				Console.WriteLine("Yeaaaaa.... Phi's not really a double dude. ");
 				kickOut = true;
 			}
 
-			if (!double.TryParse(modifier.Split(' ')[1], out Theta)) {
+			try {
+				double.TryParse(modifier.Split(' ')[1], out Theta);
+			}
+			catch (Exception) {
 				Console.WriteLine("Sorry man, that Theta's not a proper double");
 				kickOut = true;
 			}
+			//if (!
+			//	Console.WriteLine("Sorry man, that Theta's not a proper double");
+			//	kickOut = true;
+			//}
 
 			if (kickOut) {
 				throw new ArgumentException("Unnacceptable input given.");
