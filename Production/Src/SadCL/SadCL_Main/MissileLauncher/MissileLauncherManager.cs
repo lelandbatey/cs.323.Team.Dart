@@ -10,8 +10,36 @@ namespace SadCL.MissileLauncher
     {
         //Turret faces dead center, bisecting the X-axis and the Y-axis
         //into its positive and negative components.
-        private double currentTheta = 90.0;
-        private double currentPhi = 90.0;
+        private double disTheta = 0.0;
+		private double disPhi = 3000;
+		//private double currentPos = 3000.0;
+
+		private double currentPhi {
+			get{ return disPhi; }
+			set {
+				if (value >= 6000) {
+					disPhi = 6000;
+				} else if (value <= 0) {
+					disPhi = 0;
+				} else {
+					disPhi = value;
+				}
+
+			}
+		}
+		private double currentTheta {
+			get { return disTheta; }
+			set {
+				if (value >= 700) {
+					disTheta = 700;
+				} else if (value <= 0) {
+					disTheta = 0;
+				} else {
+					disTheta = value;
+				}
+
+			}
+		}
 
         // Singleton: http://msdn.microsoft.com/en-us/library/ff650316.aspx
         // Need to look at this later.  Some pretty wild stuff.
@@ -27,6 +55,11 @@ namespace SadCL.MissileLauncher
                 return instance;
             }
         }
+
+		private MissileLauncherManager(){
+			currentPhi = 3000.0;
+		}
+
         private IMissileLauncher MissileTurret = MissileLauncherFactory.create_Launcher(LauncherTypes.DreamCheeky);
         
         public void fire()
@@ -35,11 +68,24 @@ namespace SadCL.MissileLauncher
         }
         public void moveBy(double phi, double theta)
         {
+			currentPhi = currentPhi + phi;
+			currentTheta = currentTheta + theta;
             MissileTurret.moveBy(phi, theta);
         }
         public void move(double phi, double theta)
         {
-            //Math.
+			//Console.WriteLine(currentPhi);
+			//Console.WriteLine("Phi: {0}",phi);
+			//Console.WriteLine("Theta: {0}", theta);
+			double pDifference = phi - currentPhi;
+			double tDifference = theta - currentTheta;
+			//Console.WriteLine(pDifference);
+			//Console.WriteLine(tDifference);
+			if (pDifference != 0) {
+				MissileTurret.moveBy(pDifference, tDifference);				
+			}
+			currentPhi = phi;
+			currentTheta = theta;			
         }
         public void status()
         {
@@ -51,7 +97,11 @@ namespace SadCL.MissileLauncher
         }
         public void reset()
         {
-            MissileTurret.reset();
+			moveBy(6000, 700);
+			moveBy(-3000, -700);
+			currentPhi = 3000;
+			currentTheta = 0;
+			//MissileTurret.reset();
         }
     }
 }

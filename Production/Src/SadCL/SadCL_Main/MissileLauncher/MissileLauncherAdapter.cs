@@ -12,24 +12,25 @@ namespace SadCL.MissileLauncher
     {
         //Whereas the legacy hardware can move in 4 directions, the Interface provides
         //only 2 values:  Theta and Phi.  Need to translate those coordinates into directions.
-        public void moveBy(double theta, double phi)
+        public void moveBy(double phi, double theta)
         {
+			
             //As Phi increases, the Turret turns counterclockwise.
             //As Phi decreases, the Turret turns clockwise.
             if (phi < 0.0)  //Don't know if magic numbers are still a thing here.
             {
-                command_Right((int)phi);
+				command_Right(Math.Abs((int)phi));
             }
             else
             {
-                command_Left((int)phi);
+                command_Left(Math.Abs((int)phi));
             }
 
             //As Theta increases, the Turret head descends.
             //As Theta decreases, the Turret head elevates.
             if (theta < 0.0)
             {
-                command_Down((int)theta);
+                command_Down(Math.Abs((int)theta));
             }
             else
             {

@@ -1,14 +1,22 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SadCL
 {
     class Program
     {
+		enum hardVar{
+			vertMaxtick = 700,
+			horizonMaxtick = 6000,
+			vertMaxAngle = 45,
+			horizonMaxAngle = 270
+		}
         static void Main(string[] args) {
 
 
@@ -23,8 +31,22 @@ namespace SadCL
             MissileLauncher.MissileLauncherManager mMan = MissileLauncher.MissileLauncherManager.Instance;
 
             //Should reset the turret before we even begin.
-            mMan.reset();
+			mMan.reset();
 
+
+			//mMan.moveBy(0, -700);
+
+			//return;
+
+			//rotate(270);
+			//rotate(-135);
+			//mMan.move(3000, 700);
+			//rotate(90);
+			//rotate(-90);
+			//rotate(-90);
+			//rotate(180);
+			//rotate(-90);
+			
             // // Print that we're actually ready to go!
             Console.WriteLine("Status: OPERATIONAL");
             Console.WriteLine("Gimme somethin' t' shoot!");
@@ -58,8 +80,30 @@ namespace SadCL
                 } else if (givenAct == "kill") {
                     // RIGHT NOW JUST A STUB, EXPAND THIS LATER ONCE WE HAVE THE MISSILE LAUNCHER!
 
-                    tMan.takeAim(givenMod);
+                    Tuple<double, double, double> targCoords = tMan.takeAim(givenMod);
                     tMan.printAll();
+
+					double X = targCoords.Item1;
+					double Y = targCoords.Item2;
+					double Z = targCoords.Item3;
+
+					double r = Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2));
+					double Theta = (Math.PI / 2) - Math.Acos(Z / r);
+					double Phi = Math.Atan2(Y, X);
+
+					//Console.WriteLine("Phi  : {0}", Phi);
+					//Console.WriteLine("Theta: {0}", Theta);
+
+					// Uses non-relative tick conversion
+					Phi = sphToTick(Phi);
+					Theta = vertSphToTick(Theta);
+
+					//Console.WriteLine("Phi  : {0}", Phi);
+					//Console.WriteLine("Theta: {0}", Theta);
+
+					mMan.move(Phi, Theta);
+					mMan.fire();
+
 
                 } else if (givenAct == "fire") {
                     mMan.fire();
@@ -67,49 +111,116 @@ namespace SadCL
                     doneFlag = true;
                 } else if (givenAct == "moveby") {
 
-                    //For the time being, we are assuming the Physics representation of Spherical Coordinates:
-                    //Theta is the angle from the z-axis, and phi is the angle from the postive x-axis.
+					double Phi = 0.0, Theta = 0.0;
+					List<double> input = getPhiTheta(givenMod);
+					Phi = input[0];
+					Theta = input[1];
 
-                    bool kickOut = false;
-                    // LET'S DO SOME STRING FLOGGING, YEAH!
-                    givenMod = givenMod.Trim();
-                    
-                    if (! (givenMod.Split(' ').Length == 2) ) {
-                        Console.WriteLine("NAH MAN, ur typin ur doubles real bad man. FIX IT FIX IT FIX IT!");
-                        kickOut = true; // AAAAaaaaaand we out
-                    }
+					// uses relative tick-conversion for naive rotation
+					Phi = sphToTickRel(Phi);
+					Theta = sphToTickRel(Theta);
 
-                    double Theta = 0.0, Phi = 0.0;
-
-                    // This does actual checking to see if they're actually valid doubles
-                    if (! double.TryParse(givenMod.Split(' ')[0], out Theta) ) {
-                        Console.WriteLine("Yeaaaaa.... Theta's not really a double dude. ");
-                        kickOut = true;
-                    }
-
-                    if (! double.TryParse(givenMod.Split(' ')[1], out Phi)) {
-                        Console.WriteLine("Sorry man, that Phi's not a proper double");
-                        kickOut = true;
-                    }
-
-                    // If we got any trouble, we "kick out" by using the continue statement to go back to the top of the while loop
-                    if (kickOut) {
-                        continue;
-                    }
                     mMan.moveBy(Phi, Theta);
 
-                } else if (givenAct == "move") {
-                    System.Console.WriteLine("I'mma movin!");
-                } else if (givenAct == "status") {
-                    mMan.status();
-                } else if (givenAct == "reload") {
-                    mMan.reload();
-                } else if (givenAct == "reset") {
-                    mMan.reset();
-                } else {
-                    System.Console.WriteLine("Unknown Command Entered.");
-                }
+				} else if (givenAct == "move") {
+					
+					System.Console.WriteLine("I'mma movin!");
+					
+					double Phi = 0.0, Theta = 0.0;
+					List<double> input = getPhiTheta(givenMod);
+					Phi = input[0];
+					Theta = input[1];
+
+					// Uses non-relative tick conversion
+					Phi = sphToTick(Phi);
+					Theta = sphToTick(Theta);
+					
+					mMan.move(Phi,Theta);
+
+				} else if (givenAct == "deg") {
+					double rot = 0.0;
+					givenMod = givenMod.Trim();
+					double.TryParse(givenMod, out rot);
+
+					rotate(rot);
+
+				} else if (givenAct == "status") {
+					mMan.status();
+				} else if (givenAct == "reload") {
+					mMan.reload();
+				} else if (givenAct == "reset") {
+					mMan.reset();
+				} else {
+					System.Console.WriteLine("Unknown Command Entered.");
+				}
             }
         }
+
+		// Convenience method to make testing easier
+		public static void rotate(double amount) {
+			amount = amount * 22.22222222;
+			MissileLauncher.MissileLauncherManager mMan = MissileLauncher.MissileLauncherManager.Instance;
+			mMan.moveBy(amount,0.0);
+			Thread.Sleep(800);
+		}
+
+		public static double sphToTick(double amount) {
+			// Returns the absolute position where we need to go.
+			//return (amount * 180 / Math.PI * 22.222222 + 1000);
+			return (sphToTickRel(amount) + 1000);
+		}
+
+		public static double sphToTickRel(double amount) {
+			// Doesn't add the absolute 1000 
+			//return (amount * 180 / Math.PI * 22.222222);
+			return (radToDegrees(amount) * 22.22222);
+		}
+		public static double vertSphToTick(double amount) {
+			// Used to make the conversion between Z amount and 
+			//return (amount * 180 / Math.PI * 15.55555);
+			return (radToDegrees(amount) * 15.55555);
+		}
+
+		public static double radToDegrees(double amount) {
+			// Converts radians to degrees for easier math
+			return (amount * 180 / Math.PI);
+		}
+
+		// Gets the user to input data
+		public static List<double> getPhiTheta(string modifier){
+			bool kickOut = false;
+			// LET'S DO SOME STRING FLOGGING, YEAH!
+			modifier = modifier.Trim();
+
+			if (!(modifier.Split(' ').Length == 2)) {
+				Console.WriteLine("NAH MAN, ur typin ur doubles real bad man. FIX IT FIX IT FIX IT!");
+				kickOut = true; // AAAAaaaaaand we out
+			}
+
+			double Theta = 0.0, Phi = 0.0;
+
+			// This does actual checking to see if they're actually valid doubles
+			if (!double.TryParse(modifier.Split(' ')[0], out Phi)) {
+				Console.WriteLine("Yeaaaaa.... Phi's not really a double dude. ");
+				kickOut = true;
+			}
+
+			if (!double.TryParse(modifier.Split(' ')[1], out Theta)) {
+				Console.WriteLine("Sorry man, that Theta's not a proper double");
+				kickOut = true;
+			}
+
+			if (kickOut) {
+				throw new ArgumentException("Unnacceptable input given.");
+			}
+
+			List<double> toReturn = new List<double>();
+
+			toReturn.Add(Phi);
+			toReturn.Add(Theta);
+
+			return toReturn;
+		}
+
     }
 }
