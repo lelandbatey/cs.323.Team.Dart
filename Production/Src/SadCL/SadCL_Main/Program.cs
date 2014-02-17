@@ -26,27 +26,11 @@ namespace SadCL
             bool doneFlag = false;
             string inLine, givenAct, givenMod; // Input-line, given-action, given-modifier
 
-            //List<string> givenAct; // It's a list for multi-part statements.
-
             MissileLauncher.MissileLauncherManager mMan = MissileLauncher.MissileLauncherManager.Instance;
 
             //Should reset the turret before we even begin.
 			mMan.reset();
 
-
-			//mMan.moveBy(0, -700);
-
-			//return;
-
-			//rotate(270);
-			//rotate(-135);
-			//mMan.move(3000, 700);
-			//rotate(90);
-			//rotate(-90);
-			//rotate(-90);
-			//rotate(180);
-			//rotate(-90);
-			
             // // Print that we're actually ready to go!
             Console.WriteLine("Status: OPERATIONAL");
             Console.WriteLine("Gimme somethin' t' shoot!");
@@ -91,15 +75,9 @@ namespace SadCL
 					double Theta = (Math.PI / 2) - Math.Acos(Z / r);
 					double Phi = Math.Atan2(Y, X);
 
-					//Console.WriteLine("Phi  : {0}", Phi);
-					//Console.WriteLine("Theta: {0}", Theta);
-
 					// Uses non-relative tick conversion
 					Phi = sphToTick(Phi);
 					Theta = vertSphToTick(Theta);
-
-					//Console.WriteLine("Phi  : {0}", Phi);
-					//Console.WriteLine("Theta: {0}", Theta);
 
 					mMan.move(Phi, Theta);
 					mMan.fire();
@@ -124,8 +102,6 @@ namespace SadCL
 
 				} else if (givenAct == "move") {
 					
-					System.Console.WriteLine("I'mma movin!");
-					
 					double Phi = 0.0, Theta = 0.0;
 					List<double> input = getPhiTheta(givenMod);
 					Phi = input[0];
@@ -136,13 +112,6 @@ namespace SadCL
 					Theta = sphToTick(Theta);
 					
 					mMan.move(Phi,Theta);
-
-				} else if (givenAct == "deg") {
-					double rot = 0.0;
-					givenMod = givenMod.Trim();
-					double.TryParse(givenMod, out rot);
-
-					rotate(rot);
 
 				} else if (givenAct == "status") {
 					mMan.status();
@@ -166,18 +135,15 @@ namespace SadCL
 
 		public static double sphToTick(double amount) {
 			// Returns the absolute position where we need to go.
-			//return (amount * 180 / Math.PI * 22.222222 + 1000);
 			return (sphToTickRel(amount) + 1000);
 		}
 
 		public static double sphToTickRel(double amount) {
 			// Doesn't add the absolute 1000 
-			//return (amount * 180 / Math.PI * 22.222222);
 			return (radToDegrees(amount) * 22.22222);
 		}
 		public static double vertSphToTick(double amount) {
 			// Used to make the conversion between Z amount and 
-			//return (amount * 180 / Math.PI * 15.55555);
 			return (radToDegrees(amount) * 15.55555);
 		}
 
