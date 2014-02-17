@@ -96,7 +96,7 @@ namespace SadCL
 
 					// uses relative tick-conversion for naive rotation
 					Phi = sphToTickRel(Phi);
-					Theta = sphToTickRel(Theta);
+					Theta = vertSphToTick(Theta);
 
                     mMan.moveBy(Phi, Theta);
 
