@@ -75,14 +75,25 @@ namespace SadCL
                     try {
                         Tuple<double, double, double> targCoords = tMan.takeAim(givenMod);
                         //Tuple<double, double, double> targCoords = tMan.takeAim(givenMod);
-                        tMan.printAll();
+                        //tMan.printAll();
 
                         X = targCoords.Item1;
                         Y = targCoords.Item2;
                         Z = targCoords.Item3;
                     }
+                    catch (ArgumentOutOfRangeException Error) {
+                        Console.WriteLine(Error.ParamName);
+                        validTarget = false;
+                    }
+                    catch (ArgumentException Error) {
+                        if (Error.ParamName == null)
+                            Console.WriteLine(Error.Message);
+                        else
+                            Console.WriteLine(Error.ParamName);
+                        validTarget = false;
+                    }
                     catch {
-                        Console.WriteLine("List doesn't exist.");
+                        Console.WriteLine("List doesn't exist!");
                         validTarget = false;
                     }
 
