@@ -90,19 +90,33 @@ namespace SadCL
                     doneFlag = true;
                 } else if (givenAct == "moveby") {
 
+                    //In the event we encounter an error, we do not
+                    //want anything to happen to the turret.
+                    bool dontMove = false;
+
 					double Phi = 0.0, Theta = 0.0;
-					List<double> input = getPhiTheta(givenMod);
-					Phi = input[0];
-					Theta = input[1];
+                    try {
+                        List<double> input = getPhiTheta(givenMod);
+                        Phi = input[0];
+                        Theta = input[1];
+                    }
+                    catch {
+                        dontMove = true;
+                    }
 
 					// uses relative tick-conversion for naive rotation
-					Phi = sphToTickRel(Phi);
-					Theta = vertSphToTick(Theta);
+                    if (dontMove == false) {
+                        Phi = sphToTickRel(Phi);
+                        Theta = vertSphToTick(Theta);
 
-                    mMan.moveBy(Phi, Theta);
+                        mMan.moveBy(Phi, Theta);
+                    }
+					
 
 				} else if (givenAct == "move") {
 
+                    //In the event we encounter an error, we do not
+                    //want anything to happen to the turret.
                     bool dontMove = false;
 					
 					double Phi = 0.0, Theta = 0.0;
@@ -111,17 +125,12 @@ namespace SadCL
                         Phi = input[0];
 					    Theta = input[1];
                     }
-                    catch (ArgumentException Error) {
-                        Console.WriteLine(Error.Message);
-                        dontMove = true;
-                    }
                     catch {
                         dontMove = true;
                     }
 					
 					// Uses non-relative tick conversion
                     if (dontMove == false) {
-                        Console.WriteLine("Made it!");
                         Phi = sphToTick(Phi);
                         Theta = vertSphToTick(Theta);
 
@@ -174,8 +183,8 @@ namespace SadCL
 			modifier = modifier.Trim();
 
 			if (!(modifier.Split(' ').Length == 2)) {
-				//Console.WriteLine("NAH MAN, ur typin ur doubles real bad man. FIX IT FIX IT FIX IT!");
-                throw new ArgumentException("NAH MAN, ur typin ur doubles real bad man. FIX IT FIX IT FIX IT!");
+				Console.WriteLine("NAH MAN, ur typin ur doubles real bad man. FIX IT FIX IT FIX IT!");
+                throw new Exception();
 			}
 
 			double Theta = 0.0, Phi = 0.0;
