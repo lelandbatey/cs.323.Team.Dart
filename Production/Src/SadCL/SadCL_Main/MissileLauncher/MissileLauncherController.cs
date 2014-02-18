@@ -43,18 +43,18 @@ namespace SadCL.MissileLauncher
 
         // Singleton: http://msdn.microsoft.com/en-us/library/ff650316.aspx
         // Need to look at this later.  Some pretty wild stuff.
-        private static MissileLauncherController instance; // Our private instance of ourself
-        public static MissileLauncherController Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new MissileLauncherController();
-                }
-                return instance;
-            }
-        }
+        //private static MissileLauncherController instance; // Our private instance of ourself
+        //public static MissileLauncherController Instance
+        //{
+        //    get
+        //    {
+        //        if (instance == null)
+        //        {
+        //            instance = new MissileLauncherController();
+        //        }
+        //        return instance;
+        //    }
+        //}
 
 		private MissileLauncherController(){
 			currentPhi = 3000.0;
