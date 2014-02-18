@@ -26,7 +26,8 @@ namespace SadCL
             bool doneFlag = false;
             string inLine, givenAct, givenMod; // Input-line, given-action, given-modifier
 
-            MissileLauncher.MissileLauncherController mMan = MissileLauncher.MissileLauncherController.Instance;
+            MissileLauncher.MissileLauncherController mMan = new MissileLauncher.MissileLauncherController();
+            //MissileLauncher.MissileLauncherController mMan = MissileLauncher.MissileLauncherController.Instance;
 
             //Should reset the turret before we even begin.
 			mMan.reset();
@@ -128,7 +129,7 @@ namespace SadCL
 		// Convenience method to make testing easier
 		public static void rotate(double amount) {
 			amount = amount * 22.22222222;
-			MissileLauncher.MissileLauncherController mMan = MissileLauncher.MissileLauncherController.Instance;
+			MissileLauncher.MissileLauncherController mMan = new MissileLauncher.MissileLauncherController();
 			mMan.moveBy(amount,0.0);
 			Thread.Sleep(800);
 		}

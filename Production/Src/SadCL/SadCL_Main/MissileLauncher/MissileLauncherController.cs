@@ -56,7 +56,7 @@ namespace SadCL.MissileLauncher
         //    }
         //}
 
-		private MissileLauncherController(){
+		public MissileLauncherController(){
 			currentPhi = 3000.0;
 		}
 
