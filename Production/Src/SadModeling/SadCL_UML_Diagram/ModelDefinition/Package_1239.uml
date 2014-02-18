@@ -77,6 +77,47 @@
               LastKnownLocation="Package_1239.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="01709c67-1021-4b9c-b62c-75be17b7d7e3"
+            isDerived="false"
+            sourceEndRoleName="IniBuilder"
+            targetEndRoleName="mutableTarget"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="aefc7498-0786-4739-89c6-7515bc31a51e"
+              LastKnownName="mutableTarget"
+              LastKnownLocation="Package_1239.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="de7969b9-3e05-4d16-af63-4c551e9e1028"
+                  name="IniBuilder"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e6c3f62d-b3ff-4503-8894-69d42dcca522"
+                  name="mutableTarget"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="959ab125-1d4f-4149-9c52-c4880c8211de"
@@ -1524,6 +1565,45 @@
                       value="1" />
                   </upperValueInternal>
                 </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="d70efa94-97d1-4434-a81f-060a361ab278"
+            isDerived="false"
+            sourceEndRoleName="mutableTarget"
+            targetEndRoleName="Target"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="2e406012-67c3-423b-a340-f39afcd6b093"
+              LastKnownName="Target"
+              LastKnownLocation="Package_1239.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="84333295-bec1-4127-86dd-2887b251ab5e"
+                  name="mutableTarget"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4187d54e-281a-4d8c-a111-2ff151527ffd"
+                  name="Target"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -4595,6 +4675,47 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="990f04be-e270-4286-8423-b563593e3f08"
+            isDerived="false"
+            sourceEndRoleName="TargetFactory"
+            targetEndRoleName="IniBuilder"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b9a57451-7567-4a7d-a2c2-2b2a366effa9"
+              LastKnownName="IniBuilder"
+              LastKnownLocation="Package_1239.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="32d38d8a-fa26-4990-b2f3-c526e1c30c6b"
+                  name="TargetFactory"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2265740a-5e38-419c-a7b1-dfe7dea3f79f"
+                  name="IniBuilder"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation
             Id="ea238ae3-92a6-4e1c-a6f0-6f8bd978c680"
@@ -4882,6 +5003,45 @@
                       value="1" />
                   </upperValueInternal>
                 </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ba6c2e4e-9f87-4774-9d80-b9aa3a11f62d"
+            isDerived="false"
+            sourceEndRoleName="TargetManager"
+            targetEndRoleName="TargetFactory"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="23f56af8-d0fa-4776-9ca0-9106f71dcc27"
+              LastKnownName="TargetFactory"
+              LastKnownLocation="Package_1239.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5f68fe25-c946-40c4-882d-f5aad0ba6795"
+                  name="TargetManager"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="345b7520-f7b9-42a6-963e-97a7338136b3"
+                  name="TargetFactory"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>

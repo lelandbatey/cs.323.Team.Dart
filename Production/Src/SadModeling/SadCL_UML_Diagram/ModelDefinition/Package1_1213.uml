@@ -724,86 +724,22 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
-        <targetEnds>
-          <association
-            Id="0fea4e08-ab48-4316-b4cd-069f09f82b31"
-            isDerived="false"
-            sourceEndRoleName="MissileLauncherFactory"
-            targetEndRoleName="DreamCheekyLauncher"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="f96a3448-651d-48bd-b314-a8c501e4d7e2"
-              LastKnownName="DreamCheekyLauncher"
-              LastKnownLocation="Package1_1213.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="baeb4cce-2b1c-4a8b-b7d6-dbcb359f098a"
-                  name="MissileLauncherFactory"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="791a7aef-3e8e-4e66-a619-4c639c77379d"
-                  name="DreamCheekyLauncher"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="d7dde2b4-ef23-4285-95e7-31a0e5e5021f"
-            isDerived="false"
-            sourceEndRoleName="MissileLauncherFactory"
-            targetEndRoleName="MockLauncher"
-            isLeaf="false"
-            isAbstract="false">
+        <suppliersInternal>
+          <dependency
+            Id="f756aecf-b0fd-4116-80f7-f7db953acf97">
             <classMoniker
               Id="2dc28c0f-51b6-4dc4-9020-a314d8389102"
               LastKnownName="MockLauncher"
               LastKnownLocation="Package1_1213.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="7f9c085c-9b00-4d3c-81b6-a308f279ce64"
-                  name="MissileLauncherFactory"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="d55fe60d-588e-4640-8231-1fa8553f20ca"
-                  name="MockLauncher"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
+          </dependency>
+          <dependency
+            Id="4d44b779-dc22-4640-8a74-deb24261d134">
+            <classMoniker
+              Id="f96a3448-651d-48bd-b314-a8c501e4d7e2"
+              LastKnownName="DreamCheekyLauncher"
+              LastKnownLocation="Package1_1213.uml" />
+          </dependency>
+        </suppliersInternal>
         <ownedOperationsInternal>
           <operation
             Id="0834cc81-09fa-4e9d-8e75-dd06f449ad85"
@@ -1143,11 +1079,13 @@
             sourceEndRoleName="MissileLauncherManager"
             targetEndRoleName="MissileLauncherFactory"
             isLeaf="false"
+            name="Requests"
             isAbstract="false">
             <classMoniker
               Id="195b2031-ddb5-4247-8761-f1a11d697cf0"
               LastKnownName="MissileLauncherFactory"
               LastKnownLocation="Package1_1213.uml" />
+            <description>Manager Requests Product From Factory</description>
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -1182,6 +1120,7 @@
             sourceEndRoleName="MissileLauncherManager"
             targetEndRoleName="IMissileLauncher"
             isLeaf="false"
+            name="Uses"
             isAbstract="false">
             <interfaceMoniker
               Id="2232d368-2c27-4c60-9f33-faff91d7a236"
