@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="MissileLauncher\IMissileLauncher.cs" />
     <Compile Include="MissileLauncher\MissileLauncherAdapter.cs" />
-    <Compile Include="MissileLauncher\MissileLauncherManager.cs" />
+    <Compile Include="MissileLauncher\MissileLauncherController.cs" />
     <Compile Include="MissileLauncher\MissileLauncherHardware.cs" />
     <Compile Include="MissileLauncher\MissileLauncherFactory.cs" />
     <Compile Include="Program.cs" />
