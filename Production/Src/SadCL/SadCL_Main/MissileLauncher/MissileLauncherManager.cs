@@ -75,15 +75,15 @@ namespace SadCL.MissileLauncher
         public void move(double phi, double theta)
         {
 			//Console.WriteLine(currentPhi);
-			//Console.WriteLine("Phi: {0}",phi);
+			//Console.WriteLine("Phi: {0}", phi);
 			//Console.WriteLine("Theta: {0}", theta);
 			double pDifference = phi - currentPhi;
 			double tDifference = theta - currentTheta;
 			//Console.WriteLine(pDifference);
 			//Console.WriteLine(tDifference);
-			if (pDifference != 0) {
-				MissileTurret.moveBy(pDifference, tDifference);				
-			}
+			
+			MissileTurret.moveBy(pDifference, tDifference);				
+			
 			currentPhi = phi;
 			currentTheta = theta;			
         }
