@@ -3349,37 +3349,37 @@
         </appliedStereotypesInternal>
         <elementDefinition Id="bd3576a3-f769-4eb2-8a3c-d004bd82077a" />
         <targetEnds>
-          <association Id="41beb3b1-5d3d-45e5-a26d-bf4c2ebd09d1" isDerived="false" sourceEndRoleName="MissileLauncherController" targetEndRoleName="IMissileLauncher" isLeaf="false" name="Uses Interface" isAbstract="false">
+          <association Id="934342e1-5209-4e61-891b-d604b9cda582" isDerived="false" sourceEndRoleName="MissileLauncherController" targetEndRoleName="IMissileLauncher" isLeaf="false" name="Uses Interface" isAbstract="false">
             <interfaceMoniker Id="7e5f192f-6a2d-4358-ae50-ae41e1467a73" LastKnownName="IMissileLauncher" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="4313efe4-fc47-405b-a04e-0f187fb4f3a8" name="MissileLauncherController" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="2f6abac8-2563-4188-9841-7a58ac89911c" />
+                <memberEnd Id="c002b74d-ac1b-4206-956b-fd04920a8465" name="MissileLauncherController" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="455a492d-1e8d-4dcb-9c93-0fa1b80248b3" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="82ab3a58-21f8-4c29-bb31-efd2949617de" name="IMissileLauncher" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="7c8d55d2-9cef-4986-b8f4-b02245390f55" />
+                <memberEnd Id="28076fa4-ff03-4d58-8516-48cb83f704a5" name="IMissileLauncher" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d5ac64b3-c9dd-4694-b81d-8600a8970833" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="c4d91f72-a44b-4d1c-8275-091e3ee606a8" />
+            <elementDefinition Id="b737adac-f04b-482f-a213-40a413012101" />
           </association>
-          <association Id="9cebaf1c-fa6d-43de-b227-bb359c412216" isDerived="false" sourceEndRoleName="MissileLauncherController" targetEndRoleName="MissileLauncherFactory" isLeaf="false" name="Requests Product" isAbstract="false">
+          <association Id="00647e48-705b-4cb7-8de2-1d1c7ba456f6" isDerived="false" sourceEndRoleName="MissileLauncherController" targetEndRoleName="MissileLauncherFactory" isLeaf="false" name="Requests Product" isAbstract="false">
             <classMoniker Id="3f3d2323-6119-4058-8d6b-e422d38487c8" LastKnownName="MissileLauncherFactory" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="1c575d36-a860-481a-89f7-f4598f9bde81" name="MissileLauncherController" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="87d9fd1d-c9a7-4214-9c99-c525ba86367c" />
+                <memberEnd Id="0eae04f8-b058-401a-9ec6-97a1188d0f4d" name="MissileLauncherController" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7ddd7552-3185-44cf-941a-fbc4c5f65ead" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="e6acb69e-de0f-437a-ad21-bfa74b527010" name="MissileLauncherFactory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="7fa793ef-ee2a-41bf-b114-8ca80030c80c" />
+                <memberEnd Id="0a92b76f-e4b2-42e2-8a02-62d7ca3fa93e" name="MissileLauncherFactory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ba47e9ed-e0a2-4b09-9bf4-09d207e3c5c3" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="2274359c-24ee-438a-b061-54aa973516fd" />
+            <elementDefinition Id="97dbc194-7923-4b09-90b1-379f96b00993" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
@@ -3649,57 +3649,6 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="25c6ee04-bec2-4d8e-a836-54ca28b0dfec" name="MissileLauncherController" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <referencesInternal>
-              <reference Id="35a82a8e-d562-4a3d-b99e-62dbf79404b4" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DMissileLauncherController Member%3D.ctor" tag="ViewCode">
-                <elementDefinition Id="05a940fb-c018-4336-9b34-ade807e7accb" />
-              </reference>
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance Id="56ea6d51-a30e-46f4-acaf-e0ec8b26c53b" name="method" profile="CSharpProfile">
-                <elementDefinition Id="4667381c-2cdf-4318-8d50-778caf21c353" />
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="5a70d487-274b-42cf-8a7a-26b2c5fa3962">
-                    <propertyInstance Id="1006afc5-1b58-4168-9ada-41dfaefbb917" name="ClrAttributes">
-                      <elementDefinition Id="70018bec-20dd-4780-8803-196cb98ca450" />
-                    </propertyInstance>
-                    <elementDefinition Id="02b4d72d-f0df-480f-966b-2270a23a05a5" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="dab81b4d-6924-4824-aa48-120df2850362">
-                    <propertyInstance Id="ba0cf671-188c-4831-9b1d-6705976ab96d" name="IsPartial" value="false">
-                      <elementDefinition Id="44657031-52a2-4265-bf79-eee05a552d1f" />
-                    </propertyInstance>
-                    <elementDefinition Id="4a8aba4d-b5eb-42e7-8f51-b7a878f1d36d" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="21faa9d8-7919-4e77-8726-ef8051667f49">
-                    <propertyInstance Id="1dde92dd-2e67-4b1a-aba2-23b9defa0b37" name="IsUnsafe" value="false">
-                      <elementDefinition Id="345e79ff-90f9-4375-b13b-f2e3bfd541b5" />
-                    </propertyInstance>
-                    <elementDefinition Id="b740a0bc-1257-4827-9426-a37ebbf96746" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="92e486c3-0833-4a2a-adf7-bdef5fb66c1b">
-                    <propertyInstance Id="0c2be04c-e763-4823-8851-71a89eb9fd54" name="Inheritance" value="none">
-                      <elementDefinition Id="43a00bd2-f1ea-42ec-bd1b-72b66b702f75" />
-                    </propertyInstance>
-                    <elementDefinition Id="f5e62fb6-73ae-468d-a2cd-914682133e4e" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="24314861-26de-4eb9-8d5f-a29809f3be2e">
-                    <propertyInstance Id="a15c18fd-6305-4fce-b44a-e9a1ee471e4e" name="PackageVisibility" value="internal">
-                      <elementDefinition Id="7b6a0474-9aea-4442-87ad-caf91f142095" />
-                    </propertyInstance>
-                    <elementDefinition Id="87bb9129-0b8c-48ca-847e-4e0f421a4f98" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="0655c6a2-84b2-420a-ab29-af53d43bd9ce">
-                    <propertyInstance Id="3d23b208-c09a-4b73-9731-150d60c00242" name="params" value="false">
-                      <elementDefinition Id="11e75850-5a0e-48e2-aa07-647b9232e8f2" />
-                    </propertyInstance>
-                    <elementDefinition Id="de9744d2-b4fc-49f5-b5c3-d774621e0b9c" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <elementDefinition Id="8eb5f6b6-cd0d-47cd-99bf-4d7aa51c865d" />
-          </operation>
           <operation Id="c793d296-57aa-423e-a1f6-db1c000867ea" name="fire" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <referencesInternal>
               <reference Id="5895f927-5be4-449b-be51-a58e6beb47c0" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DMissileLauncherController Member%3Dfire" tag="ViewCode">
@@ -4061,6 +4010,57 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="e0d6813f-a857-4ac2-8263-1df49c8474f9" />
+          </operation>
+          <operation Id="141e896d-4e32-4114-a1b9-ebe1ff048d9d" name="MissileLauncherController" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="559c9732-7d9b-463c-bdaf-08ba4a75ba29" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DMissileLauncherController Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="e72d0590-b96a-4f29-b77a-d0429b2f1274" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="b03fc734-dd14-4a25-8b6b-e1046cc23ca1" name="method" profile="CSharpProfile">
+                <elementDefinition Id="532fc421-4182-4dd3-b89c-9d3564691591" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7b495978-7183-4433-ab2c-11028bf76628">
+                    <propertyInstance Id="1405de9d-9e49-45ed-a0fd-9867128b427f" name="ClrAttributes">
+                      <elementDefinition Id="94202547-1a28-485c-bffc-e79239100745" />
+                    </propertyInstance>
+                    <elementDefinition Id="1abc24dd-10a7-41c8-a160-d8347bfcedb7" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="5c8c09af-6037-441d-918e-34e2103be66f">
+                    <propertyInstance Id="2ab625d5-8970-4ec3-8589-93c7b9585d61" name="IsPartial" value="false">
+                      <elementDefinition Id="48276a90-2a42-4a2d-ba27-65d31ce20520" />
+                    </propertyInstance>
+                    <elementDefinition Id="3d010dd1-10a8-4e87-b71b-203f5a16d7cc" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6a3e19f1-e496-4e6e-95a2-614b4b59c66e">
+                    <propertyInstance Id="65907298-a4a3-4a06-8628-fd38be112358" name="IsUnsafe" value="false">
+                      <elementDefinition Id="f5a2c513-52aa-46c5-9574-3aeec4639f60" />
+                    </propertyInstance>
+                    <elementDefinition Id="5ce42440-e685-4bc1-9d7b-6b0b210dc471" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="cc6c6741-8ce2-4e8f-85df-5c775b8b3a55">
+                    <propertyInstance Id="d4bc1494-1e89-4546-9a98-f7555d671511" name="Inheritance" value="none">
+                      <elementDefinition Id="f94f18fa-c3cc-4efb-befc-22f2f8b6247f" />
+                    </propertyInstance>
+                    <elementDefinition Id="9c5d27a0-80e8-45b6-80a6-1d681066baa7" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a1d18482-b02b-4fcc-9c25-5956d692f0c0">
+                    <propertyInstance Id="2efd05e2-0c9c-44fa-8f99-ae62c2042c39" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="3dc51ae2-3e8b-40f3-9cd8-4cb059b2e095" />
+                    </propertyInstance>
+                    <elementDefinition Id="77f309ff-f6ec-48a2-b28a-96e9044bd2f2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e7923b75-6bbf-4f65-8406-fa74cc842c21">
+                    <propertyInstance Id="d4486e7f-bfd0-40de-9e8a-aad583785fe8" name="params" value="false">
+                      <elementDefinition Id="8f5c2c60-ff59-4074-acda-4f5261c26341" />
+                    </propertyInstance>
+                    <elementDefinition Id="1b31a635-c3dd-4c5b-853e-e894845e2e93" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="9bcb6b6a-0f16-480c-9472-4a6cb46b926a" />
           </operation>
         </ownedOperationsInternal>
       </class>

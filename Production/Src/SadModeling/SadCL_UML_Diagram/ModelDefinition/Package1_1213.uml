@@ -3551,7 +3551,7 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="c4d91f72-a44b-4d1c-8275-091e3ee606a8"
+            Id="b737adac-f04b-482f-a213-40a413012101"
             isDerived="false"
             sourceEndRoleName="MissileLauncherController"
             targetEndRoleName="IMissileLauncher"
@@ -3565,7 +3565,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="2f6abac8-2563-4188-9841-7a58ac89911c"
+                  Id="455a492d-1e8d-4dcb-9c93-0fa1b80248b3"
                   name="MissileLauncherController"
                   isLeaf="false"
                   isStatic="false"
@@ -3578,7 +3578,7 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="7c8d55d2-9cef-4986-b8f4-b02245390f55"
+                  Id="d5ac64b3-c9dd-4694-b81d-8600a8970833"
                   name="IMissileLauncher"
                   isLeaf="false"
                   isStatic="false"
@@ -3591,7 +3591,7 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="2274359c-24ee-438a-b061-54aa973516fd"
+            Id="97dbc194-7923-4b09-90b1-379f96b00993"
             isDerived="false"
             sourceEndRoleName="MissileLauncherController"
             targetEndRoleName="MissileLauncherFactory"
@@ -3605,7 +3605,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="87d9fd1d-c9a7-4214-9c99-c525ba86367c"
+                  Id="7ddd7552-3185-44cf-941a-fbc4c5f65ead"
                   name="MissileLauncherController"
                   isLeaf="false"
                   isStatic="false"
@@ -3618,7 +3618,7 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="7fa793ef-ee2a-41bf-b114-8ca80030c80c"
+                  Id="ba47e9ed-e0a2-4b09-9bf4-09d207e3c5c3"
                   name="MissileLauncherFactory"
                   isLeaf="false"
                   isStatic="false"
@@ -3995,71 +3995,6 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation
-            Id="8eb5f6b6-cd0d-47cd-99bf-4d7aa51c865d"
-            name="MissileLauncherController"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
-                Id="05a940fb-c018-4336-9b34-ade807e7accb"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DMissileLauncherController Member%3D.ctor"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="4667381c-2cdf-4318-8d50-778caf21c353"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="02b4d72d-f0df-480f-966b-2270a23a05a5">
-                    <propertyInstance
-                      Id="70018bec-20dd-4780-8803-196cb98ca450"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="4a8aba4d-b5eb-42e7-8f51-b7a878f1d36d">
-                    <propertyInstance
-                      Id="44657031-52a2-4265-bf79-eee05a552d1f"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="b740a0bc-1257-4827-9426-a37ebbf96746">
-                    <propertyInstance
-                      Id="345e79ff-90f9-4375-b13b-f2e3bfd541b5"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="f5e62fb6-73ae-468d-a2cd-914682133e4e">
-                    <propertyInstance
-                      Id="43a00bd2-f1ea-42ec-bd1b-72b66b702f75"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="87bb9129-0b8c-48ca-847e-4e0f421a4f98">
-                    <propertyInstance
-                      Id="7b6a0474-9aea-4442-87ad-caf91f142095"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="de9744d2-b4fc-49f5-b5c3-d774621e0b9c">
-                    <propertyInstance
-                      Id="11e75850-5a0e-48e2-aa07-647b9232e8f2"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-          </operation>
           <operation
             Id="b9f04d30-c932-411c-81aa-9d509db1742e"
             name="fire"
@@ -4523,6 +4458,71 @@
                     Id="bc9d53c0-ddfe-4cf6-994d-f545f61b5757">
                     <propertyInstance
                       Id="fc8f4020-ec90-47f7-9626-692132c8d370"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="9bcb6b6a-0f16-480c-9472-4a6cb46b926a"
+            name="MissileLauncherController"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e72d0590-b96a-4f29-b77a-d0429b2f1274"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DMissileLauncherController Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="532fc421-4182-4dd3-b89c-9d3564691591"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1abc24dd-10a7-41c8-a160-d8347bfcedb7">
+                    <propertyInstance
+                      Id="94202547-1a28-485c-bffc-e79239100745"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d010dd1-10a8-4e87-b71b-203f5a16d7cc">
+                    <propertyInstance
+                      Id="48276a90-2a42-4a2d-ba27-65d31ce20520"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5ce42440-e685-4bc1-9d7b-6b0b210dc471">
+                    <propertyInstance
+                      Id="f5a2c513-52aa-46c5-9574-3aeec4639f60"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c5d27a0-80e8-45b6-80a6-1d681066baa7">
+                    <propertyInstance
+                      Id="f94f18fa-c3cc-4efb-befc-22f2f8b6247f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="77f309ff-f6ec-48a2-b28a-96e9044bd2f2">
+                    <propertyInstance
+                      Id="3dc51ae2-3e8b-40f3-9cd8-4cb059b2e095"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1b31a635-c3dd-4c5b-853e-e894845e2e93">
+                    <propertyInstance
+                      Id="8f5c2c60-ff59-4074-acda-4f5261c26341"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
