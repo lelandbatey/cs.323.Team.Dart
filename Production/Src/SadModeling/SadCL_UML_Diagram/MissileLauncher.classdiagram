@@ -3381,6 +3381,38 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="97dbc194-7923-4b09-90b1-379f96b00993" />
           </association>
+          <association Id="ff9ecfe2-ea3c-40ab-a21e-ebfdbe264d5a" isDerived="false" sourceEndRoleName="MissileLauncherController" targetEndRoleName="LauncherTypes" isLeaf="false" name="Uses" isAbstract="false">
+            <enumerationMoniker Id="3f5cce84-bc8c-41ff-ba9e-2d1340bdece4" LastKnownName="LauncherTypes" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="04c2ef97-2368-469b-94c2-feb91f74afbf" name="MissileLauncherController" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8dfb9237-092a-4a37-aeb1-37e7e163cd95" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9cdc4ceb-c30f-47b2-b8f5-77a8a38ec408" name="LauncherTypes" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0dc20fa1-2c36-4715-ac70-e81fff77065b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8f3ac36b-ddee-4dd7-a4ba-2fa11cc3ce53" />
+          </association>
+          <association Id="416e90d5-49bd-4074-8553-deb687a83c6f" isDerived="false" sourceEndRoleName="MissileLauncherController" targetEndRoleName="AmmoCount" isLeaf="false" name="Uses" isAbstract="false">
+            <enumerationMoniker Id="7ad9794a-5282-4a16-84d0-783cb17be38b" LastKnownName="AmmoCount" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8c82ffa2-fe57-4f08-b788-c286d196c606" name="MissileLauncherController" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6076bcbe-b9cb-4d35-bbd4-2d6a0347ce58" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f001ba62-cc3e-47ea-ab44-1eee273ea24f" name="AmmoCount" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bcf819f5-b5eb-4f9a-835c-3fd1ebab5a65" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d61f0ae8-f30c-46c7-a387-7a11545b41a9" />
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property Id="55cc75c6-df8a-4dd2-8133-41a9c8e4bc10" name="currentPhi" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -4064,6 +4096,112 @@
           </operation>
         </ownedOperationsInternal>
       </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="3f5cce84-bc8c-41ff-ba9e-2d1340bdece4" name="LauncherTypes" isAbstract="false" isLeaf="false">
+        <referencesInternal>
+          <reference Id="b9174bf8-e62d-44ee-bb4e-0689c3a57726" handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DLauncherTypes" tag="ViewCode">
+            <elementDefinition Id="de0c5482-37ce-4a81-b58b-6bc61d9fd77c" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="5e13c016-3ce2-441b-8398-351c918d1239" name="enum" profile="CSharpProfile">
+            <elementDefinition Id="070f3984-5162-45a7-a494-9e83b2181eba" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="ada2e4f4-d815-463b-81f2-1276eee04e43">
+                <propertyInstance Id="0fb0ae6c-1f65-4fa8-8929-117942ec525a" name="ClrAttributes">
+                  <elementDefinition Id="ef642622-150d-488a-800a-e859128956f6" />
+                </propertyInstance>
+                <elementDefinition Id="e9cca3e8-9bd3-466b-b737-08202d1fd478" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="2abf0ec3-b3a1-468f-8567-3c70b852f1f2">
+                <propertyInstance Id="df00521b-2efe-497b-820e-4c037a67dc64" name="BaseType" value="int">
+                  <elementDefinition Id="d7b98e34-ebd7-4ac2-9a18-914820b411c7" />
+                </propertyInstance>
+                <elementDefinition Id="ade8a092-84c6-4032-a05d-d1225444ddbf" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="442139c5-8dc0-4fae-9b6d-dabbc26daaef">
+                <propertyInstance Id="8ee60698-c972-4da4-ad07-9d2ed3c8dc20" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="319391f0-6047-47d9-abd7-bc11ca216f3c" />
+                </propertyInstance>
+                <elementDefinition Id="1e247fa5-f793-4001-b845-ea900eb41b0e" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="f73adbca-5c58-454f-8174-d41024a0767c" />
+        <ownedLiterals>
+          <enumerationLiteral Id="c2ea4420-6c77-485a-a954-9db08a0b053b" name="Mock">
+            <referencesInternal>
+              <reference Id="f7277f20-5801-42b9-8b42-5f2be9e0ad9e" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DLauncherTypes Member%3DMock" tag="ViewCode">
+                <elementDefinition Id="579733d1-862b-4cc1-ad2d-faeaa948357a" />
+              </reference>
+            </referencesInternal>
+            <elementDefinition Id="a3e41805-4cad-4217-95ee-372c2d4afa96" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="01ae6615-fc82-4e53-8beb-e2d5cbeb6aef" name="DreamCheeky">
+            <referencesInternal>
+              <reference Id="a8c24bf5-a220-49c2-a743-f2cb1a4939ee" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DLauncherTypes Member%3DDreamCheeky" tag="ViewCode">
+                <elementDefinition Id="032793d4-afd8-48cd-8df9-8c8d2f58edea" />
+              </reference>
+            </referencesInternal>
+            <elementDefinition Id="1ce08bc8-fd79-4662-8d83-a3a28c3627cf" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="7ad9794a-5282-4a16-84d0-783cb17be38b" name="AmmoCount" isAbstract="false" isLeaf="false">
+        <referencesInternal>
+          <reference Id="9fd49b09-07b2-41f9-82fd-52a7433e6702" handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DAmmoCount" tag="ViewCode">
+            <elementDefinition Id="ee1776a9-0e94-4746-9905-e1d1f9036d33" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="10f76500-08df-469e-bcde-110d1f54f74d" name="enum" profile="CSharpProfile">
+            <elementDefinition Id="1dd70469-c307-49ab-9306-31442c6d2845" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="c5794c3f-f448-456c-87c9-2982d90f46b6">
+                <propertyInstance Id="c523ed53-1353-46ef-8eee-c29207a7919c" name="ClrAttributes">
+                  <elementDefinition Id="bb773fad-b5d2-464f-8b60-a7898ce8d926" />
+                </propertyInstance>
+                <elementDefinition Id="334453ad-6429-4286-afea-58689abbdb89" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="0b609f38-5505-4108-879b-b838e26e673b">
+                <propertyInstance Id="6c796e04-7923-4d2a-bb1f-d78194367316" name="BaseType" value="int">
+                  <elementDefinition Id="237e1864-03e2-42a5-922b-7c6e6d0f61de" />
+                </propertyInstance>
+                <elementDefinition Id="060abb52-4706-4632-a1d8-d4126e185e92" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="a36b21ca-1996-4178-b861-3172dcd1c150">
+                <propertyInstance Id="4dbfc70d-a869-4931-bc51-ab7165a59ef6" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="b7ae64d8-7848-40c7-8377-fd241ac9dc95" />
+                </propertyInstance>
+                <elementDefinition Id="0e19ad1d-2640-4b67-a3b1-05ccdc6cce6d" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="556f58f4-16e6-45b9-b8de-bb508f7fb152" />
+        <ownedLiterals>
+          <enumerationLiteral Id="27fc7132-a61a-4c82-b26a-bc208ec0a068" name="EmptyAmmo">
+            <referencesInternal>
+              <reference Id="887c24b3-144d-4545-ae18-5bf840885579" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DAmmoCount Member%3DEmptyAmmo" tag="ViewCode">
+                <elementDefinition Id="3fc26fc1-695f-40a9-8535-682f5fe06589" />
+              </reference>
+            </referencesInternal>
+            <elementDefinition Id="11c76bae-566e-4b76-ba36-0a8479d800e8" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="751c2c23-d2e6-4903-afbd-7dccfe5f1d65" name="MaxAmmo">
+            <referencesInternal>
+              <reference Id="b1fe06d5-bf56-4033-ae1e-976861580487" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DAmmoCount Member%3DMaxAmmo" tag="ViewCode">
+                <elementDefinition Id="b645a220-54ec-4b5d-8a01-a021184be2a5" />
+              </reference>
+            </referencesInternal>
+            <elementDefinition Id="47a172a6-4c1b-41aa-9dc5-00a41c06f474" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="eb34f03a-204a-46d3-94a2-255ba6699c60" name="SadCL_UML_Diagram">
