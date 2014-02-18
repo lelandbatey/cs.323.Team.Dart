@@ -102,6 +102,8 @@ namespace SadCL
                     mMan.moveBy(Phi, Theta);
 
 				} else if (givenAct == "move") {
+
+                    bool dontMove = false;
 					
 					double Phi = 0.0, Theta = 0.0;
                     try {
@@ -109,16 +111,22 @@ namespace SadCL
                         Phi = input[0];
 					    Theta = input[1];
                     }
-                    catch (Exception) {
-                        Console.WriteLine("Dude.  It's like.. you didn't even DO anything.");
+                    catch (ArgumentException Error) {
+                        Console.WriteLine(Error.Message);
+                        dontMove = true;
+                    }
+                    catch {
+                        dontMove = true;
                     }
 					
-
 					// Uses non-relative tick conversion
-					Phi = sphToTick(Phi);
-					Theta = vertSphToTick(Theta);
-					
-					mMan.move(Phi,Theta);
+                    if (dontMove == false) {
+                        Console.WriteLine("Made it!");
+                        Phi = sphToTick(Phi);
+                        Theta = vertSphToTick(Theta);
+
+                        mMan.move(Phi, Theta);
+                    }
 
 				} else if (givenAct == "status") {
 					mMan.status();
@@ -161,13 +169,13 @@ namespace SadCL
 
 		// Gets the user to input data
 		public static List<double> getPhiTheta(string modifier){
-			bool kickOut = false;
+			//bool kickOut = false;
 			// LET'S DO SOME STRING FLOGGING, YEAH!
 			modifier = modifier.Trim();
 
 			if (!(modifier.Split(' ').Length == 2)) {
-				Console.WriteLine("NAH MAN, ur typin ur doubles real bad man. FIX IT FIX IT FIX IT!");
-				kickOut = true; // AAAAaaaaaand we out
+				//Console.WriteLine("NAH MAN, ur typin ur doubles real bad man. FIX IT FIX IT FIX IT!");
+                throw new ArgumentException("NAH MAN, ur typin ur doubles real bad man. FIX IT FIX IT FIX IT!");
 			}
 
 			double Theta = 0.0, Phi = 0.0;
@@ -179,28 +187,28 @@ namespace SadCL
 			//}
 
 			try {
-				double.TryParse(modifier.Split(' ')[0], out Phi);
+				Phi = double.Parse(modifier.Split(' ')[0]);
 			}
-			catch (Exception) {
+			catch {
 				Console.WriteLine("Yeaaaaa.... Phi's not really a double dude. ");
-				kickOut = true;
+                throw;
 			}
 
 			try {
-				double.TryParse(modifier.Split(' ')[1], out Theta);
+				Theta = double.Parse(modifier.Split(' ')[1]);
 			}
-			catch (Exception) {
+			catch {
 				Console.WriteLine("Sorry man, that Theta's not a proper double");
-				kickOut = true;
+                throw;
 			}
 			//if (!
 			//	Console.WriteLine("Sorry man, that Theta's not a proper double");
 			//	kickOut = true;
 			//}
 
-			if (kickOut) {
-				throw new ArgumentException("Unnacceptable input given.");
-			}
+            //if (kickOut) {
+            //    throw new ArgumentException("Unnacceptable input given.");
+            //}
 
 			List<double> toReturn = new List<double>();
 
