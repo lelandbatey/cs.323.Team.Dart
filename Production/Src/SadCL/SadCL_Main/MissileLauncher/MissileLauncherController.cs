@@ -11,12 +11,12 @@ namespace SadCL.MissileLauncher
         //Turret faces dead center, bisecting the X-axis and the Y-axis
         //into its positive and negative components.
         private double disTheta = 0.0;
-		private double disPhi = 3000;
+		private double disPhi = 3000.0;
 		//private double currentPos = 3000.0;
 
-		private double currentPhi {
+		public double currentPhi {
 			get{ return disPhi; }
-			set {
+			private set {
 				if (value >= 6000) {
 					disPhi = 6000;
 				} else if (value <= 0) {
@@ -27,9 +27,9 @@ namespace SadCL.MissileLauncher
 
 			}
 		}
-		private double currentTheta {
+		public double currentTheta {
 			get { return disTheta; }
-			set {
+			private set {
 				if (value >= 700) {
 					disTheta = 700;
 				} else if (value <= 0) {
