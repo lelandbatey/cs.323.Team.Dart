@@ -53,6 +53,7 @@ namespace Target
             if (find(name).Count == 0) {
                 throw new ArgumentException("No target by that name");
             }
+
             Target tempTarg = find(name)[0];
 
             if (tempTarg.Friend == true) {
@@ -63,7 +64,18 @@ namespace Target
 
         // Returns tuple of named targets X, Y, and Z coordinates, in that order.
         public Tuple<double, double, double> takeAim(string name) {
-            Target toRet = findPrey(name);
+
+            //If it succeeds, null won't be returned.
+            //If it fails, null still won't be returned.
+            Target toRet = null;
+
+            try {
+                toRet = findPrey(name);
+            }
+            catch {
+                throw;
+            }
+            
 
             // SERIOUSLY, THIS NEXT LINE WON'T BE HERE IN THE NEXT VERSION!!!
             setToDead(name); // TOTALLY TEMPORARY UNTIL WE HAVE A NETWORK OBJECT
@@ -72,8 +84,22 @@ namespace Target
             return Tuple.Create<double, double, double>(toRet.X, toRet.Y, toRet.Z);
         }
 
-        public void printEnemies() { print(listEnemies()); }
-        public void printFriends() { print(listFriends()); }
+        public void printEnemies() {
+            try {
+                print(listEnemies());
+            }
+            catch {
+                Console.WriteLine("List doesn't exist.");
+            }
+        }
+        public void printFriends() {
+            try {
+                print(listFriends());
+            }
+            catch {
+                Console.WriteLine("List doesn't exist.");
+            }
+        }
         public void printAll() { print(masterList); }
 
         // // Private method declarations
@@ -86,12 +112,22 @@ namespace Target
         }
         private List<Target> listEnemies() {
             List<Target> toRet = new List<Target>();
-            toRet = masterList.FindAll(s => s.Friend == false);
+            try {
+                toRet = masterList.FindAll(s => s.Friend == false);
+            }
+            catch {
+                throw;
+            }
             return toRet;
         }
         private List<Target> listFriends() {
             List<Target> toRet = new List<Target>();
-            toRet = masterList.FindAll(s => s.Friend == true);
+            try {
+                toRet = masterList.FindAll(s => s.Friend == true);
+            }
+            catch {
+                throw;
+            }
             return toRet;
         }
 

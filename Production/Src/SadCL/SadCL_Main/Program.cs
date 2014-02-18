@@ -65,24 +65,37 @@ namespace SadCL
                 } else if (givenAct == "kill") {
                     // RIGHT NOW JUST A STUB, EXPAND THIS LATER ONCE WE HAVE THE MISSILE LAUNCHER!
 
-                    Tuple<double, double, double> targCoords = tMan.takeAim(givenMod);
-                    tMan.printAll();
+                    bool validTarget = true;
+                    double X = 0.0;
+                    double Y = 0.0;
+                    double Z = 0.0;
 
-					double X = targCoords.Item1;
-					double Y = targCoords.Item2;
-					double Z = targCoords.Item3;
+                    try {
+                        Tuple<double, double, double> targCoords = tMan.takeAim(givenMod);
+                        //Tuple<double, double, double> targCoords = tMan.takeAim(givenMod);
+                        tMan.printAll();
 
-					double r = Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2));
-					double Theta = (Math.PI / 2) - Math.Acos(Z / r);
-					double Phi = Math.Atan2(Y, X);
+                        X = targCoords.Item1;
+                        Y = targCoords.Item2;
+                        Z = targCoords.Item3;
+                    }
+                    catch {
+                        Console.WriteLine("List doesn't exist.");
+                        validTarget = false;
+                    }
 
-					// Uses non-relative tick conversion
-					Phi = sphToTick(Phi);
-					Theta = vertSphToTick(Theta);
+                    if (validTarget == true) {
+                        double r = Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2));
+                        double Theta = (Math.PI / 2) - Math.Acos(Z / r);
+                        double Phi = Math.Atan2(Y, X);
 
-					mMan.move(Phi, Theta);
-					mMan.fire();
+                        // Uses non-relative tick conversion
+                        Phi = sphToTick(Phi);
+                        Theta = vertSphToTick(Theta);
 
+                        mMan.move(Phi, Theta);
+                        mMan.fire();
+                    }
 
                 } else if (givenAct == "fire") {
                     mMan.fire();
