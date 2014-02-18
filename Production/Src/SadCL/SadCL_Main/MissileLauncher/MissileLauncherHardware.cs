@@ -2,7 +2,7 @@
 using System.Threading;
 using UsbLibrary;
 
-namespace SadCL
+namespace SadCL.MissileLauncher
 {
     public class MissileLauncherHardware
     {
