@@ -85,7 +85,8 @@ namespace SadCL.MissileLauncher
 			MissileTurret.moveBy(pDifference, tDifference);				
 			
 			currentPhi = phi;
-			currentTheta = theta;			
+			currentTheta = theta;
+
         }
         public void status()
         {

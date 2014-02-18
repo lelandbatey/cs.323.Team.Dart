@@ -76,7 +76,7 @@
         <OperationElementListCompartment Id="d900e563-7394-4e1f-bd58-a46e504d43d5" absoluteBounds="14.015, 10.671819996933142, 3.0949999999999998, 1.1621093377470972" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <realizationConnector edgePoints="[(15.5625 : 9.625); (15.5625 : 7.26612841924032); (13.125 : 7.26612841924032); (13.125 : 6.89112841924032)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
+    <realizationConnector edgePoints="[(15.5143651402353 : 9.625); (15.5143651402353 : 7.26612841924032); (13.125 : 7.26612841924032); (13.125 : 6.89112841924032)]" fixedFrom="Caller" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
       <interfaceRealizationMoniker Id="9e3d05cf-2ad4-4aac-a5be-ee2e1e0cc53f" />
       <relativeChildShapes />
       <nodes>

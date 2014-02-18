@@ -53,8 +53,10 @@ namespace SadCL
                 // Giant hairy if-elseif statement
                 if (givenAct == "load"){
 
-                    if (File.Exists(givenMod))
+                    if (File.Exists(givenMod)){
                         tMan.load(givenMod);
+                        Console.WriteLine("File has been shifted into MAXIMUM OVERDRIVE!!!");
+                    }
                     else
                         Console.WriteLine("File specified doesn't exist.");
 
@@ -108,6 +110,7 @@ namespace SadCL
                     bool dontMove = false;
 
 					double Phi = 0.0, Theta = 0.0;
+
                     try {
                         List<double> input = getPhiTheta(givenMod);
                         Phi = input[0];
