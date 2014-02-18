@@ -104,9 +104,15 @@ namespace SadCL
 				} else if (givenAct == "move") {
 					
 					double Phi = 0.0, Theta = 0.0;
-					List<double> input = getPhiTheta(givenMod);
-					Phi = input[0];
-					Theta = input[1];
+                    try {
+                        List<double> input = getPhiTheta(givenMod);
+                        Phi = input[0];
+					    Theta = input[1];
+                    }
+                    catch (Exception) {
+                        Console.WriteLine("Dude.  It's like.. you didn't even DO anything.");
+                    }
+					
 
 					// Uses non-relative tick conversion
 					Phi = sphToTick(Phi);
