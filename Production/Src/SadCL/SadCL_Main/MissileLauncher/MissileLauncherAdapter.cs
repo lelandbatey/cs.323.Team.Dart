@@ -84,7 +84,7 @@ namespace SadCL.MissileLauncher
         }
     }
 
-    public class MockLauncher : MissileLauncherAdapter, IMissileLauncher
+    public class MockLauncher : IMissileLauncher
     {
         public string launcherName { get; private set; }
         public int launcherAmmo { get; private set; }
