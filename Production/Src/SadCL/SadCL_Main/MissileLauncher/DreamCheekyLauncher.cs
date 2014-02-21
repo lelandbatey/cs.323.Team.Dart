@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace SadCL.MissileLauncher
 {
+    public enum AmmoCount
+    {
+        EmptyAmmo = 0,
+        MaxAmmo = 4
+    }
+
     public class DreamCheekyLauncher : MissileLauncherAdapter, IMissileLauncher
     {
         public string launcherName { get; private set; }
