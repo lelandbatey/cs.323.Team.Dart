@@ -34,7 +34,7 @@ namespace SadCL.MissileLauncher
             }
             else
             {
-                command_Up((int)theta);
+                command_Up(Math.Abs((int)theta));
             }
         }
     }
