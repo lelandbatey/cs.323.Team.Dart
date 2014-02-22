@@ -24,7 +24,7 @@ namespace SadCL.MissileLauncher
             }
             else if (Product == LauncherTypes.DreamCheeky)
             {
-                generatedLauncher = new DreamCheekyLauncher("Photon Cannon", (int)AmmoCount.MaxAmmo);
+                generatedLauncher = new DreamCheekyLauncher("Photon Cannon");
             }
             else
                 throw new ArgumentException("The product you want me to create doesn't exist in my database.");

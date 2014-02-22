@@ -9,7 +9,7 @@ namespace SadCL.MissileLauncher
     public enum DreamAmmoCount
     {
         EmptyAmmo = 0,
-        DreamMaxAmmo = 4
+        MaxAmmo = 4
     }
 
     public class DreamCheekyLauncher : MissileLauncherAdapter, IMissileLauncher
@@ -17,9 +17,9 @@ namespace SadCL.MissileLauncher
         public string launcherName { get; private set; }
         public int launcherAmmo { get; private set; }
 
-        public DreamCheekyLauncher(string passedName, int passedAmmo) {
+        public DreamCheekyLauncher(string passedName) {
             launcherName = passedName;
-            launcherAmmo = (int)DreamAmmoCount.DreamMaxAmmo;
+            launcherAmmo = (int)DreamAmmoCount.MaxAmmo;
         }
 
         public void fire() {
@@ -34,7 +34,7 @@ namespace SadCL.MissileLauncher
 
         public void reload() {
             System.Console.WriteLine("We're reloaded!");
-            launcherAmmo = (int)AmmoCount.MaxAmmo;
+            launcherAmmo = (int)DreamAmmoCount.MaxAmmo;
         }
 
         public void status() {
