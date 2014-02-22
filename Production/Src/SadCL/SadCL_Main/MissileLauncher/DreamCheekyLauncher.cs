@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SadCL.MissileLauncher
 {
-    public enum AmmoCount
+    public enum DreamAmmoCount
     {
         EmptyAmmo = 0,
-        MaxAmmo = 4
+        DreamMaxAmmo = 4
     }
 
     public class DreamCheekyLauncher : MissileLauncherAdapter, IMissileLauncher
@@ -19,11 +19,11 @@ namespace SadCL.MissileLauncher
 
         public DreamCheekyLauncher(string passedName, int passedAmmo) {
             launcherName = passedName;
-            launcherAmmo = passedAmmo;
+            launcherAmmo = (int)DreamAmmoCount.DreamMaxAmmo;
         }
 
         public void fire() {
-            if (launcherAmmo == (int)AmmoCount.EmptyAmmo) {
+            if (launcherAmmo == (int)DreamAmmoCount.EmptyAmmo) {
                 System.Console.WriteLine("We're out of ammunition!");
             } else {
                 System.Console.WriteLine("PEW!");

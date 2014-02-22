@@ -11,11 +11,7 @@ namespace SadCL.MissileLauncher
         Mock = 0,
         DreamCheeky = 1
     }
-    public enum AmmoCount
-    {
-        EmptyAmmo = 0,
-        MaxAmmo = 4
-    }
+   
     public class MissileLauncherFactory
     {
         public static IMissileLauncher create_Launcher(LauncherTypes Product)
