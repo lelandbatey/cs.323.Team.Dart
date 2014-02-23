@@ -31,7 +31,6 @@ namespace SadCL.MissileLauncher
                 } else {
                     disPhi = value;
                 }
-
             }
         }
 
@@ -45,7 +44,6 @@ namespace SadCL.MissileLauncher
                 } else {
                     disTheta = value;
                 }
-
             }
         }
 
@@ -58,7 +56,6 @@ namespace SadCL.MissileLauncher
             if (launcherAmmo == (int)DreamAmmoCount.EmptyAmmo) {
                 System.Console.WriteLine("We're out of ammunition!");
             } else {
-                System.Console.WriteLine("PEW!");
                 command_Fire();
                 --launcherAmmo;
             }
@@ -79,7 +76,6 @@ namespace SadCL.MissileLauncher
         public void moveBy(double phi, double theta) {
 
             currentPhi = currentPhi + phi;
-
             currentTheta = currentTheta + theta;
 
             //As Phi increases, the Turret head turns left.

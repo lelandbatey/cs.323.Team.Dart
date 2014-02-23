@@ -8,27 +8,6 @@ namespace SadCL.MissileLauncher
 {
     public class MissileLauncherController
     {
-
-
-        // Singleton: http://msdn.microsoft.com/en-us/library/ff650316.aspx
-        // Need to look at this later.  Some pretty wild stuff.
-        //private static MissileLauncherController instance; // Our private instance of ourself
-        //public static MissileLauncherController Instance
-        //{
-        //    get
-        //    {
-        //        if (instance == null)
-        //        {
-        //            instance = new MissileLauncherController();
-        //        }
-        //        return instance;
-        //    }
-        //}
-
-        //public MissileLauncherController(){
-        //    currentPhi = 3000.0;
-        //}
-
         private IMissileLauncher MissileTurret = MissileLauncherFactory.create_Launcher(LauncherTypes.DreamCheeky);
         
         public void fire()
