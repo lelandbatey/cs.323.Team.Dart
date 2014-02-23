@@ -54,7 +54,7 @@
     <Compile Include="GetTestData.cs" />
     <Compile Include="TestTargetFactory.cs" />
     <Compile Include="TestTargetManager.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="TestIniFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestMissileController.cs" />
   </ItemGroup>

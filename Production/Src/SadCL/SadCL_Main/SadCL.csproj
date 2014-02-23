@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoordConvert.cs" />
     <Compile Include="MissileLauncher\DreamCheekyLauncher.cs" />
     <Compile Include="MissileLauncher\IMissileLauncher.cs" />
     <Compile Include="MissileLauncher\MissileLauncherController.cs" />

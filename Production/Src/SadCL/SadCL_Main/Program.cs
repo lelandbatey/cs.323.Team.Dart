@@ -104,8 +104,8 @@ namespace SadCL
                         double Phi = Math.Atan2(Y, X);
 
                         // Uses non-relative tick conversion
-                        Phi = sphToTick(Phi);
-                        Theta = vertSphToTick(Theta);
+                        Phi = CoordConvert.sphToTick(Phi);
+                        Theta = CoordConvert.vertSphToTick(Theta);
 
                         mMan.move(Phi, Theta);
                         mMan.fire();
@@ -124,7 +124,7 @@ namespace SadCL
 					double Phi = 0.0, Theta = 0.0;
 
                     try {
-                        List<double> input = getPhiTheta(givenMod);
+                        List<double> input = CoordConvert.getPhiTheta(givenMod);
                         Phi = input[0];
                         Theta = input[1];
                     }
@@ -134,8 +134,8 @@ namespace SadCL
 
 					// uses relative tick-conversion for naive rotation
                     if (dontMove == false) {
-                        Phi = sphToTickRel(Phi);
-                        Theta = vertSphToTick(Theta);
+                        Phi = CoordConvert.sphToTickRel(Phi);
+                        Theta = CoordConvert.vertSphToTick(Theta);
 
                         mMan.moveBy(Phi, Theta);
                     }
@@ -149,7 +149,7 @@ namespace SadCL
 					
 					double Phi = 0.0, Theta = 0.0;
                     try {
-                        List<double> input = getPhiTheta(givenMod);
+                        List<double> input = CoordConvert.getPhiTheta(givenMod);
                         Phi = input[0];
 					    Theta = input[1];
                     }
@@ -159,8 +159,8 @@ namespace SadCL
 					
 					// Uses non-relative tick conversion
                     if (dontMove == false) {
-                        Phi = sphToTick(Phi);
-                        Theta = vertSphToTick(Theta);
+                        Phi = CoordConvert.sphToTick(Phi);
+                        Theta = CoordConvert.vertSphToTick(Theta);
 
                         mMan.move(Phi, Theta);
                     }
@@ -176,84 +176,5 @@ namespace SadCL
 				}
             }
         }
-
-		// Convenience method to make testing easier
-		public static void rotate(double amount) {
-			amount = amount * 22.22222222;
-			MissileLauncher.MissileLauncherController mMan = new MissileLauncher.MissileLauncherController();
-			mMan.moveBy(amount,0.0);
-			Thread.Sleep(800);
-		}
-
-		public static double sphToTick(double amount) {
-			// Returns the absolute position where we need to go.
-			return (sphToTickRel(amount) + 1000);
-		}
-
-		public static double sphToTickRel(double amount) {
-			// Doesn't add the absolute 1000 
-			return (radToDegrees(amount) * 22.22222);
-		}
-		public static double vertSphToTick(double amount) {
-			// Used to make the conversion between Z amount and 
-			return (radToDegrees(amount) * 15.55555);
-		}
-
-		public static double radToDegrees(double amount) {
-			// Converts radians to degrees for easier math
-			return (amount * 180 / Math.PI);
-		}
-
-		// Gets the user to input data
-		public static List<double> getPhiTheta(string modifier){
-			//bool kickOut = false;
-			// LET'S DO SOME STRING FLOGGING, YEAH!
-			modifier = modifier.Trim();
-
-			if (!(modifier.Split(' ').Length == 2)) {
-				Console.WriteLine("NAH MAN, ur typin ur doubles real bad man. FIX IT FIX IT FIX IT!");
-                throw new Exception();
-			}
-
-			double Theta = 0.0, Phi = 0.0;
-
-			// This does actual checking to see if they're actually valid doubles
-			//if (!double.TryParse(modifier.Split(' ')[0], out Phi)) {
-			//	Console.WriteLine("Yeaaaaa.... Phi's not really a double dude. ");
-			//	kickOut = true;
-			//}
-
-			try {
-				Phi = double.Parse(modifier.Split(' ')[0]);
-			}
-			catch {
-				Console.WriteLine("Yeaaaaa.... Phi's not really a double dude. ");
-                throw;
-			}
-
-			try {
-				Theta = double.Parse(modifier.Split(' ')[1]);
-			}
-			catch {
-				Console.WriteLine("Sorry man, that Theta's not a proper double");
-                throw;
-			}
-			//if (!
-			//	Console.WriteLine("Sorry man, that Theta's not a proper double");
-			//	kickOut = true;
-			//}
-
-            //if (kickOut) {
-            //    throw new ArgumentException("Unnacceptable input given.");
-            //}
-
-			List<double> toReturn = new List<double>();
-
-			toReturn.Add(Phi);
-			toReturn.Add(Theta);
-
-			return toReturn;
-		}
-
     }
 }
