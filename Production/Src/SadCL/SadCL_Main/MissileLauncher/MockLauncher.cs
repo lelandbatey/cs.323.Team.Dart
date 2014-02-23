@@ -18,9 +18,15 @@ namespace SadCL.MissileLauncher
         public void fire() {
             System.Console.WriteLine("Cry 'God for Harry! England and Saint George!'");
         }
-        public void moveBy(double phi, double theta) {
-            System.Console.WriteLine("Theta: {0}", theta);
+        public void move(double phi, double theta) {
+            System.Console.WriteLine("We're moving TO the follwing coordinates.");
             System.Console.WriteLine("Phi: {0}", phi);
+            System.Console.WriteLine("Theta{0}", theta);
+        }
+        public void moveBy(double phi, double theta) {
+            System.Console.WriteLine("We're moving BY the follwing coordinates.");
+            System.Console.WriteLine("Phi: {0}", phi);
+            System.Console.WriteLine("Theta: {0}", theta);
         }
         public void reload() {
             System.Console.WriteLine("Once more unto the breach, dear friends, once more.");
