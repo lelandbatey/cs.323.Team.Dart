@@ -37,7 +37,6 @@ namespace SadCL
 
         // Gets the user to input data
         public static List<double> getPhiTheta(string modifier) {
-            //bool kickOut = false;
             // LET'S DO SOME STRING FLOGGING, YEAH!
             modifier = modifier.Trim();
 
@@ -47,12 +46,6 @@ namespace SadCL
             }
 
             double Theta = 0.0, Phi = 0.0;
-
-            // This does actual checking to see if they're actually valid doubles
-            //if (!double.TryParse(modifier.Split(' ')[0], out Phi)) {
-            //	Console.WriteLine("Yeaaaaa.... Phi's not really a double dude. ");
-            //	kickOut = true;
-            //}
 
             try {
                 Phi = double.Parse(modifier.Split(' ')[0]);
@@ -69,14 +62,6 @@ namespace SadCL
                 Console.WriteLine("Sorry man, that Theta's not a proper double");
                 throw;
             }
-            //if (!
-            //	Console.WriteLine("Sorry man, that Theta's not a proper double");
-            //	kickOut = true;
-            //}
-
-            //if (kickOut) {
-            //    throw new ArgumentException("Unnacceptable input given.");
-            //}
 
             List<double> toReturn = new List<double>();
 
