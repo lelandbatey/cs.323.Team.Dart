@@ -117,23 +117,16 @@ namespace SadCL
                     doneFlag = true;
                 } else if (givenAct == "moveby") {
 
-                    //In the event we encounter an error, we do not
-                    //want anything to happen to the turret.
-                    bool dontMove = false;
-
 					double Phi = 0.0, Theta = 0.0;
 
-                    try {
-                        List<double> input = CoordConvert.getPhiTheta(givenMod);
+                    //Will return either a list of 2 or list of 0.
+                    List<double> input = CoordConvert.getPhiTheta(givenMod);
+
+                    if (input.Count == 2) {
                         Phi = input[0];
                         Theta = input[1];
-                    }
-                    catch {
-                        dontMove = true;
-                    }
 
-					// uses relative tick-conversion for naive rotation
-                    if (dontMove == false) {
+                        // uses relative tick-conversion for naive rotation
                         Phi = CoordConvert.sphToTickRel(Phi);
                         Theta = CoordConvert.vertSphToTick(Theta);
 
@@ -142,23 +135,16 @@ namespace SadCL
 					
 
 				} else if (givenAct == "move") {
-
-                    //In the event we encounter an error, we do not
-                    //want anything to happen to the turret.
-                    bool dontMove = false;
 					
 					double Phi = 0.0, Theta = 0.0;
-                    try {
-                        List<double> input = CoordConvert.getPhiTheta(givenMod);
+
+                    //Will return either a list of 2 or list of 0.
+                    List<double> input = CoordConvert.getPhiTheta(givenMod);
+
+                    if (input.Count == 2) {
                         Phi = input[0];
-					    Theta = input[1];
-                    }
-                    catch {
-                        dontMove = true;
-                    }
-					
-					// Uses non-relative tick conversion
-                    if (dontMove == false) {
+                        Theta = input[1];
+
                         Phi = CoordConvert.sphToTick(Phi);
                         Theta = CoordConvert.vertSphToTick(Theta);
 
