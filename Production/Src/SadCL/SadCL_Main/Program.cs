@@ -11,12 +11,13 @@ namespace SadCL
 {
     class Program
     {
-		enum hardVar{
-			vertMaxtick = 700,
-			horizonMaxtick = 6000,
-			vertMaxAngle = 45,
-			horizonMaxAngle = 270
-		}
+        //This enum isn't being used by anything.
+        //enum hardVar{
+        //    vertMaxtick = 700,
+        //    horizonMaxtick = 6000,
+        //    vertMaxAngle = 45,
+        //    horizonMaxAngle = 270
+        //}
         static void Main(string[] args) {
 
 
