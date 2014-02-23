@@ -12,10 +12,42 @@ namespace SadCL.MissileLauncher
         MaxAmmo = 4
     }
 
-    public class DreamCheekyLauncher : MissileLauncherAdapter, IMissileLauncher
+    public class DreamCheekyLauncher : MissileLauncherHardware, IMissileLauncher 
     {
         public string launcherName { get; private set; }
         public int launcherAmmo { get; private set; }
+
+        private double disTheta = 0.0;
+
+        private double disPhi = 3000.0;
+
+        public double currentPhi {
+            get { return disPhi; }
+            private set {
+                if (value >= 6000) {
+                    disPhi = 6000;
+                } else if (value <= 0) {
+                    disPhi = 0;
+                } else {
+                    disPhi = value;
+                }
+
+            }
+        }
+
+        public double currentTheta {
+            get { return disTheta; }
+            private set {
+                if (value >= 700) {
+                    disTheta = 700;
+                } else if (value <= 0) {
+                    disTheta = 0;
+                } else {
+                    disTheta = value;
+                }
+
+            }
+        }
 
         public DreamCheekyLauncher(string passedName) {
             launcherName = passedName;
@@ -32,6 +64,41 @@ namespace SadCL.MissileLauncher
             }
         }
 
+        public void move(double phi, double theta) {
+
+			double pDifference = phi - currentPhi;
+			double tDifference = theta - currentTheta;
+			
+			this.moveBy(pDifference, tDifference);				
+			
+			currentPhi = phi;
+			currentTheta = theta;
+        }
+
+
+        public void moveBy(double phi, double theta) {
+
+            currentPhi = currentPhi + phi;
+
+            currentTheta = currentTheta + theta;
+
+            //As Phi increases, the Turret head turns left.
+            //As Phi decreases, the Turret head turns right.
+            if (phi < 0.0)  {
+                command_Right(Math.Abs((int)phi));
+            } else {
+                command_Left(Math.Abs((int)phi));
+            }
+
+            //As Theta increases, the Turret head descends.
+            //As Theta decreases, the Turret head elevates.
+            if (theta < 0.0) {
+                command_Down(Math.Abs((int)theta));
+            } else {
+                command_Up(Math.Abs((int)theta));
+            }
+        }
+
         public void reload() {
             System.Console.WriteLine("We're reloaded!");
             launcherAmmo = (int)DreamAmmoCount.MaxAmmo;
@@ -44,7 +111,10 @@ namespace SadCL.MissileLauncher
 
         public void reset() {
             System.Console.WriteLine("Please wait while we return to origin.");
-            command_reset();
+            moveBy(6000, 700);
+            moveBy(-3000, -700);
+            currentPhi = 3000;
+            currentTheta = 0;
             System.Console.WriteLine("Reset Complete!");
         }
     }
