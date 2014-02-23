@@ -35,38 +35,40 @@ namespace SadCL
             return (amount * 180 / Math.PI);
         }
 
-        // Gets the user to input data
+
+        //Input:  String of Two Doubles
+        //Req:  Two values must be generated from split.
+        //Req:  Both values must successfully convert to be added.
+        //Return Success:  List of Two Values
+        //Return Failure:  List of No Values
         public static List<double> getPhiTheta(string modifier) {
             // LET'S DO SOME STRING FLOGGING, YEAH!
             modifier = modifier.Trim();
 
-            if (!(modifier.Split(' ').Length == 2)) {
-                Console.WriteLine("NAH MAN, ur typin ur doubles real bad man. FIX IT FIX IT FIX IT!");
-                throw new Exception();
-            }
-
+            //Variables that will valid values generated from modifier string.
             double Theta = 0.0, Phi = 0.0;
 
-            try {
-                Phi = double.Parse(modifier.Split(' ')[0]);
-            }
-            catch {
-                Console.WriteLine("Yeaaaaa.... Phi's not really a double dude. ");
-                throw;
-            }
-
-            try {
-                Theta = double.Parse(modifier.Split(' ')[1]);
-            }
-            catch {
-                Console.WriteLine("Sorry man, that Theta's not a proper double");
-                throw;
-            }
-
+            //Our return variable.
             List<double> toReturn = new List<double>();
 
-            toReturn.Add(Phi);
-            toReturn.Add(Theta);
+            //Two values must be generated from split.
+            if (modifier.Split(' ').Length == 2) {
+
+                bool PhiFlag = Double.TryParse(modifier.Split(' ')[0], out Phi);
+                bool ThetaFlag = Double.TryParse(modifier.Split(' ')[1], out Theta);
+
+                //Both values must successfully convert to be added.
+                if (PhiFlag && ThetaFlag) {
+                    toReturn.Add(Phi);
+                    toReturn.Add(Theta);
+                } else if (!PhiFlag) {
+                    Console.WriteLine("The Phi you entered wasn't valid.");
+                } else {
+                    Console.WriteLine("The Theta you entered wasn't valid.");
+                }
+            } else {
+                Console.WriteLine("A Phi or Theta wasn't entered.");
+            }
 
             return toReturn;
         }
