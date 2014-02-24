@@ -28,7 +28,7 @@ namespace Target
         // // Public field declarations
 
         // // Private field declarations
-        List<Target> masterList; // The "master" list of all the targets.
+        List<Target> masterList = null; // The "master" list of all the targets.
         string currentFilePath; // Path to the file that's currently loaded
 
         // // // Method Declarations
@@ -40,48 +40,57 @@ namespace Target
         }
 
         public List<Target> find(string name) { // Searches for all targets that have a given name
+            //Process string
             name = name.ToLower();
+
             List<Target> toRet = new List<Target>();
-            toRet = masterList.FindAll(s => s.Name == name);
+
+            //Returns List of all matches or empty list.
+            if (name.Length != 0 && masterList != null)
+                toRet = masterList.FindAll(s => s.Name == name);
+
             return toRet;
         }
 
         // While "find" naively returns all targets with a given name,
         //"findPrey" does some checking to make sure the target we're looking for is one we're actually allowed to shoot at.
         public Target findPrey(string name) {
-            List<Target> toRet = new List<Target>();
-            if (find(name).Count == 0) {
-                throw new ArgumentException("No target by that name");
+
+            Target retTarg = null;
+
+            List<Target> toRet = find(name);
+
+            //A target must be returned from find method.
+            if (toRet.Count == 1) {
+
+                //The target returned must be an enemy.
+                if (!toRet[0].Friend) {
+                    retTarg = toRet[0];
+                } else {
+                    Console.WriteLine("Target is a friendly.");
+                }
+            } else {
+                Console.WriteLine("Target doesn't exist in list.");
             }
 
-            Target tempTarg = find(name)[0];
-
-            if (tempTarg.Friend == true) {
-                throw new ArgumentOutOfRangeException("Target is friendly");
-            }
-            return tempTarg;
+            return retTarg;
         }
 
         // Returns tuple of named targets X, Y, and Z coordinates, in that order.
         public Tuple<double, double, double> takeAim(string name) {
 
-            //If it succeeds, null won't be returned.
-            //If it fails, null still won't be returned.
-            Target toRet = null;
+            Tuple<double, double, double> targCoord = null;
 
-            try {
-                toRet = findPrey(name);
+            //toRet is either Target or null
+            Target toRet = findPrey(name);
+
+            if (toRet != null) {
+                targCoord = Tuple.Create<double, double, double>(toRet.X, toRet.Y, toRet.Z);
+                setToDead(name);
             }
-            catch {
-                throw;
-            }
-            
 
-            // SERIOUSLY, THIS NEXT LINE WON'T BE HERE IN THE NEXT VERSION!!!
-            setToDead(name); // TOTALLY TEMPORARY UNTIL WE HAVE A NETWORK OBJECT
-            // GONNA GET RID OF THE PREVIOUS LINE WHEN THE TIME COMES
 
-            return Tuple.Create<double, double, double>(toRet.X, toRet.Y, toRet.Z);
+            return targCoord;
         }
 
         public void printEnemies() {
