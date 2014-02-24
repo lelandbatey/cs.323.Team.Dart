@@ -66,39 +66,17 @@ namespace SadCL
                 } else if (givenAct == "friends") {
                     tMan.printFriends();
                 } else if (givenAct == "kill") {
-                    // RIGHT NOW JUST A STUB, EXPAND THIS LATER ONCE WE HAVE THE MISSILE LAUNCHER!
 
-                    bool validTarget = true;
                     double X = 0.0;
                     double Y = 0.0;
                     double Z = 0.0;
 
-                    try {
-                        Tuple<double, double, double> targCoords = tMan.takeAim(givenMod);
-                        //Tuple<double, double, double> targCoords = tMan.takeAim(givenMod);
-                        //tMan.printAll();
+                    Tuple<double, double, double> targCoords = tMan.takeAim(givenMod);
 
+                    if (targCoords != null) {
                         X = targCoords.Item1;
                         Y = targCoords.Item2;
                         Z = targCoords.Item3;
-                    }
-                    catch (ArgumentOutOfRangeException Error) {
-                        Console.WriteLine(Error.ParamName);
-                        validTarget = false;
-                    }
-                    catch (ArgumentException Error) {
-                        if (Error.ParamName == null)
-                            Console.WriteLine(Error.Message);
-                        else
-                            Console.WriteLine(Error.ParamName);
-                        validTarget = false;
-                    }
-                    catch {
-                        Console.WriteLine("List doesn't exist!");
-                        validTarget = false;
-                    }
-
-                    if (validTarget == true) {
                         double r = Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2));
                         double Theta = (Math.PI / 2) - Math.Acos(Z / r);
                         double Phi = Math.Atan2(Y, X);
