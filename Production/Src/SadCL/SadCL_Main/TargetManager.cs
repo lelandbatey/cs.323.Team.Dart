@@ -28,7 +28,7 @@ namespace Target
         // // Public field declarations
 
         // // Private field declarations
-        List<Target> masterList = null; // The "master" list of all the targets.
+        List<Target> masterList = new List<Target>(); // The "master" list of all the targets.
         string currentFilePath; // Path to the file that's currently loaded
 
         // // // Method Declarations
@@ -46,7 +46,7 @@ namespace Target
             List<Target> toRet = new List<Target>();
 
             //Returns List of all matches or empty list.
-            if (name.Length != 0 && masterList != null)
+            if (name.Length != 0)
                 toRet = masterList.FindAll(s => s.Name == name);
 
             return toRet;
@@ -89,25 +89,14 @@ namespace Target
                 setToDead(name);
             }
 
-
             return targCoord;
         }
 
         public void printEnemies() {
-            try {
-                print(listEnemies());
-            }
-            catch {
-                Console.WriteLine("List doesn't exist.");
-            }
+            print(listEnemies());
         }
         public void printFriends() {
-            try {
-                print(listFriends());
-            }
-            catch {
-                Console.WriteLine("List doesn't exist.");
-            }
+            print(listFriends());
         }
         public void printAll() { print(masterList); }
 
@@ -120,23 +109,26 @@ namespace Target
             }
         }
         private List<Target> listEnemies() {
+
             List<Target> toRet = new List<Target>();
-            try {
-                toRet = masterList.FindAll(s => s.Friend == false);
+            
+            toRet = masterList.FindAll(s => s.Friend == false);
+
+            if (toRet.Count == 0) {
+                Console.WriteLine("No enemies available.");
             }
-            catch {
-                throw;
-            }
+            
             return toRet;
         }
         private List<Target> listFriends() {
             List<Target> toRet = new List<Target>();
-            try {
-                toRet = masterList.FindAll(s => s.Friend == true);
+
+            toRet = masterList.FindAll(s => s.Friend == true);
+
+            if (toRet.Count == 0) {
+                Console.WriteLine("No friends available.");
             }
-            catch {
-                throw;
-            }
+
             return toRet;
         }
 
