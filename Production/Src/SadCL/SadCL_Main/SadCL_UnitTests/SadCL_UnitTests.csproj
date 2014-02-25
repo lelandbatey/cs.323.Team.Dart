@@ -52,7 +52,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="GetTestData.cs" />
-    <Compile Include="TestTargetFactory.cs" />
     <Compile Include="TestTargetManager.cs" />
     <Compile Include="TestIniFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
