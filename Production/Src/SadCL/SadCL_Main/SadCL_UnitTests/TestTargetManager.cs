@@ -114,29 +114,5 @@ namespace SadCL_UnitTests
             Assert.AreEqual(testTuple, tMan.takeAim("ronni"));
 
         }
-
-
-        [TestMethod]
-        public void Target_TestConverion() {
-            string targPath = "validTargets.ini";
-
-            Target.TargetManager tMan = Target.TargetManager.Instance;
-            tMan.load(GetTestData.getTestFilePath(targPath));
-
-            Target.Target j1 = tMan.find("mai")[0];
-            Target.mutableTarget m1 = new Target.mutableTarget(j1);
-            Target.Target j2 = new Target.Target(m1);
-            Target.mutableTarget m2 = new Target.mutableTarget(j2);
-
-            Console.WriteLine(j1);
-            Console.WriteLine(j2);
-            Console.WriteLine();
-            Console.WriteLine(m1);
-            Console.WriteLine(m2);
-
-            Assert.AreEqual(j1.ToString(), j2.ToString());
-            Assert.AreEqual(m1.ToString(), m2.ToString());
-        }
-
     }
 }

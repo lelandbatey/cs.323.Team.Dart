@@ -46,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoordConvert.cs" />
+    <Compile Include="IniBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MissileLauncher\DreamCheekyLauncher.cs" />
     <Compile Include="MissileLauncher\IMissileLauncher.cs" />
     <Compile Include="MissileLauncher\MissileLauncherController.cs" />
@@ -55,7 +58,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Target.cs" />
-    <Compile Include="IniFactory.cs" />
     <Compile Include="TargetFactory.cs" />
     <Compile Include="TargetManager.cs" />
   </ItemGroup>

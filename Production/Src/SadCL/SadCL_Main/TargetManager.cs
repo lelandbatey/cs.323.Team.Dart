@@ -55,25 +55,17 @@ namespace Target
         // While "find" naively returns all targets with a given name,
         //"findPrey" does some checking to make sure the target we're looking for is one we're actually allowed to shoot at.
         public Target findPrey(string name) {
+			List<Target> toRet = new List<Target>();
+			if (find(name).Count == 0) {
+				throw new ArgumentException("No target by that name");
+			}
 
-            Target retTarg = null;
+			Target tempTarg = find(name)[0];
 
-            List<Target> toRet = find(name);
-
-            //A target must be returned from find method.
-            if (toRet.Count == 1) {
-
-                //The target returned must be an enemy.
-                if (!toRet[0].Friend) {
-                    retTarg = toRet[0];
-                } else {
-                    Console.WriteLine("Target is a friendly.");
-                }
-            } else {
-                Console.WriteLine("Target doesn't exist in list.");
-            }
-
-            return retTarg;
+			if (tempTarg.Friend == true) {
+				throw new ArgumentOutOfRangeException("Target is friendly");
+			}
+			return tempTarg;
         }
 
         // Returns tuple of named targets X, Y, and Z coordinates, in that order.
@@ -175,8 +167,8 @@ namespace Target
             // We have to do it this way because Targets are read only, so we have to destroy the old one to make a change to an existing one
 
             Target tmpTarg = masterList[replaceIndex];
-            mutableTarget toReplace = new mutableTarget(tmpTarg);
-            toReplace.isDead = true;
+            Target toReplace = new Target(tmpTarg);
+            toReplace.dead = true;
             masterList[replaceIndex] = new Target(toReplace);
         }
         
