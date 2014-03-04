@@ -1858,222 +1858,6 @@
         </appliedStereotypesInternal>
         <elementDefinition Id="bd3576a3-f769-4eb2-8a3c-d004bd82077a" />
         <ownedAttributesInternal>
-          <property Id="68eeb33a-062a-4543-97e9-74497e7088ca" name="currentPhi" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <referencesInternal>
-              <reference Id="a82f5dcc-3474-4fa4-bc22-7cc81ea917be" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DMissileLauncherController Member%3DcurrentPhi" tag="ViewCode">
-                <elementDefinition Id="2506325d-eedc-4e6b-b49e-f7b161952cd0" />
-              </reference>
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance Id="4ed98e91-ffa3-4fbe-bc24-b967dd430390" name="property" profile="CSharpProfile">
-                <elementDefinition Id="cc7c2122-b2e2-4428-be4d-23341692d35b" />
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="23bf6d1a-60ee-4ea9-b94c-05f94ce15e3a">
-                    <propertyInstance Id="973d75d7-d7ae-4615-aa28-2ee6520830ec" name="ClrAttributes">
-                      <elementDefinition Id="ffb10b3d-44f7-484c-9f58-bff2ce6a9ab0" />
-                    </propertyInstance>
-                    <elementDefinition Id="8356164d-f4c4-4017-88d8-5ec51ccade10" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="6d128299-f87f-4900-8830-843396b75ea5">
-                    <propertyInstance Id="b93da7df-5259-4567-8074-7c3bf087f5b7" name="Get" value="public">
-                      <elementDefinition Id="37f36a62-09f5-49c7-a5d9-1f1ee8d7876d" />
-                    </propertyInstance>
-                    <elementDefinition Id="169d15e2-a943-4e0c-b428-9a8d8d306f73" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="c138d508-bda3-4238-bfd7-6c97c9ad320e">
-                    <propertyInstance Id="37f98184-1382-4dda-847a-08947bb463be" name="HasBody" value="false">
-                      <elementDefinition Id="871b71fd-7ca9-40c8-8d9e-3a3b5bf1656d" />
-                    </propertyInstance>
-                    <elementDefinition Id="dde684d3-d931-45e5-9d60-886f2d92faea" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="f577d455-264c-427b-ae8d-e57e28ed1f61">
-                    <propertyInstance Id="1b7653e4-d316-4277-9a26-39c4c6d0fd1c" name="IsUnsafe" value="false">
-                      <elementDefinition Id="9ebed298-9c25-4d43-a353-2e058bf5f1f9" />
-                    </propertyInstance>
-                    <elementDefinition Id="f0101985-7235-444f-b5e1-6574f3b784b4" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="6ad0b05e-d9df-47dc-b391-e69f703c5df6">
-                    <propertyInstance Id="f519b93b-c372-4022-9af7-8351fc9a61d3" name="Inheritance" value="none">
-                      <elementDefinition Id="add71a39-c999-42b7-805a-4c487e6df64d" />
-                    </propertyInstance>
-                    <elementDefinition Id="32d88a0c-4e3c-44ff-a359-1a2f1862e343" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="c0acd82d-d718-4a95-bab2-a552136b099c">
-                    <propertyInstance Id="57ae5adc-4003-4f80-beac-599cef571d60" name="PackageVisibility" value="internal">
-                      <elementDefinition Id="f6a53866-b243-438a-9131-45ed4c10e87a" />
-                    </propertyInstance>
-                    <elementDefinition Id="f29691d6-f480-45c7-b1b1-d579dbe5493e" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="fe00419c-888b-4fa5-8ad6-1e3473b30ad8">
-                    <propertyInstance Id="4b2c2bc8-e583-451c-a5b4-fad0ab958fd3" name="Set" value="public">
-                      <elementDefinition Id="faf6e6cc-4774-4685-b8f4-dc7a7cddf9b6" />
-                    </propertyInstance>
-                    <elementDefinition Id="71c08030-65c4-421b-aa12-9367e35881eb" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <elementDefinition Id="22a8ea96-4cbe-408a-afac-4b1bc9fbb6af" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="248aec9d-076f-4c3f-8925-a062f5a7ab9d" LastKnownName="Double" />
-            </type_NamedElement>
-          </property>
-          <property Id="bd1a35e3-c9b1-457d-8bc7-1d8228c80592" name="currentTheta" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <referencesInternal>
-              <reference Id="431f533c-837c-44d8-88a8-a7b74ead2f5f" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DMissileLauncherController Member%3DcurrentTheta" tag="ViewCode">
-                <elementDefinition Id="8165cc97-9a9f-4c11-8f1b-5a537fdd1d51" />
-              </reference>
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance Id="13ec0045-d7d6-4f12-a2c0-14af94311606" name="property" profile="CSharpProfile">
-                <elementDefinition Id="61e74b9e-2e90-41b1-9c26-1e7c05bc8ade" />
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="d00c3676-2ba9-419e-bc46-2d0638fd5d5a">
-                    <propertyInstance Id="9748a5f0-ab35-4921-938d-0546f89d1678" name="ClrAttributes">
-                      <elementDefinition Id="5cdc364e-bd0c-4aca-8554-cc79613226ef" />
-                    </propertyInstance>
-                    <elementDefinition Id="6955f354-7f4a-4fa0-8575-54e4e59cdefe" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="c0891f22-e1d3-4e71-bd1b-6eaeaf91800a">
-                    <propertyInstance Id="0f41119e-dbd9-43ab-9e70-4294ad516fbd" name="Get" value="public">
-                      <elementDefinition Id="e5e351d9-f2bf-4065-a82b-245de90b1ec0" />
-                    </propertyInstance>
-                    <elementDefinition Id="d1b19e5e-3701-48d7-876b-147c5d19af14" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="c8e6ab4c-8d32-4a20-98b6-de305a6009c7">
-                    <propertyInstance Id="22135bcd-f893-439e-885c-9fe2d5740be9" name="HasBody" value="false">
-                      <elementDefinition Id="e2140d45-0a9d-4895-ae8a-3515b5cbb2f7" />
-                    </propertyInstance>
-                    <elementDefinition Id="1e59522a-0340-4855-a7ce-fd012b9324af" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="a301b0ff-e69e-4a01-aa08-2ef0188fba68">
-                    <propertyInstance Id="76a14afb-bbd2-416e-bcaf-891c1f12269e" name="IsUnsafe" value="false">
-                      <elementDefinition Id="3815e3ac-61d4-4051-9bba-114538dae8ad" />
-                    </propertyInstance>
-                    <elementDefinition Id="f039593c-5a30-4cda-b8eb-4973c7c2452e" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="45664799-89b7-484a-86d1-8d496c2b5cf4">
-                    <propertyInstance Id="668b9f59-71f3-4a94-b8bd-9064b415386e" name="Inheritance" value="none">
-                      <elementDefinition Id="6ff6daa2-ebc3-413a-9006-3497b16fc4bf" />
-                    </propertyInstance>
-                    <elementDefinition Id="f95b7185-d154-4c77-9990-94cf03066e0e" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="e04dc440-aeb2-4d59-8afd-b07f357b6291">
-                    <propertyInstance Id="ce6c8456-2274-4d8d-ac4e-da351b1015df" name="PackageVisibility" value="internal">
-                      <elementDefinition Id="109a6b69-311f-44c8-9997-419c673ee331" />
-                    </propertyInstance>
-                    <elementDefinition Id="9a2cca46-9db9-42d8-a996-dbcfd4fe5c14" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="34c8134e-e858-4c46-a7a8-b736b5872197">
-                    <propertyInstance Id="be328291-815f-4ede-9923-17ae885b48fa" name="Set" value="public">
-                      <elementDefinition Id="2df4e61b-8717-48ff-a6cd-17abe14ccec6" />
-                    </propertyInstance>
-                    <elementDefinition Id="9f2294c5-143c-4ed0-b535-65b742270d93" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <elementDefinition Id="4d9491e8-fc61-4d7d-a1c7-dcae5849fd44" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="248aec9d-076f-4c3f-8925-a062f5a7ab9d" LastKnownName="Double" />
-            </type_NamedElement>
-          </property>
-          <property Id="d1e42589-bfc9-4925-9275-11c9b1e907b0" name="disTheta" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <referencesInternal>
-              <reference Id="170db078-c99a-4528-bd45-70bf80c91b25" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DMissileLauncherController Member%3DdisTheta" tag="ViewCode">
-                <elementDefinition Id="62d82f9d-8e1c-4e12-84ee-ec004c2d5eeb" />
-              </reference>
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance Id="b55cb223-cfce-45ea-9c37-5320ac49786a" name="field" profile="CSharpProfile">
-                <elementDefinition Id="f140bbd9-a921-4adb-b228-5ed9376aa832" />
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="67f45751-fd91-4c83-a576-09b5f8735114">
-                    <propertyInstance Id="dc5e1d66-17b8-425d-82b6-ee8092b12d5f" name="ClrAttributes">
-                      <elementDefinition Id="7e3f56a1-cef9-4813-b32b-db859f48ff9f" />
-                    </propertyInstance>
-                    <elementDefinition Id="d62f3d4e-2413-49fc-aad5-e041efa5c424" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="b459c306-aef6-4ad8-bb49-de68effab207">
-                    <propertyInstance Id="bce21165-9054-46f4-9f0b-95e5edec102e" name="IsConst" value="false">
-                      <elementDefinition Id="fbfe6099-e003-4a03-94a1-882be8ad6249" />
-                    </propertyInstance>
-                    <elementDefinition Id="35add660-4d56-410b-841b-f93cb501cd1d" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="e83326fa-73cc-4518-a36f-a8560675e59d">
-                    <propertyInstance Id="983376c2-c25c-44af-b793-9f31d4e3a445" name="IsNullable" value="false">
-                      <elementDefinition Id="e823017d-5d36-497b-8953-ed8d434d23d6" />
-                    </propertyInstance>
-                    <elementDefinition Id="a89c8472-11ec-43c5-af1b-c0b35aff4eef" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="2b714cb5-6bbd-4c3e-8572-fa2f5a651e9c">
-                    <propertyInstance Id="b6195e8a-30fb-4aa7-9508-3c52ef2408c5" name="IsVolatile" value="false">
-                      <elementDefinition Id="4ca807eb-3d79-4e41-b23f-0d214bf135aa" />
-                    </propertyInstance>
-                    <elementDefinition Id="c30e9488-f70e-4e97-a4e7-0e44c2298328" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="30ca4989-e710-4548-872f-7396dc5e2189">
-                    <propertyInstance Id="48ab4007-05ae-4d1e-9f94-bf9950e39d0d" name="PackageVisibility" value="internal">
-                      <elementDefinition Id="fb8daa05-a46a-44e8-8b10-6f1a70d29330" />
-                    </propertyInstance>
-                    <elementDefinition Id="2fc377f6-72ac-48d0-be63-633b1d9d53e8" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <elementDefinition Id="0ad84bd1-5990-456d-ace5-63bb87c15432" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="248aec9d-076f-4c3f-8925-a062f5a7ab9d" LastKnownName="Double" />
-            </type_NamedElement>
-          </property>
-          <property Id="b12418af-320a-4100-ae6a-c8c6a9e5a37e" name="disPhi" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <referencesInternal>
-              <reference Id="703bc70e-7bc1-4ba2-b7ac-06bcf7625dba" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DMissileLauncherController Member%3DdisPhi" tag="ViewCode">
-                <elementDefinition Id="6fbd8c9f-02e4-4119-8022-82706add0585" />
-              </reference>
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance Id="4f3847d3-46fe-4020-bd0e-ab13f51978cc" name="field" profile="CSharpProfile">
-                <elementDefinition Id="81494992-1a6d-430a-96c3-4dec2f84a63c" />
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="49ffd045-cea6-45f1-9ca3-cfe062df0a23">
-                    <propertyInstance Id="e7272405-92f6-4a56-9ea3-2faf99f1912d" name="ClrAttributes">
-                      <elementDefinition Id="f18e8f85-7e28-466c-92ec-b841b21fad6d" />
-                    </propertyInstance>
-                    <elementDefinition Id="e25db1d5-c69a-4ba2-a90e-8afe583d6ab8" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="1d2c05df-b780-45ad-93dd-7d79f51fcae8">
-                    <propertyInstance Id="f005f2e2-223a-4e28-be2a-8517ced2951e" name="IsConst" value="false">
-                      <elementDefinition Id="9626500d-7288-4833-be06-73689d187ac3" />
-                    </propertyInstance>
-                    <elementDefinition Id="a97547c6-8a02-43f1-b511-a701e9d6a597" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="f480fa4d-ee4b-40cc-8f2e-0fcabd4f6281">
-                    <propertyInstance Id="8ee025e5-8504-45d0-b0f7-558306a35a2d" name="IsNullable" value="false">
-                      <elementDefinition Id="6de973ef-74b3-44ec-b01b-84919b7cc1dd" />
-                    </propertyInstance>
-                    <elementDefinition Id="0525b6d1-48ed-4138-93c4-2bb48bd3d07f" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="fd099ed0-6eda-4e3b-a451-b5a258848610">
-                    <propertyInstance Id="83be24b9-3c1f-4eb4-a6c0-418359ba43c0" name="IsVolatile" value="false">
-                      <elementDefinition Id="2fe9249e-b392-4469-884a-9a4a723361cf" />
-                    </propertyInstance>
-                    <elementDefinition Id="10744a60-9aed-418c-b79f-ba4d2cc9b3cb" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="59ee3a1a-127c-4122-be8c-00a98881dd21">
-                    <propertyInstance Id="065b38de-f162-48f4-9171-db5c7632990f" name="PackageVisibility" value="internal">
-                      <elementDefinition Id="637e8c5e-884d-470d-b12f-c2c328758327" />
-                    </propertyInstance>
-                    <elementDefinition Id="291789b2-4646-4813-b2f4-72dc04ff2347" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <elementDefinition Id="58bd87ab-da91-47dd-b4b6-45a36e1c6b4b" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="248aec9d-076f-4c3f-8925-a062f5a7ab9d" LastKnownName="Double" />
-            </type_NamedElement>
-          </property>
           <property Id="793fe1cc-27f8-436a-8842-40e093db51e6" name="MissileTurret" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
               <reference Id="c08ce5cc-e700-49df-91ca-a29cd037cdb6" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DMissileLauncherController Member%3DMissileTurret" tag="ViewCode">
@@ -2486,56 +2270,56 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="e0d6813f-a857-4ac2-8263-1df49c8474f9" />
           </operation>
-          <operation Id="fc46fc1d-6920-4d87-b24b-b4a159e859f0" name="MissileLauncherController" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="efcb4bef-18df-44c7-9596-7d2e7c3a2cde" name="MissileLauncherController" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <referencesInternal>
-              <reference Id="c028d084-cbe7-4ffc-a25c-e794570831d2" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DMissileLauncherController Member%3D.ctor" tag="ViewCode">
-                <elementDefinition Id="e72d0590-b96a-4f29-b77a-d0429b2f1274" />
+              <reference Id="497132c5-e06d-4ae7-9b47-a700b143cd65" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DMissileLauncherController Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="7891e564-4886-4c70-a00e-639ca48bce70" />
               </reference>
             </referencesInternal>
             <appliedStereotypesInternal>
-              <stereotypeInstance Id="8d05302e-507c-40d4-b5cc-b3c2f17c06c7" name="method" profile="CSharpProfile">
-                <elementDefinition Id="532fc421-4182-4dd3-b89c-9d3564691591" />
+              <stereotypeInstance Id="486b4f98-0ffb-4cb2-bdbe-72c8daeba92f" name="method" profile="CSharpProfile">
+                <elementDefinition Id="1391a22f-86d3-4853-ab82-3dead4ef6f84" />
                 <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="839f715d-0fbc-4e2a-9af5-9f11143668c4">
-                    <propertyInstance Id="2088a0d1-6ac9-464a-b0af-d6907895ab31" name="ClrAttributes">
-                      <elementDefinition Id="94202547-1a28-485c-bffc-e79239100745" />
+                  <stereotypeInstanceHasPropertyInstances Id="9dceb2f8-e75c-47ec-b842-87daf31ba2c0">
+                    <propertyInstance Id="64bc5481-6ce7-4a02-a97b-374f9869df33" name="ClrAttributes">
+                      <elementDefinition Id="9d4326a1-bad0-446c-9528-cfb67fb591ce" />
                     </propertyInstance>
-                    <elementDefinition Id="1abc24dd-10a7-41c8-a160-d8347bfcedb7" />
+                    <elementDefinition Id="49d5b811-5f9a-4d9b-b320-cd350b6bea8e" />
                   </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="13da709d-da18-4641-9552-0dc1c76f364a">
-                    <propertyInstance Id="f2142154-59ef-4783-9db7-24827e1d95a0" name="IsPartial" value="false">
-                      <elementDefinition Id="48276a90-2a42-4a2d-ba27-65d31ce20520" />
+                  <stereotypeInstanceHasPropertyInstances Id="f7e26888-c687-40df-9f29-bf1a43fa8e59">
+                    <propertyInstance Id="f7b7c537-5429-4734-8cf9-81499a6f3ac4" name="IsPartial" value="false">
+                      <elementDefinition Id="31a566f0-dd30-4899-a0c7-783167292dea" />
                     </propertyInstance>
-                    <elementDefinition Id="3d010dd1-10a8-4e87-b71b-203f5a16d7cc" />
+                    <elementDefinition Id="fdbc61d0-310a-444e-92bd-e705640d9560" />
                   </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="b1d4a277-360e-4e43-b4ec-c3b169484153">
-                    <propertyInstance Id="0f76d56c-593c-4f65-9571-3b618e53a48d" name="IsUnsafe" value="false">
-                      <elementDefinition Id="f5a2c513-52aa-46c5-9574-3aeec4639f60" />
+                  <stereotypeInstanceHasPropertyInstances Id="d98759f2-fa57-4f5b-9894-c235c19945fb">
+                    <propertyInstance Id="1535ef7b-9fb8-4e80-998f-37782a76e371" name="IsUnsafe" value="false">
+                      <elementDefinition Id="d0dec0d1-840b-4d94-8df6-0d5ff62cb321" />
                     </propertyInstance>
-                    <elementDefinition Id="5ce42440-e685-4bc1-9d7b-6b0b210dc471" />
+                    <elementDefinition Id="d2fbcfa0-4c40-442f-a0ef-36fa49beb3c3" />
                   </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="108ed85d-07e8-4f6d-b79b-09175caef5a9">
-                    <propertyInstance Id="cefe5812-680e-4aa6-beaf-d7be233e1be3" name="Inheritance" value="none">
-                      <elementDefinition Id="f94f18fa-c3cc-4efb-befc-22f2f8b6247f" />
+                  <stereotypeInstanceHasPropertyInstances Id="0259177b-74fb-40e6-a72c-0f90761ccea7">
+                    <propertyInstance Id="f29b822b-17b2-467b-856e-54cb456bd2d5" name="Inheritance" value="none">
+                      <elementDefinition Id="044e38de-295e-4e9d-baf4-f699612e64a1" />
                     </propertyInstance>
-                    <elementDefinition Id="9c5d27a0-80e8-45b6-80a6-1d681066baa7" />
+                    <elementDefinition Id="656e9248-338c-4901-b1ba-6f7539a069d4" />
                   </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="30491a94-4f8f-409b-a837-9d30246dcedc">
-                    <propertyInstance Id="38af368d-233f-403d-b053-4d897e83ab6d" name="PackageVisibility" value="internal">
-                      <elementDefinition Id="3dc51ae2-3e8b-40f3-9cd8-4cb059b2e095" />
+                  <stereotypeInstanceHasPropertyInstances Id="d69d5b1f-3dc0-426f-a9dc-da4a1b551140">
+                    <propertyInstance Id="512e1b90-a94c-4bcc-9d7a-e1fa1e6c3966" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="048d90a1-fe6d-4e64-b56d-d10832210867" />
                     </propertyInstance>
-                    <elementDefinition Id="77f309ff-f6ec-48a2-b28a-96e9044bd2f2" />
+                    <elementDefinition Id="c60bcd66-2efa-4ebb-999c-091e1b896365" />
                   </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="a5685a28-f9f6-41b4-a25a-9a2bf24873f2">
-                    <propertyInstance Id="254e9c60-c8df-4b9e-b917-3e591b316f5a" name="params" value="false">
-                      <elementDefinition Id="8f5c2c60-ff59-4074-acda-4f5261c26341" />
+                  <stereotypeInstanceHasPropertyInstances Id="b5eb6952-9f75-472f-85a1-da61e08e4a33">
+                    <propertyInstance Id="46c2c014-54ba-4f28-8727-f1c2e82f32ad" name="params" value="false">
+                      <elementDefinition Id="241fafea-bb2e-4550-9c30-705edd69ac82" />
                     </propertyInstance>
-                    <elementDefinition Id="1b31a635-c3dd-4c5b-853e-e894845e2e93" />
+                    <elementDefinition Id="6cc10b39-1c64-42c3-bced-c8d56f8d174c" />
                   </stereotypeInstanceHasPropertyInstances>
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
-            <elementDefinition Id="9bcb6b6a-0f16-480c-9472-4a6cb46b926a" />
+            <elementDefinition Id="05380be8-a985-494a-89f2-ea28a90f585e" />
           </operation>
         </ownedOperationsInternal>
       </class>

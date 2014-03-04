@@ -6,12 +6,39 @@
   <MessageClass Name="Error" Label="Error" Option="Show errors" />
   <MessageClass Name="Property" Label="Property" Option="Show metadata" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
-  <Message Timestamp="2014-02-18T14:04:31" Importance="High" Text="Reverse Engineering Started." />
-  <Message Timestamp="2014-02-18T14:04:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL' -  (Package)" />
-  <Message Timestamp="2014-02-18T14:04:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher' -  (Package)" />
-  <Message Timestamp="2014-02-18T14:04:31" Importance="Medium" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::AmmoCount' -  (Enumeration)" />
-  <Message Timestamp="2014-02-18T14:04:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::AmmoCount::EmptyAmmo' -  (EnumerationLiteral)" />
-  <Message Timestamp="2014-02-18T14:04:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::AmmoCount::MaxAmmo' -  (EnumerationLiteral)" />
-  <Message Timestamp="2014-02-18T14:04:31" Importance="High" Text="(1) type(s) fully reverse engineered." />
-  <Message Timestamp="2014-02-18T14:04:31" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+  <Message Timestamp="2014-03-04T14:24:26" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL' -  (Package)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher' -  (Package)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Medium" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher' -  (Class)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::currentPhi' -  (Property)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::currentTheta' -  (Property)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::disPhi' -  (Property)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::disTheta' -  (Property)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::DreamCheekyLauncher' -  (Operation)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::DreamCheekyLauncher::passedName' -  (Parameter)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::fire' -  (Operation)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::launcherAmmo' -  (Property)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::launcherName' -  (Property)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::move' -  (Operation)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::move::phi' -  (Parameter)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::move::theta' -  (Parameter)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::moveBy' -  (Operation)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::moveBy::phi' -  (Parameter)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::moveBy::theta' -  (Parameter)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::reload' -  (Operation)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::reset' -  (Operation)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher::status' -  (Operation)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::IMissileLauncher' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::SadCL::MissileLauncher::MissileLauncherHardware' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::System' -  (Package)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SadCL_UML_Diagram::System::Double' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher to SadCL_UML_Diagram::System::Double (Association)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher to SadCL_UML_Diagram::System::Double (Association)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher to SadCL_UML_Diagram::SadCL::MissileLauncher::IMissileLauncher (InterfaceRealization)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SadCL_UML_Diagram::SadCL::MissileLauncher::DreamCheekyLauncher to SadCL_UML_Diagram::SadCL::MissileLauncher::MissileLauncherHardware (Generalization)" />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="High" Text="(3) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2014-03-04T14:24:27" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
 </Log>
