@@ -2218,6 +2218,46 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="a1983802-0f4a-4674-ab33-d0f9d73bb65f"
+            isDerived="false"
+            sourceEndRoleName="Program"
+            targetEndRoleName="CoordConvert"
+            isLeaf="false"
+            name="Uses"
+            isAbstract="false">
+            <classMoniker
+              Id="3c231753-f0e5-4d78-8088-0f23d6595c0a"
+              LastKnownName="CoordConvert"
+              LastKnownLocation="Package_1213.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="316210e0-21b7-4bef-ba17-af85eea7aa7f"
+                  name="Program"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2396589c-64b2-4dd0-9184-02240047113a"
+                  name="CoordConvert"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedOperationsInternal>
           <operation
@@ -2960,6 +3000,642 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3c231753-f0e5-4d78-8088-0f23d6595c0a"
+        name="CoordConvert"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="b85b0cc4-8590-4d76-bd1e-544aa5bb76ce"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL Type%3DCoordConvert"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="0cc38841-a747-4a19-9592-27e3409638fa"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6e6e0985-3118-46b7-a2cd-d958f5939cd8">
+                <propertyInstance
+                  Id="2813076b-c6c4-489c-822a-cb181deed97d"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3046f49c-feb5-4b76-99e4-16e3fd8f434d">
+                <propertyInstance
+                  Id="09d86f67-7d8c-4173-b09e-9f2dc95adbac"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="85277e33-9992-4119-bf14-e621534867d3">
+                <propertyInstance
+                  Id="31e0a8e9-6ba4-45cc-a9e0-19d8d594348c"
+                  name="IsStatic"
+                  value="True" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2d11d8d8-2274-4dca-8a0d-d3aa5dda6fbf">
+                <propertyInstance
+                  Id="03573bab-809a-47d3-8cd3-22c817d9986b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="73527f75-d7d5-42d4-b3c7-2d0836821e42">
+                <propertyInstance
+                  Id="9662fcdd-5ae2-4165-8d1a-ac8a17a2bee4"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="6b6a09fa-c752-4541-b495-b68028f1a46a"
+            name="rotate"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="42e8ac91-1540-4e0f-b786-2ab3ca2d63e0"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL Type%3DCoordConvert Member%3D(Name%3Drotate OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DDouble)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="51853faa-a0bd-425e-976d-8d2b417f0a41"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9d4c98f9-9154-47f6-856c-bca493904b15">
+                    <propertyInstance
+                      Id="5abe833c-182e-4169-a53d-6f39ec5181a1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="424111f6-3da8-4acd-a9fd-5c83a0d3a1a5">
+                    <propertyInstance
+                      Id="9201e790-da1c-44d4-a83e-a0c92567ad3d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6cd1e891-821d-41ab-a2aa-e7ec7b30bb74">
+                    <propertyInstance
+                      Id="f84e1578-6476-44b5-911c-4e045bffce01"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d0f1c68e-cde2-429b-bffb-6bf8f8bff2d8">
+                    <propertyInstance
+                      Id="feec02df-c49c-421b-8399-a87004cc2d6c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b5772776-af30-4038-bd47-c5c1ade826ae">
+                    <propertyInstance
+                      Id="7246284a-0af0-4747-b527-716154d5c5aa"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6dfa8ba4-438a-4d18-9cf1-d607a209c430">
+                    <propertyInstance
+                      Id="2424e82e-ee38-4e73-aae0-a857f4c29f07"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d682f2f3-ddc1-44bc-b221-0bfd00e3514f"
+                  name="amount"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="21c71d2a-fcd4-4fb1-8948-b2e930f5ca43"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL Type%3DCoordConvert Member%3D(Name%3Drotate OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DDouble)]) ParameterIdentifier%3Damount"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fe7be9b4-e09d-46d0-9dbd-644f9beb294a"
+                      LastKnownName="Double"
+                      LastKnownLocation="Package2_1213.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4b16d761-60ac-4401-ac9e-5750232d86f8"
+            name="sphToTick"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="55ed5991-ae9c-4571-a795-d7dbe6cc4d8c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL Type%3DCoordConvert Member%3D(Name%3DsphToTick OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DDouble)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5095ac21-d8e1-4356-a69f-0e7f8353aa1f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f57652f-e5d8-4f41-82db-14b4a8c7abad">
+                    <propertyInstance
+                      Id="a35115ee-146d-45e8-8abe-9df61931c945"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="44b8167c-70b1-490b-a528-217ff01f9bf0">
+                    <propertyInstance
+                      Id="b59a9db4-8d6b-4f88-a9aa-6d3de7f3a13d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="31c43c4b-a68d-421b-a98d-c366c8818ae2">
+                    <propertyInstance
+                      Id="9113a309-0d7a-42e7-9855-b8cbea5e65b4"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ddc1640c-d063-4a7c-a5d2-bf513d6c264a">
+                    <propertyInstance
+                      Id="3fa99131-7fa0-46be-b224-c5b89f743297"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bd03c89d-8818-4c70-a3c9-fac37f1da350">
+                    <propertyInstance
+                      Id="ad593544-a7be-465a-816b-6b100d7944ce"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="85d683e5-e236-48df-8807-367afe332c3c">
+                    <propertyInstance
+                      Id="abfa96d7-ef01-4093-bc91-8c7b54bc1917"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="35ecdb25-28dd-4643-9810-ade630838846"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fe7be9b4-e09d-46d0-9dbd-644f9beb294a"
+                      LastKnownName="Double"
+                      LastKnownLocation="Package2_1213.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8180ab75-a4e2-4b1c-8c8c-03aaa40bd02e"
+                  name="amount"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="f2741d56-5871-4741-95ba-0363e52f5bb5"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL Type%3DCoordConvert Member%3D(Name%3DsphToTick OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DDouble)]) ParameterIdentifier%3Damount"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fe7be9b4-e09d-46d0-9dbd-644f9beb294a"
+                      LastKnownName="Double"
+                      LastKnownLocation="Package2_1213.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e47a1920-ae01-4212-9ef9-e47632d30c75"
+            name="sphToTickRel"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="c938cdbf-ca0a-45b4-a067-5f50849940c0"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL Type%3DCoordConvert Member%3D(Name%3DsphToTickRel OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DDouble)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ae534c6a-42ba-437e-a888-cdc726c3389f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e4be741b-a8ec-4c27-9087-0ac249da430f">
+                    <propertyInstance
+                      Id="c9b8f146-b352-401d-ab0c-1bbb05cfc7a3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="15199bf0-5e30-4346-b21d-552f079d30ff">
+                    <propertyInstance
+                      Id="4213c777-8eef-4159-b260-e008f45a176b"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="772a8a28-3d4a-400f-9ae2-9671ef2e7bbc">
+                    <propertyInstance
+                      Id="6be83981-eed2-4c0e-b23e-7977f9bc459f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="024e9ce0-13b9-40a0-94f3-d7320730d41e">
+                    <propertyInstance
+                      Id="79ec705d-6e46-4075-8a8a-7bb0818eea26"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="702ad193-251b-41fc-8363-03798d80267b">
+                    <propertyInstance
+                      Id="41dfd1ea-3255-43c1-94c0-b28e7d9cd65c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa6321e4-8f8a-4125-9554-3a456dcd919e">
+                    <propertyInstance
+                      Id="0c4c6abc-cac5-4863-b158-93a4a1efb59c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ed720e17-5dc1-453b-bf0f-5dfb737501a1"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fe7be9b4-e09d-46d0-9dbd-644f9beb294a"
+                      LastKnownName="Double"
+                      LastKnownLocation="Package2_1213.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f34e598b-b5c0-48a5-a148-183e7d0b4b10"
+                  name="amount"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="f9f7e555-a5ce-4790-b777-2c78d9162304"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL Type%3DCoordConvert Member%3D(Name%3DsphToTickRel OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DDouble)]) ParameterIdentifier%3Damount"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fe7be9b4-e09d-46d0-9dbd-644f9beb294a"
+                      LastKnownName="Double"
+                      LastKnownLocation="Package2_1213.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="433b79de-ca1b-41a3-b5ec-e4235f9f5dcf"
+            name="vertSphToTick"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="4e7ec285-b92f-4b27-9257-4a2dae0220fe"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL Type%3DCoordConvert Member%3D(Name%3DvertSphToTick OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DDouble)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="987aa065-0f6e-4b41-82b1-6dd1b0daa52e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="acaaa764-641c-49a1-9d42-88b98e605114">
+                    <propertyInstance
+                      Id="8d6a455a-4bc9-4adc-9908-3133f91c9b8b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7017391-96c2-40a6-b52f-8e6f9653da8a">
+                    <propertyInstance
+                      Id="ae27ab2c-548a-4d22-88ac-73baba40cedf"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ac9b2b10-af6f-4a6b-adeb-2e105e9f43d4">
+                    <propertyInstance
+                      Id="132cf63c-3e9e-43c0-bcff-55808be173b0"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5a71645-bb36-4ba0-aa84-857f60845908">
+                    <propertyInstance
+                      Id="c598657f-b1c8-42d2-9690-766dad6af759"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eacd181f-b4ef-4779-8229-a1dc9287f397">
+                    <propertyInstance
+                      Id="afdc512a-db6d-4562-b1bc-114c49a38f09"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3595c5b3-fc76-4987-84d0-0182466f41cc">
+                    <propertyInstance
+                      Id="0452ac33-17f2-48d2-9ff4-2fc71d588d1d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b30b8027-93cd-4fcc-ab7c-a1d43341780e"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fe7be9b4-e09d-46d0-9dbd-644f9beb294a"
+                      LastKnownName="Double"
+                      LastKnownLocation="Package2_1213.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="726ca7fe-6dc8-4d21-aa12-95c817500728"
+                  name="amount"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="25f783dc-d8a8-4c68-b70c-3809bf74ab94"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL Type%3DCoordConvert Member%3D(Name%3DvertSphToTick OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DDouble)]) ParameterIdentifier%3Damount"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fe7be9b4-e09d-46d0-9dbd-644f9beb294a"
+                      LastKnownName="Double"
+                      LastKnownLocation="Package2_1213.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d483d407-c2e9-4a5c-87e5-b830d10c8039"
+            name="radToDegrees"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f658f3b9-a9d4-4ebf-9876-b773be2049df"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL Type%3DCoordConvert Member%3D(Name%3DradToDegrees OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DDouble)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d58e42a2-05ed-4fe6-84a1-b9ef881f3939"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="76a3b4e5-ad80-4b71-8a55-cd6c9464fc90">
+                    <propertyInstance
+                      Id="fae174ae-d67f-47be-b614-85b89a688798"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="045e1921-5274-4fc1-b7f4-3eca92b1a6ee">
+                    <propertyInstance
+                      Id="1c9de069-7078-4700-ae5d-1e1a53be85ad"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e59e250f-0708-49bf-a052-21f5483ad996">
+                    <propertyInstance
+                      Id="01f9816b-ca35-4e6d-8fbe-fd91b7018af8"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="10e91e35-68c2-49fe-bde1-43721000cf7e">
+                    <propertyInstance
+                      Id="c079a481-bea0-41e4-b4ae-7f40f0e6e557"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9d804fa6-7b47-48be-aaa5-c2abe523334e">
+                    <propertyInstance
+                      Id="444786cd-7d66-40bd-ac4f-c89cce82dfb9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d0465e1-f5f1-40a2-ae4e-6b749dcd63d6">
+                    <propertyInstance
+                      Id="e5f57a75-cbbb-4ffa-ad4f-de91b608dc05"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1b8b8ed1-c619-4591-84c1-6a15b8590d7b"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fe7be9b4-e09d-46d0-9dbd-644f9beb294a"
+                      LastKnownName="Double"
+                      LastKnownLocation="Package2_1213.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="52a885e7-7abc-4823-a6f6-25de8b8c5ea7"
+                  name="amount"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="5d558002-2936-4817-b0d5-a3279fc6d073"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL Type%3DCoordConvert Member%3D(Name%3DradToDegrees OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DDouble)]) ParameterIdentifier%3Damount"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fe7be9b4-e09d-46d0-9dbd-644f9beb294a"
+                      LastKnownName="Double"
+                      LastKnownLocation="Package2_1213.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c09d0fdf-966a-4d25-affa-65f12adf5f99"
+            name="getPhiTheta"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e11304d2-0055-4f14-91b8-aaf90e25e428"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL Type%3DCoordConvert Member%3D(Name%3DgetPhiTheta OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="28389426-9a0a-4f04-a3a8-a5e356ef38ad"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da098aaa-5a05-4976-bef3-695e0038700f">
+                    <propertyInstance
+                      Id="f0877609-bdf8-49bd-86ad-9588fc55f6ff"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ebe3e47-e37c-4493-b604-998dd48fd046">
+                    <propertyInstance
+                      Id="63a1014d-5195-428d-a2e2-4323f4f89927"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f40e9416-e11b-4808-bb32-f5fbb52e8d2f">
+                    <propertyInstance
+                      Id="f24cc26e-adbb-4f06-a75d-725248abcbec"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="001101ff-ead9-4b47-ab70-28651c371819">
+                    <propertyInstance
+                      Id="b4fa1cda-76c6-4172-8e61-d699ab36523a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d6dc764-2b8d-401c-a203-89dfbd5c48d2">
+                    <propertyInstance
+                      Id="d375547f-2e44-4a9c-8b5b-751e0baf9e06"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7bfb1efe-09c9-4553-8294-c1c575750869">
+                    <propertyInstance
+                      Id="b58ca81f-4302-4050-b85f-32168bd80943"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9a3ad5eb-7762-4220-b0d1-16b091130cb0"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1fe19621-4608-4ad5-a5a2-41c69ad502ad"
+                      LastKnownName="List&lt;Double‎&gt;"
+                      LastKnownLocation="Package2_1239.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="69b7c4e1-48f4-4a1f-966a-8a6d8f2fa743"
+                  name="modifier"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e43d360e-0a69-446b-91f9-15c2310cc83a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL Type%3DCoordConvert Member%3D(Name%3DgetPhiTheta OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dmodifier"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="SadCL_UML_Diagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
