@@ -17,10 +17,18 @@ namespace SadCL.MissileLauncher
         public string launcherName { get; private set; }
         public int launcherAmmo { get; private set; }
 
+
+		// Sorry for the magic numbers :/
+
+		// These are initialized to these particular numbers because they
+		// represent the defaults for theta and phi. Phi is in the "middle",
+		// and theta is pointed straight ahead.
         private double disTheta = 0.0;
 
         private double disPhi = 3000.0;
 
+        // Does bounds checking on horizontal rotation, not allowing it to go
+        // past it's maximum, and not allowing it to go below zero
         public double currentPhi {
             get { return disPhi; }
             private set {
@@ -34,6 +42,7 @@ namespace SadCL.MissileLauncher
             }
         }
 
+        // Doing bounds checking on aiming in the vertical
         public double currentTheta {
             get { return disTheta; }
             private set {
@@ -61,6 +70,7 @@ namespace SadCL.MissileLauncher
             }
         }
 
+		// Could also be called "MoveTo", since it moves th launcher to a specified position
         public void move(double phi, double theta) {
 
 			double pDifference = phi - currentPhi;
@@ -106,12 +116,12 @@ namespace SadCL.MissileLauncher
         }
 
         public void reset() {
-            System.Console.WriteLine("Please wait while we return to origin.");
+			//System.Console.WriteLine("Please wait while we return to origin.");
             moveBy(6000, 700);
             moveBy(-3000, -700);
             currentPhi = 3000;
             currentTheta = 0;
-            System.Console.WriteLine("Reset Complete!");
+			//System.Console.WriteLine("Reset Complete!");
         }
     }
 }

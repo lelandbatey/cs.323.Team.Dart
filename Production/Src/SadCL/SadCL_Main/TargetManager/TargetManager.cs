@@ -107,7 +107,7 @@ namespace Target
             toRet = masterList.FindAll(s => s.Friend == false);
 
             if (toRet.Count == 0) {
-                Console.WriteLine("No enemies available.");
+                throw new ArgumentException("No enemies available.");
             }
             
             return toRet;
@@ -118,7 +118,7 @@ namespace Target
             toRet = masterList.FindAll(s => s.Friend == true);
 
             if (toRet.Count == 0) {
-                Console.WriteLine("No friends available.");
+                throw new ArgumentException("No friends available.");
             }
 
             return toRet;
