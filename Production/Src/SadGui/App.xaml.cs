@@ -17,8 +17,20 @@ namespace SadGui
 		private void Applciation_Startup(object sender, StartupEventArgs args) {
 			MainWindow window = new MainWindow();
 			IMissileLauncher launcher = new DreamCheekyLauncher("Photon Cannon");
-			MainWindowViewModel viewModel = new MainWindowViewModel(launcher);
 
+			var targets = new List<Target.Target>();
+
+			for (int i = 0; i < 4; i++) {
+				var sumthin = new Target.Target();
+				sumthin.Name = i.ToString();
+				sumthin.Friend = false;
+				sumthin.X = i+1;
+				sumthin.Y = i;
+				sumthin.Z = i+2;
+				targets.Add(sumthin);
+			}
+
+			MainWindowViewModel viewModel = new MainWindowViewModel(launcher, targets);
 			window.DataContext = viewModel;
 			window.ShowDialog();
 		}
