@@ -39,6 +39,12 @@ namespace Target
             masterList = TargetFactory.BuildTargetList(filepath);
         }
 
+		// Returns all the targets in the list.
+		// Needed for the GUI
+		public List<Target> getAll() {
+			return masterList;
+		}
+
         public List<Target> find(string name) { // Searches for all targets that have a given name
             //Process string
             name = name.ToLower();

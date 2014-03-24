@@ -10,20 +10,19 @@ namespace SadGui
 {
 	class ChangedProperty : INotifyPropertyChanged
 	{
-		private string testMessage;
+		//private string testMessage;
 
-		public string TestMessage { 
-			get{ return testMessage; }
-			set
-				{ 
-					testMessage = value; 
-					//this.OnPropertyChanged("TestMessage");
-					this.OnPropertyChanged("TestMessage");
+		//public string TestMessage { 
+		//	get{ return testMessage; }
+		//	set
+		//		{ 
+		//			testMessage = value; 
+		//			this.OnPropertyChanged("TestMessage");
 					
-				} 
-			}
+		//		} 
+		//	}
 
-		private void OnPropertyChanged(string propertyName) {
+		protected void OnPropertyChanged(string propertyName) {
 			if (PropertyChanged != null) {
 				PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
