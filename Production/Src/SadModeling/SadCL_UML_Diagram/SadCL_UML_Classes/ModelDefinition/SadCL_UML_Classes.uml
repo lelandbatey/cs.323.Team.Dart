@@ -3,20 +3,6 @@
   dslVersion="1.0.0.0"
   Id="a2dd8310-9bb2-4312-a596-ab2ba57052b7"
   name="SadCL_UML_Classes" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
-  <ownedCommentsInternal>
-    <comment
-      Id="ea955916-83b9-4b0d-8853-bb5cf4994352">
-      <body>View</body>
-    </comment>
-    <comment
-      Id="1c3a8835-894e-4e8e-9d67-ab49e0fb8022">
-      <body>Model</body>
-    </comment>
-    <comment
-      Id="d82ea78e-2ce2-476f-a22d-a2837fcd0669">
-      <body>ViewModel</body>
-    </comment>
-  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -30,12 +16,18 @@
         Id="532ea607-fb19-44b8-8502-3351b05452be"
         name="StandardProfileL3" />
     </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="fdbcdd97-90f8-4a14-99fc-3197ddd04810">
+      <profileInstance
+        Id="6ce47d4b-6452-4f05-9a03-ec6dbaaecd61"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
     <packageHasNamedElement>
       <class
         Id="c0b947b0-f381-43c7-9d6a-ea23c5fc6eae"
-        name="Class1"
+        name="Missile Launcher Controls"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
@@ -76,6 +68,734 @@
       <class
         Id="80e72a94-e72f-456d-a40d-32285ef8bd9f"
         name="Class6"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="35cf1174-06d2-4e6f-94aa-96390d8ece22"
+        name="MainWindow"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7b8bb037-e127-4f95-be9a-a9f546986e1a"
+        name="MainWindowViewModel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9e0be445-09a3-4491-b4fe-f9b735314a9e"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="3cf5ef7b-d3ec-43af-ba65-f58091ce41b8"
+        LastKnownName="SadGui"
+        LastKnownLocation="Package_0822.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="116509df-6b74-47fa-bfdf-1b143f30ba4c"
+        LastKnownName="System"
+        LastKnownLocation="Package1_0822.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ca9c5719-3a9e-46ab-b60f-cfd45c72420b"
+        LastKnownName="Target"
+        LastKnownLocation="Package3_0822.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="6a72c14f-88cf-4b06-9ef4-298039e494af"
+        LastKnownName="SadCL"
+        LastKnownLocation="Package_0832.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="33ebfeda-4e82-4082-8de5-0e136dff94f0"
+        name="LauncherControls"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6c507cc5-d357-4c90-95a8-2d444140e399"
+        name="TargetList"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ee252de4-fc9f-4533-8281-6a2b7c1ac3c0"
+        name="VideoFeed"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f3b8d385-8c90-4199-ba2b-834a8ecc2bf9"
+        name="Target"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f328bb70-712f-493a-bb60-a0c21de7ca64"
+        name="MainView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="2b2a26ea-9e12-4fe8-8c50-393ee0b57d30"
+            name="Binding">
+            <classMoniker
+              Id="45c85d32-acde-4d0c-9e02-b7787d71d6c9"
+              LastKnownName="MainWindowViewModel"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+          </dependency>
+          <dependency
+            Id="e2873397-4bf0-45f0-b019-d67e2df37b20"
+            name="Binding">
+            <classMoniker
+              Id="a1f74ed6-9531-4a3d-b383-4d0aa0aab0ca"
+              LastKnownName="TargetViewModel"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="45c85d32-acde-4d0c-9e02-b7787d71d6c9"
+        name="MainWindowViewModel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="9ae6587a-40a9-4b9c-9ea3-543a755a195c">
+            <classMoniker
+              Id="7e8601ee-625b-461d-877e-7e862c99487a"
+              LastKnownName="MissileLauncherModel"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="1619fa15-b8a8-4df2-bc12-9eda8470182a"
+            isSubstitutable="false">
+            <classMoniker
+              Id="cc12b809-89e6-4c71-a0bf-ec25a4417f15"
+              LastKnownName="ViewModelBase"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="71eab3d2-d981-41e4-8ae5-2263012ce999"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            name="Has"
+            isAbstract="false">
+            <classMoniker
+              Id="4c490702-d5f4-4194-866d-dfe3918bce1d"
+              LastKnownName="DelegateCommand"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ed3303d1-b36a-49f4-8ecb-d55e05c1989b"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="88b4aeb3-eb92-4b1d-b771-d19835b0777f"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="8a4e2dee-822c-4d05-8226-3605bf943854"
+                      name="Upper"
+                      value="0" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2f07e515-b560-48e2-91e4-8906a79b88df"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="68fed295-e2fe-4c5c-9c58-813527b4b428"
+                      name="Lower"
+                      value="12" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6d5ce84b-4744-4009-8f2d-352c6da57422"
+                      name="Upper"
+                      value="12" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="349a7fde-110d-404d-8e5f-94ac43762de6"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="66e8d46a-61e5-476d-8791-e4a5841f93a1"
+              LastKnownName="MsgTest"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8d1f2254-ba7a-4a3e-a6d6-199c74b0c4e2"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c28b3056-27b7-431d-8626-03d259bf7495"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="995f3a40-19e5-41d8-aad7-a0762714bd0f"
+                      name="Upper"
+                      value="0" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2c7c6598-baa2-4f87-922b-df4b444bc555"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="2ed1980d-6f59-4796-8be5-c397c25c100b"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="147e2da8-c754-46d7-abd8-d9014a6f4082"
+              LastKnownName="filePathTest"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1e752be2-51b3-4f74-9496-3b8bf6ebd610"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f9416b59-0795-4ef6-ab97-25ac4e2c2b24"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ff57fbba-a953-4fdb-8da0-9d14cc33cf41"
+                      name="Upper"
+                      value="0" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f2b7c4eb-5656-42d9-b7a0-a58ce8f2c9fb"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="60dbb17b-ae1d-4928-a8ae-7c9563059b3f"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4c270add-232b-4225-a0f9-4c0bb67ca33f"
+              LastKnownName="targIndex"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8fd243a9-8710-4c68-ba57-8129d2c83a77"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e93aec47-231b-470e-a9cb-7f7e9efd5188"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="558fbdd5-2e54-412a-abb8-0c01316ab471"
+                      name="Upper"
+                      value="0" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a5558b1c-9d96-4327-80e6-bcd10d365262"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f764bfee-a892-4099-96a2-561ad2cd4c54"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            name="Updates"
+            isAbstract="false">
+            <classMoniker
+              Id="f328bb70-712f-493a-bb60-a0c21de7ca64"
+              LastKnownName="MainView"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a508e2bf-165f-492a-8154-4aba7f794a00"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d157da30-2c21-4115-b6d2-428e1fe56e97"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cc12b809-89e6-4c71-a0bf-ec25a4417f15"
+        name="ViewModelBase"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="7f820ec9-2109-4eb9-b649-d345ca00b793">
+            <interfaceMoniker
+              Id="dc9cec93-0ab2-4850-b820-f03e7394bd28"
+              LastKnownName="INotifyPropertyChanged"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a1f74ed6-9531-4a3d-b383-4d0aa0aab0ca"
+        name="TargetViewModel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="3e85ecc5-0f80-4bef-bd0f-ad22a78ae864">
+            <classMoniker
+              Id="ba4cfb44-5112-4a33-a200-5a322de7540b"
+              LastKnownName="TargetModel"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="d7b2a987-1e0c-48bc-a71f-056734ba3055"
+            isSubstitutable="false">
+            <classMoniker
+              Id="cc12b809-89e6-4c71-a0bf-ec25a4417f15"
+              LastKnownName="ViewModelBase"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="45bf16fd-4daa-4b47-a379-3c15992f616e"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            name="Updates"
+            isAbstract="false">
+            <classMoniker
+              Id="f328bb70-712f-493a-bb60-a0c21de7ca64"
+              LastKnownName="MainView"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+            <description>Updates</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4a454a5c-add3-48c6-9cca-3e02a7f6df2a"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="116daa4f-4479-46f3-8c34-b9226d4fc50e"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4c490702-d5f4-4194-866d-dfe3918bce1d"
+        name="DelegateCommand"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="60a394d5-2a5e-48b2-9f9f-273df34c7507">
+            <interfaceMoniker
+              Id="83d812f3-1f2e-4da4-b5b9-b2c75105c42a"
+              LastKnownName="ICommand"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+          </interfaceRealization>
+          <dependency
+            Id="68e1a523-db62-4ce6-85cd-49e01d494c8e">
+            <classMoniker
+              Id="c7c422c6-1d8e-4ca3-8f71-cc1370506778"
+              LastKnownName="ICommand"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3c09372e-1f24-46db-b492-b4808c5f3407"
+        name="ChangedProperty"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="49e54ca7-c7e9-4e9a-9170-36d5a52271bc">
+            <interfaceMoniker
+              Id="dc9cec93-0ab2-4850-b820-f03e7394bd28"
+              LastKnownName="INotifyPropertyChanged"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c7c422c6-1d8e-4ca3-8f71-cc1370506778"
+        name="ICommand"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="83d812f3-1f2e-4da4-b5b9-b2c75105c42a"
+        name="ICommand"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="66e8d46a-61e5-476d-8791-e4a5841f93a1"
+        name="MsgTest"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="6abd9b16-0699-492e-b304-4e2802b99ee9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="3c09372e-1f24-46db-b492-b4808c5f3407"
+              LastKnownName="ChangedProperty"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="147e2da8-c754-46d7-abd8-d9014a6f4082"
+        name="filePathTest"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="a631a543-65d4-4e92-8e9e-b11ce551b669"
+            isSubstitutable="false">
+            <classMoniker
+              Id="3c09372e-1f24-46db-b492-b4808c5f3407"
+              LastKnownName="ChangedProperty"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4c270add-232b-4225-a0f9-4c0bb67ca33f"
+        name="targIndex"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="6c55fd73-6df6-4cd5-acf1-37488ab72867"
+            isSubstitutable="false">
+            <classMoniker
+              Id="3c09372e-1f24-46db-b492-b4808c5f3407"
+              LastKnownName="ChangedProperty"
+              LastKnownLocation="SadCL_UML_Classes.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="dc9cec93-0ab2-4850-b820-f03e7394bd28"
+        name="INotifyPropertyChanged"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="24d732e2-b380-4290-8475-cfa7a848170c"
+        name="MainWindowViewModel1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b0438d0f-b95e-4450-b449-806a3aa35c80"
+        name="ViewModelBase1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="741e3305-4557-457b-acec-107e1988d154"
+        name="TargetViewModel1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="3d3f9d9f-a952-4ca7-9bc0-fb9a7e073b14"
+        name="INotifyPropertyChanged"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="344d37c7-6050-44ec-82e7-2e2a16292611"
+            name="event PropertyChangedHandler"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="93a4565b-6718-4a58-9f24-d154f9c96b6e"
+        name="ICommand"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="aa7b79c9-87b5-4e65-8055-4c9009fe5a38"
+            name="event  EventHandler"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="940b07d9-b73d-471c-86f0-d45aa77507bf"
+            name="bool CanExecute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="51be9749-6370-4a76-b271-aef43d31a8e5"
+                  name="object"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1568d076-440a-497b-9742-4443d17c0262"
+            name="void Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f8a85aa5-66a9-4bf1-9864-311f22491ed9"
+                  name="object"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="3bca1519-4290-468e-ac72-c577b0f68530"
+        name="INotifyPropertyChanged1"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="1da973de-3e94-4e26-bd38-0a5e23608453"
+            name="event PropertyChangedHandler"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7e8601ee-625b-461d-877e-7e862c99487a"
+        name="MissileLauncherModel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ba4cfb44-5112-4a33-a200-5a322de7540b"
+        name="TargetModel"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />

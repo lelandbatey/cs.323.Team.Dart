@@ -22,12 +22,66 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="UMLClassDiagram1.classdiagram">
+    <Content Include="ChangedPropertyClasses.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="UMLClassDiagram1.classdiagram.layout">
+    <Content Include="ChangedPropertyClasses.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>UMLClassDiagram1.classdiagram</DependentUpon>
+      <DependentUpon>ChangedPropertyClasses.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="DelegateCommand.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DelegateCommand.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DelegateCommand.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\Package1_0822.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_0832.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_0822.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_0832.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_0822.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_0832.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package4_0832.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package5_0832.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package6_0832.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_0822.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_0832.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SadCL_GUI_Relationships.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SadCL_GUI_Relationships.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>SadCL_GUI_Relationships.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ViewModels.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ViewModels.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ViewModels.classdiagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\SadCL_UML_Classes.uml">

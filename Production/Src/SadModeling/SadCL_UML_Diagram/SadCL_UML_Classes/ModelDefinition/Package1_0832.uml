@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="a8d5f482-fcd2-4cfc-ae1a-50703893e360"
+  name="MissileLauncher"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="f4fef46e-c706-4d48-8144-1d02d2a42962"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSadCL.MissileLauncher"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="7156c9c7-1599-41e8-bd75-8288cbbd0b11"
+        name="IMissileLauncher"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="488a8cdf-f7a7-4420-9253-7ce37b7ce242"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DIMissileLauncher"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d98cf39f-205d-4812-98ff-e9cc3d8508f7"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="449aec2a-5001-43d6-a0c0-f28d09a58b0e">
+                <propertyInstance
+                  Id="b3a5497b-bd46-47bf-955e-538cf9959118"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="513bc09c-b24e-4a26-8fc3-12e081399641">
+                <propertyInstance
+                  Id="e8e6790b-d900-4a3c-96ca-891dcebda0fb"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e09ec490-8ecd-4ef1-85d8-a4dfc47dd557">
+                <propertyInstance
+                  Id="988c4f7b-3a20-4016-95ab-7de9cb6fce3f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="651ddbb1-93d4-49df-b23a-0dffcbceab08">
+                <propertyInstance
+                  Id="efb65f67-9c60-405e-a232-acaa9a6b3381"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4144b774-0806-4cb8-9d4e-094a8d51915f"
+        name="MissileLauncherController"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d7cd5793-1303-4761-a54c-fa0a3c3b2b25"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fjason_000%2FDropbox%2Fcs323%2Fjason_323.team.dart.git%2FProduction%2FSrc%2FSadCL%2FSadCL_Main%2Fbin%2FDebug%2FSadCL.exe Namespace%3DSadCL.MissileLauncher Type%3DMissileLauncherController"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="908c04b3-092c-465c-a06e-09d8d9a06835"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="47cd6c7c-343e-4b21-8d88-dcc6ea919ad6">
+                <propertyInstance
+                  Id="97dc2512-d3bf-4d07-8dcb-0970c526854c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="688ce67e-e349-47c7-841f-21ca4606a589">
+                <propertyInstance
+                  Id="e14d2326-4db0-41e5-90bc-12dbde55df78"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b9cfc55b-69d7-44f4-9025-5483e9969041">
+                <propertyInstance
+                  Id="d3a3c2af-e52e-41bf-80f4-4dedd5f49a6f"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="68de6c4f-bd27-48f5-a2c5-c9ea30e948d4">
+                <propertyInstance
+                  Id="80c3eb8c-d13f-4241-ad87-8d9467638d01"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="15129dc8-8d28-4153-bdd5-67773b8711c1">
+                <propertyInstance
+                  Id="b4be0ba7-b40d-4230-b9d0-887a556757bb"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
