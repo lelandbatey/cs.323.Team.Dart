@@ -9,5 +9,8 @@ namespace SadCL.MissileLauncher
         void reload();
         void status();
         void reset();   //Though it isn't a requirement, it's convenient to have.
+		double getPhi();
+		double getTheta();
+		int getAmmo();
     }
 }

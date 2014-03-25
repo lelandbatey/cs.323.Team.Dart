@@ -214,6 +214,17 @@
             Content="Aim at Target" 
             Command="{Binding aimAtTargetCommand}"
             Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="370,161,-169,0" Grid.Row="1" VerticalAlignment="Top" Width="76"/>
+        <TextBox
+            Text="{Binding LauncherStatus.LaunchStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+            Grid.Column="1" HorizontalAlignment="Left" Margin="310,140,-120,0" Grid.Row="2" TextWrapping="NoWrap" VerticalAlignment="Top" 
+            Height="61"
+            Width="84"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="291,116,-140,0" Grid.Row="2" TextWrapping="Wrap" Text="Missile Launcher Status" VerticalAlignment="Top" Width="124"/>
+        <Button 
+            Content="Reload" 
+            Command="{Binding reloadCommand}"
+            Grid.Column="1" HorizontalAlignment="Left" Height="42" Margin="430,159,-230,0" Grid.Row="2" VerticalAlignment="Top" Width="70"/>
+
 
 
     </Grid>
