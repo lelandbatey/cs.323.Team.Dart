@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="209387f7-93eb-4daf-8667-96b7704722a9" name="UMLClassDiagram1" linkedPackageId="fb0fea71-ccc2-4aed-8b4e-2c49eab490a2" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="db5a45ea-14cf-4ea7-b10e-6ec0f2621723">
+      <elementDefinition Id="ea955916-83b9-4b0d-8853-bb5cf4994352" />
+      <body>View</body>
+    </comment>
+    <comment Id="25e9633e-aaed-4ae3-9eca-09da67f38abc">
+      <elementDefinition Id="1c3a8835-894e-4e8e-9d67-ab49e0fb8022" />
+      <body>Model</body>
+    </comment>
+    <comment Id="30340903-585b-4ef7-8ff9-8163ffb4721d">
+      <elementDefinition Id="d82ea78e-2ce2-476f-a22d-a2837fcd0669" />
+      <body>ViewModel</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="39bd06e3-5a2f-474f-9afe-6084bb8883f6">
+      <profileInstance Id="edba6852-987d-4199-9c92-c6c9e501ef5f" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="2be46efc-38fe-4be1-adfa-849bb30ffe7e">
+      <profileInstance Id="7c968104-f813-41a5-ba43-d15c701356ea" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f4fa4706-c076-4630-8b12-d26da34d1a8b" name="Class1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c0b947b0-f381-43c7-9d6a-ea23c5fc6eae" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3d52c10f-5c85-4063-a276-b4e35dc0a9c6" name="Class2" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e643f513-06ef-4f64-b4a3-1603b7727534" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fd390f09-bd40-46b0-b790-d2b0f3837280" name="Class3" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6d6848d3-2739-4698-aa48-7c48d94b0967" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d19d1f7d-538c-491d-8e6f-8c7af514e3cb" name="Class4" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ba3afcc4-494e-4601-804a-a2cc42751bf4" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8e9e9774-c48f-448e-b641-10a633825e42" name="Class5" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="11178eae-6878-4433-8c98-4dd54fd11e3a" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e0590d1a-c6ab-41ce-ba31-248fb0e12e91" name="Class6" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="80e72a94-e72f-456d-a40d-32285ef8bd9f" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="fb0fea71-ccc2-4aed-8b4e-2c49eab490a2" name="SadCL_UML_Classes">
+    <elementDefinition Id="a2dd8310-9bb2-4312-a596-ab2ba57052b7" />
+  </package>
+</logicalClassDesignerModel>
