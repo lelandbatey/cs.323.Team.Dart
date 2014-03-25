@@ -131,7 +131,7 @@
 
 
 
-        <Button 
+        <!--<Button 
             Content="Test Msg" 
             HorizontalAlignment="Right" 
             Height="24" 
@@ -140,7 +140,7 @@
             Grid.Column="3" 
             VerticalAlignment="Bottom" 
             Width="55"
-            Command="{Binding changeMessage}"/>
+            Command="{Binding changeMessage}"/>-->
 
         <!-- The properties "UpdateSourceTrigger" and "NotifyOnSourceUpdated" 
         are what cause the viewmodel to be updated so quickly. -->
@@ -194,6 +194,26 @@
             Grid.Row="1" 
             VerticalAlignment="Top" 
             Width="75"/>
+
+        <TextBox
+            Grid.Column="1" 
+            HorizontalAlignment="Left" 
+            Margin="356,130,-110,0" 
+            Grid.Row="1" 
+            TextWrapping="Wrap" 
+            Text="{Binding TargetIndex.TargIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}" 
+            VerticalAlignment="Top" Height="26" Width="30" 
+            />
+        <Button 
+            Content="Kill Target"
+            Command="{Binding shootAtTargetCommand}"
+            Grid.Column="1" 
+            HorizontalAlignment="Left" Height="24" Margin="302,161,-84,0" Grid.Row="1" VerticalAlignment="Top" 
+            Width="59"/>
+        <Button 
+            Content="Aim at Target" 
+            Command="{Binding aimAtTargetCommand}"
+            Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="370,161,-169,0" Grid.Row="1" VerticalAlignment="Top" Width="76"/>
 
 
     </Grid>

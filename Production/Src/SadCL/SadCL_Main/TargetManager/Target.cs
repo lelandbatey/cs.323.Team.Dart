@@ -50,7 +50,8 @@ namespace Target
 		}
 		// Makes printing these blasted things much easier.
 		public override string ToString() {
-			string tmpStr = "Name={0}\nX={1}\nY={2}\nZ={3}\nFriend={4}\nPoints={5}\nFlashRate={6}\n";
+			//string tmpStr = "Name={0}\nX={1}\nY={2}\nZ={3}\nFriend={4}\nPoints={5}\nFlashRate={6}\n";
+			string tmpStr = "Name: {0} | X: {1} | Y={2} | Z={3} | Friend: {4} | Points={5} | FlashRate={6}";
 			tmpStr = String.Format(tmpStr, Name, X, Y, Z, Friend, Points, Flashrate);
 			return tmpStr;
 		}

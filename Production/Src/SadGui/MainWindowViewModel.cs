@@ -8,6 +8,7 @@ using SadCL.MissileLauncher;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using SadCL;
 
 namespace SadGui
 {
@@ -20,6 +21,7 @@ namespace SadGui
 		private double m_xPos;
 
 		private Target.TargetManager tMan;
+		private SadCL.MissileLauncher.MissileLauncherController mMan;
 
 		private int msgNumber; // Tracks number of time message has been changed.
 
@@ -33,6 +35,8 @@ namespace SadGui
 			m_launcher = launcher;
 
 			tMan = Target.TargetManager.Instance;
+			mMan = new SadCL.MissileLauncher.MissileLauncherController();
+			mMan.reset();
 
 			exitCommand = new DelegateCommand(exit);
 			FireCommand = new DelegateCommand(Fire);
@@ -42,6 +46,8 @@ namespace SadGui
 			moveRightCommand = new DelegateCommand(moveRight);
 			loadTargetsCommand = new DelegateCommand(loadTargets);
 			clearTargetsCommand = new DelegateCommand(clearTargets);
+			aimAtTargetCommand = new DelegateCommand(aimAtTarget);
+			shootAtTargetCommand = new DelegateCommand(killTarget);
 
 
 			changeMessage = new DelegateCommand(testMsg);
@@ -49,12 +55,14 @@ namespace SadGui
 			msgNumber = 0;
 
 			FilePath = new filePathText();
+			TargetIndex = new targIndex();
 
 			ChangeNameOfTarget = new DelegateCommand(changeName);
 
 			m_name = "Hello World!";
 
 			Targets = new ObservableCollection<Target.Target>(tMan.getAll());
+			this.Message.TestMessage = "All jacked up and ready to go!";
 		}
 
 
@@ -89,6 +97,7 @@ namespace SadGui
 		}
 
 		public filePathText FilePath { get; set; }
+		public targIndex TargetIndex { get; set; }
 
 		public void loadTargets() {
 			try {
@@ -114,6 +123,52 @@ namespace SadGui
 			tMan.deleteAll();
 			Targets.Clear();
 		}
+
+
+		public void aimAtTarget() {
+			this.Message.TestMessage = "Successful aiming!";
+			doTheAim(true);
+		}
+
+		public void doTheAim(bool allowFriend) {
+			double X = 0.0;
+			double Y = 0.0;
+			double Z = 0.0;
+			try {
+				Tuple<double, double, double> targCoords = tMan.aimAt(Convert.ToInt32(TargetIndex.TargIndex), allowFriend);
+
+				if (targCoords != null) {
+					X = targCoords.Item1;
+					Y = targCoords.Item2;
+					Z = targCoords.Item3;
+					double r = Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2));
+					double Theta = (Math.PI / 2) - Math.Acos(Z / r);
+					double Phi = Math.Atan2(Y, X);
+
+					// Uses non-relative tick conversion
+					Phi = CoordConvert.sphToTick(Phi);
+					Theta = CoordConvert.vertSphToTick(Theta);
+					mMan.move(Phi, Theta);
+				}
+
+			}
+			catch (Exception e) {
+				throw e;
+			}
+		}
+
+		public void killTarget() {
+			try {
+				doTheAim(false);
+				mMan.fire();
+			}
+			catch (Exception) {
+				this.Message.TestMessage = "I'm sorry Dave. I can't do that.";
+			}
+			
+		}
+
+
 
 		public void testMsg() {
 			this.Message.TestMessage = this.Message.TestMessage + msgNumber;
@@ -152,6 +207,8 @@ namespace SadGui
 		public ICommand exitCommand { get; set; }
 		public ICommand loadTargetsCommand { get; set; }
 		public ICommand clearTargetsCommand { get; set; }
+		public ICommand aimAtTargetCommand { get; set; }
+		public ICommand shootAtTargetCommand { get; set; }
 
 
 		public ICommand moveLeftCommand { get; set; }
@@ -184,6 +241,19 @@ namespace SadGui
 			set { 
 				_pathText = value;
 				this.OnPropertyChanged("PathText");
+			}
+		}
+	}
+
+	class targIndex : ChangedProperty
+	{
+		private string _targIndex;
+
+		public string TargIndex {
+			get { return _targIndex; }
+			set {
+				_targIndex = value;
+				this.OnPropertyChanged("TargIndex");
 			}
 		}
 	}

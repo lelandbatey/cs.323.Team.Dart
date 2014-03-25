@@ -95,6 +95,20 @@ namespace Target
             return targCoord;
         }
 
+		public Tuple<double, double, double> aimAt(int indx, bool allowFriend) {
+			Tuple<double, double, double> targCoord = null;
+			Target toRet = masterList[indx];
+			if (toRet != null) {
+				targCoord = Tuple.Create<double, double, double>(toRet.X, toRet.Y, toRet.Z);
+				//setToDead(name);
+				if (!allowFriend && toRet.Friend == true) {
+					throw new ArgumentOutOfRangeException("Target is friendly");
+				}
+			}
+			
+			return targCoord;
+		}
+
         public void printEnemies() {
             print(listEnemies());
         }
