@@ -27,6 +27,19 @@ namespace SadCL.MissileLauncher
 
         private double disPhi = 3000.0;
 
+
+		public double getTheta() {
+			return disTheta;
+		}
+
+		public double getPhi() {
+			return disPhi;
+		}
+		public int getAmmo() {
+			return launcherAmmo;
+		}
+
+
         // Does bounds checking on horizontal rotation, not allowing it to go
         // past it's maximum, and not allowing it to go below zero
         public double currentPhi {
@@ -106,7 +119,7 @@ namespace SadCL.MissileLauncher
         }
 
         public void reload() {
-            System.Console.WriteLine("We're reloaded!");
+			//System.Console.WriteLine("We're reloaded!");
             launcherAmmo = (int)DreamAmmoCount.MaxAmmo;
         }
 

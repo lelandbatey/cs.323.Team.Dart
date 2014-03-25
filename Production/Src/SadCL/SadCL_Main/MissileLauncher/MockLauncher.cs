@@ -38,5 +38,9 @@ namespace SadCL.MissileLauncher
         public void reset() {
             System.Console.WriteLine("To reset.  Or not to reset.  That.. is the question.");
         }
+
+		public double getTheta() { return 0; }
+		public double getPhi() { return 0; }
+		public int getAmmo() { return 9001; }
     }
 }

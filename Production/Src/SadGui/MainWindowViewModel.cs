@@ -14,7 +14,7 @@ namespace SadGui
 {
 	class MainWindowViewModel : ViewModelBase
 	{
-		private IMissileLauncher m_launcher;
+
 		private List<Target.Target> targList;
 		public ObservableCollection<Target.Target> Targets {get; set;}
 		private string m_name;
@@ -26,17 +26,12 @@ namespace SadGui
 		private int msgNumber; // Tracks number of time message has been changed.
 
 		// Define the increment for all move commands here
-		private const double moveAmnt = 100;
+		private const double moveAmnt = (Math.PI/8.0);
 
 		MsgTest message;
 		
 
-		public MainWindowViewModel(IMissileLauncher launcher, List<Target.Target> tempTargs) {
-			m_launcher = launcher;
-
-			tMan = Target.TargetManager.Instance;
-			mMan = new SadCL.MissileLauncher.MissileLauncherController();
-			mMan.reset();
+		public MainWindowViewModel(List<Target.Target> tempTargs) {
 
 			exitCommand = new DelegateCommand(exit);
 			FireCommand = new DelegateCommand(Fire);
@@ -48,14 +43,25 @@ namespace SadGui
 			clearTargetsCommand = new DelegateCommand(clearTargets);
 			aimAtTargetCommand = new DelegateCommand(aimAtTarget);
 			shootAtTargetCommand = new DelegateCommand(killTarget);
+			reloadCommand = new DelegateCommand(reload);
 
 
 			changeMessage = new DelegateCommand(testMsg);
 			message = new MsgTest();
 			msgNumber = 0;
 
+
+
+
 			FilePath = new filePathText();
 			TargetIndex = new targIndex();
+			LauncherStatus = new laucherStatus();
+
+
+			tMan = Target.TargetManager.Instance;
+			mMan = new SadCL.MissileLauncher.MissileLauncherController();
+			mMan.reset();
+			updateLauncherStatus();
 
 			ChangeNameOfTarget = new DelegateCommand(changeName);
 
@@ -64,11 +70,6 @@ namespace SadGui
 			Targets = new ObservableCollection<Target.Target>(tMan.getAll());
 			this.Message.TestMessage = "All jacked up and ready to go!";
 		}
-
-
-		// Alright, this right here lets us 
-		//public ObservableCollection<TargetViewModel> Targets { get; private set; }
-
 
 
 		public string Name { 
@@ -98,6 +99,7 @@ namespace SadGui
 
 		public filePathText FilePath { get; set; }
 		public targIndex TargetIndex { get; set; }
+		public laucherStatus LauncherStatus{ get; set; }
 
 		public void loadTargets() {
 			try {
@@ -128,6 +130,7 @@ namespace SadGui
 		public void aimAtTarget() {
 			this.Message.TestMessage = "Successful aiming!";
 			doTheAim(true);
+			updateLauncherStatus();
 		}
 
 		public void doTheAim(bool allowFriend) {
@@ -165,6 +168,7 @@ namespace SadGui
 			catch (Exception) {
 				this.Message.TestMessage = "I'm sorry Dave. I can't do that.";
 			}
+			updateLauncherStatus();
 			
 		}
 
@@ -180,26 +184,46 @@ namespace SadGui
 		}
 
 		public void Fire() {
-			m_launcher.fire();
+			mMan.fire();
+			updateLauncherStatus();
 		}
 
 		public void moveUp() {
-			m_launcher.moveBy(0, moveAmnt);
+			mMan.moveBy(0, CoordConvert.vertSphToTick(moveAmnt));
+			updateLauncherStatus();
 		}
 
 		public void moveDown() {
-			m_launcher.moveBy(0, -moveAmnt);
+			mMan.moveBy(0, CoordConvert.vertSphToTick(-moveAmnt));
+			updateLauncherStatus();
 		}
 
 		public void moveLeft() {
-			m_launcher.moveBy(moveAmnt, 0);
+			mMan.moveBy(CoordConvert.sphToTickRel(moveAmnt), 0);
+			updateLauncherStatus();
 		}
 		public void moveRight() {
-			m_launcher.moveBy(-moveAmnt, 0);
+			mMan.moveBy(CoordConvert.sphToTickRel(-moveAmnt), 0);
+			updateLauncherStatus();
+		}
+
+		public void reload() {
+			mMan.reload();
+			updateLauncherStatus();
 		}
 
 		public void changeName() {
 			Name = "new name";
+		}
+
+		private void updateLauncherStatus() {
+			double theta = mMan.getTheta();
+			double phi = mMan.getPhi();
+			int ammo = mMan.getAmmo();
+			
+
+			string toRet = String.Format("Phi   : {0}\nTheta : {1}\nAmmo  : {2}", phi, theta, ammo);
+			LauncherStatus.LaunchStatus = toRet;
 		}
 
 		public ICommand ChangeNameOfTarget { get; set; }
@@ -209,6 +233,7 @@ namespace SadGui
 		public ICommand clearTargetsCommand { get; set; }
 		public ICommand aimAtTargetCommand { get; set; }
 		public ICommand shootAtTargetCommand { get; set; }
+		public ICommand reloadCommand { get; set; }
 
 
 		public ICommand moveLeftCommand { get; set; }
@@ -254,6 +279,18 @@ namespace SadGui
 			set {
 				_targIndex = value;
 				this.OnPropertyChanged("TargIndex");
+			}
+		}
+	}
+	class laucherStatus : ChangedProperty
+	{
+		private string _launcherStatus;
+
+		public string LaunchStatus {
+			get { return _launcherStatus; }
+			set {
+				_launcherStatus = value;
+				this.OnPropertyChanged("LaunchStatus");
 			}
 		}
 	}

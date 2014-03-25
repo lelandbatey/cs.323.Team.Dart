@@ -34,5 +34,15 @@ namespace SadCL.MissileLauncher
         {
             MissileTurret.reset();
         }
-    }
+
+		public double getPhi() {
+			return MissileTurret.getPhi();
+		}
+		public double getTheta() {
+			return MissileTurret.getTheta();
+		}
+		public int getAmmo() {
+			return MissileTurret.getAmmo();
+		}
+	}
 }
