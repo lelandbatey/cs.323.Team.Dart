@@ -175,6 +175,16 @@
             Text="{Binding FilePath.PathText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}" 
             VerticalAlignment="Top" 
             Width="203"/>
+
+        <Button 
+            Command="{Binding clearTargetsCommand}"
+            Content="Clear Targets"
+            Grid.Column="1" 
+            HorizontalAlignment="Left" 
+            Grid.Row="1" 
+            VerticalAlignment="Stretch" 
+            Margin="489,40,-288,157"/>
+
         <Button
             Command="{Binding loadTargetsCommand}"
             Content="Load Targets" 
@@ -184,6 +194,7 @@
             Grid.Row="1" 
             VerticalAlignment="Top" 
             Width="75"/>
+
 
     </Grid>
 </Window>

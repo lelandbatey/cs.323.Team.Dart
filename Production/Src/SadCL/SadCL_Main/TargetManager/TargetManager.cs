@@ -45,6 +45,11 @@ namespace Target
 			return masterList;
 		}
 
+		// This is needed for the GUI
+		public void deleteAll() {
+			masterList.Clear();
+		}
+
         public List<Target> find(string name) { // Searches for all targets that have a given name
             //Process string
             name = name.ToLower();

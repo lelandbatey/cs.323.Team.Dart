@@ -41,6 +41,7 @@ namespace SadGui
 			moveLeftCommand = new DelegateCommand(moveLeft);
 			moveRightCommand = new DelegateCommand(moveRight);
 			loadTargetsCommand = new DelegateCommand(loadTargets);
+			clearTargetsCommand = new DelegateCommand(clearTargets);
 
 
 			changeMessage = new DelegateCommand(testMsg);
@@ -109,6 +110,10 @@ namespace SadGui
 			}
 		}
 
+		public void clearTargets() {
+			tMan.deleteAll();
+			Targets.Clear();
+		}
 
 		public void testMsg() {
 			this.Message.TestMessage = this.Message.TestMessage + msgNumber;
@@ -146,6 +151,7 @@ namespace SadGui
 		public ICommand changeMessage { get; set; }
 		public ICommand exitCommand { get; set; }
 		public ICommand loadTargetsCommand { get; set; }
+		public ICommand clearTargetsCommand { get; set; }
 
 
 		public ICommand moveLeftCommand { get; set; }
