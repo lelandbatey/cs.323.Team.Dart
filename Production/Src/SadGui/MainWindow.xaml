@@ -10,6 +10,9 @@
         <!--<DataTemplate x:Key="MyTargetTemplate">
             <myWindows:/>
         </DataTemplate>-->
+        <DataTemplate DataType="ItemsS">
+            
+        </DataTemplate>
     </Window.Resources>
 
     <Grid Margin="0,0,0,40">
@@ -85,14 +88,21 @@
             <TextBox Background="Gray" Margin="15"></TextBox>
         </Grid>
 
+        
 
         <ListBox
             Grid.Column="1"
             Grid.Row="1"
             Background="LightGray"
             Margin="5"
-            ItemsSource="{Binding Targets, Mode=TwoWay}"
-            />
+            ItemsSource="{Binding Targets, Mode=TwoWay}">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="FontFamily" Value="Consolas"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            
+        </ListBox>
 
 
         <Button 

@@ -221,8 +221,8 @@ namespace SadGui
 			double phi = mMan.getPhi();
 			int ammo = mMan.getAmmo();
 			
-
-			string toRet = String.Format("Phi   : {0}\nTheta : {1}\nAmmo  : {2}", phi, theta, ammo);
+			// Builds the output string, rounding off the decimals
+			string toRet = String.Format("Phi   : {0}\nTheta : {1}\nAmmo  : {2}", Math.Round(phi, 0), Math.Round(theta,0), ammo);
 			LauncherStatus.LaunchStatus = toRet;
 		}
 
