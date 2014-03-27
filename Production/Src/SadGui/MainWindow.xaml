@@ -4,12 +4,15 @@
         xmlns:myWindows="clr-namespace:SadGui"
         Title="Team Dart - SAD_GUI" Height="507.557" Width="769.799"
         MinHeight="560" MinWidth="870"
-        MaxHeight="560" MaxWidth="870"
+        
         >
     <Window.Resources>
         <!--<DataTemplate x:Key="MyTargetTemplate">
             <myWindows:/>
         </DataTemplate>-->
+        <DataTemplate DataType="ItemsS">
+            
+        </DataTemplate>
     </Window.Resources>
 
     <Grid Margin="0,0,0,40">
@@ -70,20 +73,36 @@
             Margin="5"
             Command="{Binding FireCommand}"
             >FIRE!</Button>
+            <Button
+                Grid.Row="0"
+                Grid.Column="2"
+                Margin="10"
+                Command="{Binding reloadCommand}"
+                Background="Gold"
+                TextBlock.FontSize="15">
+                Reload
+            </Button>
         </Grid>
 
         <Grid Grid.Column="0" Grid.Row="1">
             <TextBox Background="Gray" Margin="15"></TextBox>
         </Grid>
 
+        
 
         <ListBox
             Grid.Column="1"
             Grid.Row="1"
             Background="LightGray"
             Margin="5"
-            ItemsSource="{Binding Targets, Mode=TwoWay}"
-            />
+            ItemsSource="{Binding Targets, Mode=TwoWay}">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="FontFamily" Value="Consolas"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            
+        </ListBox>
 
 
         <Button 
@@ -114,7 +133,8 @@
             <TextBox
                 Grid.Row="0"
                 Margin="5,5,5,5"
-                Text="{Binding FilePath.PathText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}" ></TextBox>
+                Text="{Binding FilePath.PathText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}" 
+                Padding="15"/>
             <Button
                 Grid.Row="0"
                 Grid.Column="1"
@@ -149,7 +169,9 @@
                         UpdateSourceTrigger=PropertyChanged, 
                         NotifyOnSourceUpdated=True}"
                     Grid.Row="0"
-                    Margin="5"/>
+                    Margin="5"
+                    Padding="10"
+                    FontSize="16"/>
                 <Button
                     Command="{Binding shootAtTargetCommand}"
                     Content="Kill Target"
@@ -164,8 +186,41 @@
                         TextWrapping="Wrap"/>
                 </Button>
             </Grid>
+            
         </Grid>
-        
+        <Grid 
+            Grid.Row="2"
+            Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid
+                Grid.Row="0"
+                Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="8*"/>
+                </Grid.RowDefinitions>
+                <TextBlock
+                    Grid.Row="0"
+                    Text="Missile Launcher Status"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"/>
+                <TextBox 
+                    Grid.Row="1"
+                    Text="{Binding LauncherStatus.LaunchStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                    Margin="5,5,5,5"
+                    FontFamily="Consolas"/>
+            </Grid>
+            
+        </Grid>
 
 
         <!--<Button 
@@ -224,16 +279,16 @@
             Content="Aim at Target" 
             Command="{Binding aimAtTargetCommand}"
             Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="370,161,-169,0" Grid.Row="1" VerticalAlignment="Top" Width="76"/>-->
-        <TextBox
+        <!--<TextBox
             Text="{Binding LauncherStatus.LaunchStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
             Grid.Column="1" HorizontalAlignment="Left" Margin="310,140,-120,0" Grid.Row="2" TextWrapping="NoWrap" VerticalAlignment="Top" 
             Height="61"
-            Width="84"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="291,116,-140,0" Grid.Row="2" TextWrapping="Wrap" Text="Missile Launcher Status" VerticalAlignment="Top" Width="124"/>
-        <Button 
+            Width="84"/>-->
+        <!--<TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="291,116,-140,0" Grid.Row="2" TextWrapping="Wrap" Text="Missile Launcher Status" VerticalAlignment="Top" Width="124"/>-->
+        <!--<Button 
             Content="Reload" 
             Command="{Binding reloadCommand}"
-            Grid.Column="1" HorizontalAlignment="Left" Height="42" Margin="430,159,-230,0" Grid.Row="2" VerticalAlignment="Top" Width="70"/>
+            Grid.Column="1" HorizontalAlignment="Left" Height="42" Margin="430,159,-230,0" Grid.Row="2" VerticalAlignment="Top" Width="70"/>-->
 
 
 

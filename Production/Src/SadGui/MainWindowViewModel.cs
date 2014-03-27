@@ -117,7 +117,7 @@ namespace SadGui
 			catch (Exception e) {
 				this.FilePath.PathText = "There was an error with the file.";
 				Debug.Write("There was an error with loading the file."+e.Message);
-				//throw;
+				
 			}
 		}
 
@@ -128,8 +128,14 @@ namespace SadGui
 
 
 		public void aimAtTarget() {
-			this.Message.TestMessage = "Successful aiming!";
-			doTheAim(true);
+			
+			try {
+				doTheAim(true);
+				this.Message.TestMessage = "Successful aiming!";
+			} catch (Exception) {
+				this.Message.TestMessage = "I'm sorry Dave. I can't do that.";
+			}
+			
 			updateLauncherStatus();
 		}
 
@@ -138,6 +144,10 @@ namespace SadGui
 			double Y = 0.0;
 			double Z = 0.0;
 			try {
+				if (Convert.ToInt32(TargetIndex.TargIndex) >= Targets.Count) {
+					throw new ArgumentOutOfRangeException("List item out of range");
+				}
+
 				Tuple<double, double, double> targCoords = tMan.aimAt(Convert.ToInt32(TargetIndex.TargIndex), allowFriend);
 
 				if (targCoords != null) {
@@ -164,12 +174,12 @@ namespace SadGui
 			try {
 				doTheAim(false);
 				mMan.fire();
+				this.Message.TestMessage = ("Successfully killed the target!");
+				updateLauncherStatus();
 			}
 			catch (Exception) {
 				this.Message.TestMessage = "I'm sorry Dave. I can't do that.";
-			}
-			updateLauncherStatus();
-			
+			}			
 		}
 
 
@@ -221,8 +231,8 @@ namespace SadGui
 			double phi = mMan.getPhi();
 			int ammo = mMan.getAmmo();
 			
-
-			string toRet = String.Format("Phi   : {0}\nTheta : {1}\nAmmo  : {2}", phi, theta, ammo);
+			// Builds the output string, rounding off the decimals
+			string toRet = String.Format("Phi   : {0}\nTheta : {1}\nAmmo  : {2}", Math.Round(phi, 0), Math.Round(theta,0), ammo);
 			LauncherStatus.LaunchStatus = toRet;
 		}
 
