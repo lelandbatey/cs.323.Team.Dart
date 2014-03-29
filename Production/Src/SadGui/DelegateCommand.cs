@@ -5,26 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SadGui
+namespace SadCLGUI
 {
-	public class DelegateCommand : ICommand
-	{
+    public class DelegateCommand : ICommand
+    {
+        public event EventHandler CanExecuteChanged;  //Required to implement the ICommand Interface.
 
-		public event EventHandler CanExecuteChanged;
-		private bool m_canExecute;
-		private Action m_action;
+        private Action m_action;  //The command that is associated with this "Command".
+        private bool m_canExecute;  //This boolean won't be set to true unless if the default constructor is used.
 
-		public DelegateCommand(Action actionToTake) {
-			m_canExecute = true;
-			m_action     = actionToTake;
-		}
+        public DelegateCommand(Action actionToTake) { //Basic constructor for a new delegate command.
+            m_canExecute = true;
+            m_action = actionToTake;
+        }
+        public bool CanExecute(object parameter) {  //A required method to implement for the ICommand interface.
+            return m_canExecute;  //Don't know where this is used.
+        }
 
-		public bool CanExecute(object parameter) {
-			return m_canExecute;
-		}
-
-		public void Execute(object parameter) {
-			m_action();
-		}
-	}
+        public void Execute(object parameter) {  //A required method to implement for the ICommand interface.
+            m_action();  //When the binding is activated, the action contained in this parameter is used.
+        }
+    }
 }

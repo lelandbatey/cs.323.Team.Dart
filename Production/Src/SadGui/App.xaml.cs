@@ -1,4 +1,4 @@
-﻿using SadCL.MissileLauncher;
+﻿using SadCLGUI.GUI_ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -6,33 +6,28 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using SadCL.MissileLauncher;
 
-namespace SadGui
+namespace SadCLGUI
 {
-	/// <summary>
-	/// Interaction logic for App.xaml
-	/// </summary>
-	public partial class App : Application
-	{
-		private void Applciation_Startup(object sender, StartupEventArgs args) {
-			MainWindow window = new MainWindow();
-			//IMissileLauncher launcher = new DreamCheekyLauncher("Photon Cannon");
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// </summary>
+    public partial class App : Application
+    {
+        private void Application_Startup(object sender, StartupEventArgs e) {
+            MainWindow window = new MainWindow();
 
-			var targets = new List<Target.Target>();
+			// Here we use a relative path for cross-platform compatibilty, as well as the '@' symbol so we don't have to escape our slashes
+            string FilePath = @"..\..\..\SadCL\SadCL_Main\SadCL_UnitTests\TestData\targets.ini";
 
-			for (int i = 0; i < 4; i++) {
-				var sumthin = new Target.Target();
-				sumthin.Name = i.ToString();
-				sumthin.Friend = false;
-				sumthin.X = i+1;
-				sumthin.Y = i;
-				sumthin.Z = i+2;
-				targets.Add(sumthin);
-			}
+            List<Target.Target> RawList = Target.TargetFactory.BuildTargetList(FilePath);
 
-			MainWindowViewModel viewModel = new MainWindowViewModel(targets);
-			window.DataContext = viewModel;
-			window.ShowDialog();
-		}
-	}
+
+            MainWindowViewModel viewModel = new MainWindowViewModel(RawList);
+
+            window.DataContext = viewModel;
+            window.ShowDialog();
+        }
+    }
 }
