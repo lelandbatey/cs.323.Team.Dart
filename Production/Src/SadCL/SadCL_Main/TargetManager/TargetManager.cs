@@ -181,7 +181,7 @@ namespace Target
 
         }
 
-        private void setToDead(string name) {
+        public void setToDead(string name) {
             // Marks a given target as dead
             List<Target> oldList = masterList;
             List<Target> newList = masterList;

@@ -10,12 +10,16 @@ namespace SadCLGUI.ViewModels
 {
     class MissileControlViewModel
     {
-        private MissileLauncherController m_launcher = new MissileLauncherController();
+        private MissileLauncherManager m_launcher = new MissileLauncherManager();
+		private SadCLGUI.GUI_ViewModels.MainWindowViewModel MainWindowVM;
 
         private int distance = 50;
 
-        public MissileControlViewModel()
-        {
+        public MissileControlViewModel(SadCLGUI.GUI_ViewModels.MainWindowViewModel MWVM) {
+			
+			// Done to allow for mediator-type behaviour
+			MainWindowVM = MWVM;
+
             FireCommand = new DelegateCommand(Fire);
             LeftCommand = new DelegateCommand(moveLeft);
             RightCommand = new DelegateCommand(moveRight);
@@ -41,7 +45,7 @@ namespace SadCLGUI.ViewModels
         }
 
         public void kill() {
-
+			MainWindowVM.kill(m_launcher);
         }
 
         public ICommand FireCommand { get; set; }

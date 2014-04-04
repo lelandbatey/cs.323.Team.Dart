@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,22 +16,53 @@ namespace SadCLGUI.GUI_ViewModels
         public ObservableCollection<TargetViewModel> Targets {get; private set; }
 		public DelegateCommand getTargetFileLocationCommand { get; set; }
 
+
+		private SadCLGUI.GUI_ViewModels.MainWindowViewModel MainWindowVM;
+
+		// Allows for the tracking of the indexes of the selected targets
+		private int _targIndex;
+		public int TargetIndex {
+			get { return _targIndex; }
+			set { _targIndex = value; }
+		}
+
+		// Bound the specific target selected in the view
+		private TargetViewModel _selectTarg;
+		public TargetViewModel SelectedTarget {
+			get { return _selectTarg; }
+			set { _selectTarg = value; }
+		}
+
+		// Target manager
 		private Target.TargetManager tMan;
 
+		public bool FileIsLoaded { get; private set; }
 
-        public TargetBriefListViewModel(List<Target.Target> RawList) {
+        public TargetBriefListViewModel(SadCLGUI.GUI_ViewModels.MainWindowViewModel MWVM) {
 			tMan = Target.TargetManager.Instance; // Initialize our target manager
 
+			MainWindowVM = MWVM;
 
 			Action loadZeTargets = loadTargets; // Sets up function to run when button gets clicked
 			getTargetFileLocationCommand = new DelegateCommand(loadZeTargets);
             
             Targets = new ObservableCollection<TargetViewModel>();
-            foreach (Target.Target target in RawList) {
-                Targets.Add(new TargetViewModel(target));    
-            }
         }
 
+		// Coordinates getting file path, then loading file
+		void loadTargets() {
+			string filePath = getTargetFilePath();
+			try {
+				tMan.load(filePath);
+				rebuildTargetsViewList(tMan.getAll());
+				FileIsLoaded = true;
+			}
+			catch (Exception e) {
+				MessageBox.Show(e.Message);
+			}
+		}
+
+		// Gets file path from user
 		string getTargetFilePath() {
 			Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
 			dlg.FileName = "Target Config";
@@ -45,22 +77,12 @@ namespace SadCLGUI.GUI_ViewModels
 			return fileName;
 		}
 
-		void loadTargets() {
-			string filePath = getTargetFilePath();
-			try {
-				tMan.load(filePath);
-				rebuildTargetsViewList(tMan.getAll());
-			}
-			catch (Exception e) {
-				MessageBox.Show(e.Message);
-			}
-		}
-
 		void clearViewTargetsList() {
 			// This exists because it's a common opperation, and makes it so you 
 			// don't have to call the list of targets by name. Might be too much 
 			// abstraction, but we're just gonna do this anyway lolololol
 			Targets.Clear();
+			FileIsLoaded = false;
 		}
 
 		// Given a list of targets, rebuilds the observable collection with them
@@ -70,6 +92,12 @@ namespace SadCLGUI.GUI_ViewModels
 			foreach (var item in targList) {
 				Targets.Add(new TargetViewModel(item));
 			}
+			FileIsLoaded = true;
+		}
+
+		public void killTarg(TargetViewModel targ) {
+			tMan.setToDead(targ.Name);
+			rebuildTargetsViewList(tMan.getAll());
 		}
     }
 }

@@ -51,7 +51,7 @@
     </Compile>
     <Compile Include="MissileLauncher\DreamCheekyLauncher.cs" />
     <Compile Include="MissileLauncher\IMissileLauncher.cs" />
-    <Compile Include="MissileLauncher\MissileLauncherController.cs" />
+    <Compile Include="MissileLauncher\MissileLauncherManager.cs" />
     <Compile Include="MissileLauncher\MissileLauncherHardware.cs" />
     <Compile Include="MissileLauncher\MissileLauncherFactory.cs" />
     <Compile Include="MissileLauncher\MockLauncher.cs" />
