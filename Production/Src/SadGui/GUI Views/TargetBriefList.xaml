@@ -24,6 +24,8 @@
             HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource ResourceKey=MyTargetTemplate}"
             ItemsSource="{Binding Targets}"
+            SelectedIndex="{Binding TargetIndex}"
+            SelectedItem="{Binding SelectedTarget}"
             />
         <Grid
             Grid.Row="1">

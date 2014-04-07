@@ -8,58 +8,6 @@ namespace SadCL.MissileLauncher
 {
     public class MissileLauncherManager
     {
-        //Turret faces dead center, bisecting the X-axis and the Y-axis
-        //into its positive and negative components.
-        private double disTheta = 0.0;
-		private double disPhi = 3000;
-		//private double currentPos = 3000.0;
-
-		private double currentPhi {
-			get{ return disPhi; }
-			set {
-				if (value >= 6000) {
-					disPhi = 6000;
-				} else if (value <= 0) {
-					disPhi = 0;
-				} else {
-					disPhi = value;
-				}
-
-			}
-		}
-		private double currentTheta {
-			get { return disTheta; }
-			set {
-				if (value >= 700) {
-					disTheta = 700;
-				} else if (value <= 0) {
-					disTheta = 0;
-				} else {
-					disTheta = value;
-				}
-
-			}
-		}
-
-        // Singleton: http://msdn.microsoft.com/en-us/library/ff650316.aspx
-        // Need to look at this later.  Some pretty wild stuff.
-        private static MissileLauncherManager instance; // Our private instance of ourself
-        public static MissileLauncherManager Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new MissileLauncherManager();
-                }
-                return instance;
-            }
-        }
-
-		private MissileLauncherManager(){
-			currentPhi = 3000.0;
-		}
-
         private IMissileLauncher MissileTurret = MissileLauncherFactory.create_Launcher(LauncherTypes.DreamCheeky);
         
         public void fire()
@@ -68,24 +16,11 @@ namespace SadCL.MissileLauncher
         }
         public void moveBy(double phi, double theta)
         {
-			currentPhi = currentPhi + phi;
-			currentTheta = currentTheta + theta;
             MissileTurret.moveBy(phi, theta);
         }
         public void move(double phi, double theta)
         {
-			//Console.WriteLine(currentPhi);
-			//Console.WriteLine("Phi: {0}", phi);
-			//Console.WriteLine("Theta: {0}", theta);
-			double pDifference = phi - currentPhi;
-			double tDifference = theta - currentTheta;
-			//Console.WriteLine(pDifference);
-			//Console.WriteLine(tDifference);
-			
-			MissileTurret.moveBy(pDifference, tDifference);				
-			
-			currentPhi = phi;
-			currentTheta = theta;			
+            MissileTurret.move(phi, theta);
         }
         public void status()
         {
@@ -97,11 +32,48 @@ namespace SadCL.MissileLauncher
         }
         public void reset()
         {
-			moveBy(6000, 700);
-			moveBy(-3000, -700);
-			currentPhi = 3000;
-			currentTheta = 0;
-			//MissileTurret.reset();
+            MissileTurret.reset();
         }
-    }
+
+		public double getPhi() {
+			return MissileTurret.getPhi();
+		}
+		public double getTheta() {
+			return MissileTurret.getTheta();
+		}
+		public int getAmmo() {
+			return MissileTurret.getAmmo();
+		}
+
+		// Moves to and kills a series of xyz coordinates
+		public void killCoords(double x, double y, double z) {
+			// Convert xyz coords to spherical coords
+			double r = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2) + Math.Pow(z, 2));
+			double Theta = (Math.PI / 2) - Math.Acos(z / r); // We subtract from pi/2 because the launcher can only rotate 270 degrees, which is 90 less than 360. 90 degrees is pi/2
+			double Phi = Math.Atan2(y, x);
+
+			Theta = horizontalToTick(Theta);
+			Phi = verticalToTick(Phi);
+
+			MissileTurret.move(Phi, Theta);
+			MissileTurret.fire();
+
+		}
+
+		double radToDeg(double rads) {
+			return (rads * 180 / Math.PI);
+		}
+
+		double verticalToTick(double degrees) {
+			return degrees * 15.5555555;
+		}
+
+		double horizontalToTick(double degrees) {
+			return horizontalToTickRel(degrees) + 1000; // The plus 1000 is to compensate for the extra amount the launcher *could* turn
+		}
+
+		double horizontalToTickRel(double degrees) {
+			return (degrees * 22.2222222);
+		}
+	}
 }

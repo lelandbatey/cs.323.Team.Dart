@@ -27,7 +27,7 @@ namespace SadCL
             bool doneFlag = false;
             string inLine, givenAct, givenMod; // Input-line, given-action, given-modifier
 
-            MissileLauncher.MissileLauncherController mMan = new MissileLauncher.MissileLauncherController();
+            MissileLauncher.MissileLauncherManager mMan = new MissileLauncher.MissileLauncherManager();
             //MissileLauncher.MissileLauncherController mMan = MissileLauncher.MissileLauncherController.Instance;
 
             //Should reset the turret before we even begin.
@@ -78,7 +78,7 @@ namespace SadCL
                         Y = targCoords.Item2;
                         Z = targCoords.Item3;
                         double r = Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2));
-                        double Theta = (Math.PI / 2) - Math.Acos(Z / r);
+                        double Theta = (Math.PI / 2) - Math.Acos(Z / r); // We subtract from pi/2 because the launcher can only rotate 270 degrees, which is 90 less than 360. 90 degrees is pi/2
                         double Phi = Math.Atan2(Y, X);
 
                         // Uses non-relative tick conversion

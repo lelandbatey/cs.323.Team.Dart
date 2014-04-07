@@ -5,13 +5,13 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="45*"></RowDefinition>
             <RowDefinition Height="40*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
-            <ColumnDefinition Width="50*"></ColumnDefinition>
+            <ColumnDefinition Width="50*" MinWidth="200"></ColumnDefinition>
+            <ColumnDefinition Width="50*" MinWidth="200"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <myWindows:LauncherControls

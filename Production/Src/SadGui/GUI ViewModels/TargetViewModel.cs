@@ -43,10 +43,27 @@ namespace SadCLGUI.GUI_ViewModels
                     OnPropertyChanged("Status");
                 }
             }
-
         }
 
 
+		public bool IsFriend {
+			get {
+				if (m_target.Friend) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		}
 
+		public double X {
+			get { return m_target.X; }
+		}
+		public double Y {
+			get { return m_target.Y; }
+		}
+		public double Z {
+			get { return m_target.Z; }
+		}
     }
 }

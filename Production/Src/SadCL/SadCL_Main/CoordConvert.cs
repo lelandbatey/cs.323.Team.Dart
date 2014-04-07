@@ -11,7 +11,7 @@ namespace SadCL
         // Convenience method to make testing easier
         public static void rotate(double amount) {
             amount = amount * 22.22222222;
-            MissileLauncher.MissileLauncherController mMan = new MissileLauncher.MissileLauncherController();
+            MissileLauncher.MissileLauncherManager mMan = new MissileLauncher.MissileLauncherManager();
             mMan.moveBy(amount, 0.0);
             System.Threading.Thread.Sleep(800);
         }
