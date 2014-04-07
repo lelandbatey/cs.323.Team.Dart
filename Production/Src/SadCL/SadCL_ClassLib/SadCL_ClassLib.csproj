@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{42059611-9375-441C-9AF2-C1F4C38213DD}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{14FCFA23-5A67-48F9-BA0C-B1D400C98BE5}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SadCL</RootNamespace>
-    <AssemblyName>SadCL</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <RootNamespace>SadCL_ClassLib</RootNamespace>
+    <AssemblyName>SadCL_ClassLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SadCL_ClassLib">
-      <HintPath>..\SadCL_ClassLib\bin\Debug\SadCL_ClassLib.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,13 +37,23 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="USBLib">
+      <HintPath>..\SadCL_Main\bin\USBLib.DLL</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="CoordConvert.cs" />
+    <Compile Include="MissileLauncher\DreamCheekyLauncher.cs" />
+    <Compile Include="MissileLauncher\IMissileLauncher.cs" />
+    <Compile Include="MissileLauncher\MissileLauncherFactory.cs" />
+    <Compile Include="MissileLauncher\MissileLauncherHardware.cs" />
+    <Compile Include="MissileLauncher\MissileLauncherManager.cs" />
+    <Compile Include="MissileLauncher\MockLauncher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="TargetManager\IniBuilder.cs" />
+    <Compile Include="TargetManager\Target.cs" />
+    <Compile Include="TargetManager\TargetFactory.cs" />
+    <Compile Include="TargetManager\TargetManager.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
