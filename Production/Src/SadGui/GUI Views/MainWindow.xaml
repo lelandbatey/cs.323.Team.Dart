@@ -14,6 +14,10 @@
             <ColumnDefinition Width="50*" MinWidth="200"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        <myWindows:VideoControl
+            Grid.Row="1"
+            Grid.Column="0"/>
+        
         <myWindows:LauncherControls
             Grid.Row="2"
             DataContext="{Binding MissileTurret}"
@@ -22,6 +26,7 @@
             Grid.Row="0"
             Grid.ColumnSpan="2"
             />
+        
         
         <myWindows:TargetBriefList
             Grid.Row="1"
