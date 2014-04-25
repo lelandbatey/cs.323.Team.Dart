@@ -5,18 +5,40 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:myWindows="clr-namespace:SadCLGUI.GUI_Views"
              mc:Ignorable="d" 
-             d:DesignHeight="300">
-    <Grid Background="LightBlue">
+             >
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="90*"/>
-            <RowDefinition Height="10*" />
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="45" FontWeight="Bold">Video Feed</TextBlock>
+        <Viewbox
+            Stretch="Uniform">
+            <Image Name="image" Source="./smpte_color_bars.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill"/>
+        </Viewbox>
+        <Grid
+            Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="33*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button 
+                Grid.Column="0"
+                FontSize="16" FontWeight="Bold" Click="StartButton_Click">Start Video Feed</Button>
+            <Button 
+                Grid.Column="2"
+                FontSize="16" FontWeight="Bold" Click="StopButton_Click">Stop Video Feed</Button>
+
+        </Grid>
+        <!--<TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="45" FontWeight="Bold">Video Feed</TextBlock>
         <Image Name="image" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <Button Width="200" FontSize="16" FontWeight="Bold" Click="StartButton_Click">Start Video Feed</Button>
             <Button Width="200" FontSize="16" FontWeight="Bold" Click="StopButton_Click">Stop Video Feed</Button>
             <CheckBox Width="300" FontSize="16" FontWeight="Bold">Play Video Feed</CheckBox>
-        </StackPanel>
+        </StackPanel>-->
     </Grid>
 </UserControl>

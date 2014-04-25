@@ -21,6 +21,7 @@ namespace SadCLGUI.ViewModels
 
 		public VideoControlViewModel() {
 			Action StartAction = Startup;
+			
 		}
 
 		public bool IsRunning() {
@@ -39,7 +40,7 @@ namespace SadCLGUI.ViewModels
 		public DelegateCommand StartCommand { get; set; }
 
 		public void Startup() {
-			//Start(image);
+			
 		}
 
 		public void StopVideo() {
@@ -47,6 +48,12 @@ namespace SadCLGUI.ViewModels
 			m_capture = null;
 			m_camera = null;
 		}
+
+		private void SetDisabled() {
+			m_disabled = true;
+			m_running = false;
+		}
+
 		public void Start(System.Windows.Controls.Image image) {
 			if (image != null) {
 				m_image = image;
@@ -83,50 +90,37 @@ namespace SadCLGUI.ViewModels
 			delegate(object o, DoWorkEventArgs e) {
 				BackgroundWorker background = o as BackgroundWorker;
 
-
-				//m_image.Source = null;
-
 				while (m_running) {
-					//GetImage();
 					frame = m_capture.QueryFrame();
-
 					if (frame != null) {
-						//       gFrame = frame.Convert<Gray, Byte>();
-						//System.Windows.Controls.Image temporary = new System.Windows.Controls.Image();// = null;
-						//System.Windows.Interop.InteropBitmap temp = null;
+						
 						uDispatcher.Invoke((Action<Image<Bgr, Byte>>)(obj => m_image.Source = (ConvertImageToBitmap(obj))), frame as Image<Bgr, Byte>);
-						//temp = new System.Windows.Interop.InteropBitmap();
-						//temp = (System.Windows.Interop.InteropBitmap)temporary.Source;
-						//m_image.Source = temp;
+						
 						System.GC.Collect();
 					}
-
 					Thread.Sleep(1000 / 60);
-
 				}
+
+				// Potentially very gross
+				//if (!m_running) {
+				//	Bitmap tempImage = (Bitmap)Image.FromFile(@"./smpte_color_bars.png");
+				//	frame = new Image<Bgr,Byte>(tempImage);
+				//	uDispatcher.Invoke((Action<Image<Bgr, Byte>>)(obj => m_image.Source = (ConvertImageToBitmap(obj))), frame as Image<Bgr, Byte>);
+
+				//	System.GC.Collect();
+				//	Thread.Sleep(1500);
+				//}
 
 			});
 
 			ImageWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(
 			delegate(object o, RunWorkerCompletedEventArgs args) {
-				m_image.Source = ConvertImageToBitmap(null as Image<Bgr, Byte>);
+				Bitmap tempImage = (Bitmap)Image.FromFile(@"./smpte_color_bars.png");
+				m_image.Source = BitmapToBitMapImage(tempImage);
+				//m_image.Source = ConvertImageToBitmap(null as Image<Bgr, Byte>);
 			});
 
 			ImageWorker.RunWorkerAsync();
-
-		}
-
-		private void GetImage() {
-			Image<Bgr, Byte> frame = m_capture.QueryFrame();
-			if (frame != null) {
-				// Image<Gray, Byte> gFrame = frame.Convert<Gray, Byte>();
-				m_image.Source = ConvertImageToBitmap(frame);
-			}
-		}
-
-		private void SetDisabled() {
-			m_disabled = true;
-			m_running = false;
 		}
 
 		private static BitmapSource ConvertImageToBitmap(IImage image) {
@@ -135,8 +129,8 @@ namespace SadCLGUI.ViewModels
 					var hbitmap = source.GetHbitmap();
 
 					var bitmap = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hbitmap, IntPtr.Zero,
-														 Int32Rect.Empty,
-														 BitmapSizeOptions.FromEmptyOptions());
+						Int32Rect.Empty,
+						BitmapSizeOptions.FromEmptyOptions());
 
 					DeleteObject(hbitmap);
 
@@ -146,6 +140,20 @@ namespace SadCLGUI.ViewModels
 			}
 			return null;
 		}
+
+		private BitmapSource BitmapToBitMapImage(Bitmap bitm) {
+			IntPtr hBitmap = bitm.GetHbitmap();
+			
+
+			var toReturn = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hBitmap,
+				IntPtr.Zero,
+				Int32Rect.Empty,
+				BitmapSizeOptions.FromEmptyOptions());
+
+			DeleteObject(hBitmap);
+			return toReturn;
+		}
+		
 
 		[DllImport("gdi32")]
 		private static extern int DeleteObject(IntPtr ptr);
