@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Target;
 
-namespace SadCLGUI.GUI_ViewModels
+namespace SadCLGUI.ViewModels
 {
     public class TargetViewModel : ViewModels.ViewModelBase
     {

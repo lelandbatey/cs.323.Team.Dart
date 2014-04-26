@@ -8,7 +8,7 @@ using SadCL.MissileLauncher;
 using SadCLGUI.ViewModels;
 using System.Windows;
 
-namespace SadCLGUI.GUI_ViewModels
+namespace SadCLGUI.ViewModels
 {
     class MainWindowViewModel : ViewModelBase
     {

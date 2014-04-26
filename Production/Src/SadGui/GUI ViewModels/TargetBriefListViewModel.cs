@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace SadCLGUI.GUI_ViewModels
+namespace SadCLGUI.ViewModels
 {
     class TargetBriefListViewModel
     {
@@ -17,7 +17,7 @@ namespace SadCLGUI.GUI_ViewModels
 		public DelegateCommand getTargetFileLocationCommand { get; set; }
 
 
-		private SadCLGUI.GUI_ViewModels.MainWindowViewModel MainWindowVM;
+		private SadCLGUI.ViewModels.MainWindowViewModel MainWindowVM;
 
 		// Allows for the tracking of the indexes of the selected targets
 		private int _targIndex;
@@ -38,7 +38,7 @@ namespace SadCLGUI.GUI_ViewModels
 
 		public bool FileIsLoaded { get; private set; }
 
-        public TargetBriefListViewModel(SadCLGUI.GUI_ViewModels.MainWindowViewModel MWVM) {
+        public TargetBriefListViewModel(SadCLGUI.ViewModels.MainWindowViewModel MWVM) {
 			tMan = Target.TargetManager.Instance; // Initialize our target manager
 
 			MainWindowVM = MWVM;

@@ -11,11 +11,11 @@ namespace SadCLGUI.ViewModels
     class MissileControlViewModel
     {
         private MissileLauncherManager m_launcher = new MissileLauncherManager();
-		private SadCLGUI.GUI_ViewModels.MainWindowViewModel MainWindowVM;
+		private SadCLGUI.ViewModels.MainWindowViewModel MainWindowVM;
 
         private int distance = 50;
 
-        public MissileControlViewModel(SadCLGUI.GUI_ViewModels.MainWindowViewModel MWVM) {
+        public MissileControlViewModel(SadCLGUI.ViewModels.MainWindowViewModel MWVM) {
 			
 			// Done to allow for mediator-type behaviour
 			MainWindowVM = MWVM;

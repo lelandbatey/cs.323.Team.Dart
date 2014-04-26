@@ -1,4 +1,4 @@
-﻿using SadCLGUI.GUI_ViewModels;
+﻿using SadCLGUI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
