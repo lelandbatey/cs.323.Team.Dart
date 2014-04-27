@@ -31,16 +31,12 @@ namespace SadCLGUI.GUI_Views
 			//}
 		}
 
-        //private void StopButton_Click(object sender, RoutedEventArgs e) {
-        //    VideoControlViewModel.Singleton.StopVideo();
-        //}
+		private void StopButton_Click(object sender, RoutedEventArgs e) {
+			VideoControlViewModel.Singleton.StopVideo();
+		}
 
-        //private void StartButton_Click(object sender, RoutedEventArgs e) {
-        //    VideoControlViewModel.Singleton.Start(image);
-        //}
-
-        private void Button_Click(object sender, RoutedEventArgs e) {
-            VideoControlViewModel.Singleton.CameraButton(CamImageBox);
-        }
+		private void StartButton_Click(object sender, RoutedEventArgs e) {
+			VideoControlViewModel.Singleton.Start(image);
+		}
 	}
 }
