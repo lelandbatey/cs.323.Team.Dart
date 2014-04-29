@@ -3,26 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Target;
+//using Target;
+using TargetBase;
 
 namespace SadCLGUI.ViewModels
 {
     public class TargetViewModel : ViewModels.ViewModelBase
     {
-        private Target.Target m_target;
+		//private Target.Target m_target;
+		private TargetBase.Target m_target;
 
-        public TargetViewModel(Target.Target target) {
+        public TargetViewModel(TargetBase.Target target) {
             m_target = target;
         }
 
         public string Name {
             get {
-                return m_target.Name;
+                return m_target.name;
             }
         }
         public string Friend {
             get {
-                if (m_target.Friend) {
+                if (m_target.status > 0) {
                     return "Friend";
                 } else {
                     return "Foe";
@@ -31,24 +33,24 @@ namespace SadCLGUI.ViewModels
         }
         public string Status {
             get {
-                if (m_target.dead) {
+                if (m_target.hit > 0) {
                     return "Dead";
                 } else {
                     return "Alive";
                 }
             }
             set {
-                if (!m_target.dead) {
-                    m_target.dead = true;
-                    OnPropertyChanged("Status");
-                }
+                
+                m_target.hit++;
+                OnPropertyChanged("Status");
+                
             }
         }
 
 
 		public bool IsFriend {
 			get {
-				if (m_target.Friend) {
+				if (m_target.status > 0) {
 					return true;
 				} else {
 					return false;
@@ -57,13 +59,13 @@ namespace SadCLGUI.ViewModels
 		}
 
 		public double X {
-			get { return m_target.X; }
+			get { return m_target.x; }
 		}
 		public double Y {
-			get { return m_target.Y; }
+			get { return m_target.y; }
 		}
 		public double Z {
-			get { return m_target.Z; }
+			get { return m_target.z; }
 		}
     }
 }

@@ -61,7 +61,7 @@ namespace SadCLGUI.ViewModels
 		public void kill(SadCL.MissileLauncher.MissileLauncherManager CurrentLauncher) {
 			TargetViewModel curTarg = BriefList.SelectedTarget;
 			
-			if (!curTarg.IsFriend && BriefList.FileIsLoaded) {
+			if (curTarg != null && !curTarg.IsFriend && BriefList.FileIsLoaded) {
 				double X = curTarg.X;
 				double Y = curTarg.Y;
 				double Z = curTarg.Z;

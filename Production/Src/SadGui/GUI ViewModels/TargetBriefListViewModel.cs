@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using TargetFileIO;
 
 namespace SadCLGUI.ViewModels
 {
@@ -15,6 +16,9 @@ namespace SadCLGUI.ViewModels
         public TargetViewModel TargetsViewModel { get; set; }
         public ObservableCollection<TargetViewModel> Targets {get; private set; }
 		public DelegateCommand getTargetFileLocationCommand { get; set; }
+
+		// Target manager
+		private TargetFileIO.TargetManager tMan;
 
 
 		private SadCLGUI.ViewModels.MainWindowViewModel MainWindowVM;
@@ -33,13 +37,12 @@ namespace SadCLGUI.ViewModels
 			set { _selectTarg = value; }
 		}
 
-		// Target manager
-		private Target.TargetManager tMan;
+		
 
 		public bool FileIsLoaded { get; private set; }
 
         public TargetBriefListViewModel(SadCLGUI.ViewModels.MainWindowViewModel MWVM) {
-			tMan = Target.TargetManager.Instance; // Initialize our target manager
+			tMan = TargetManager.Instance; // Initialize our target manager
 
 			MainWindowVM = MWVM;
 
@@ -87,7 +90,7 @@ namespace SadCLGUI.ViewModels
 
 		// Given a list of targets, rebuilds the observable collection with them
 		// Rather ugly
-		void rebuildTargetsViewList(List<Target.Target> targList) {
+		void rebuildTargetsViewList(List<TargetBase.Target> targList) {
 			clearViewTargetsList();
 			foreach (var item in targList) {
 				Targets.Add(new TargetViewModel(item));

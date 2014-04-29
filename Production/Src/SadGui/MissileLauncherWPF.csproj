@@ -66,6 +66,12 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="Target">
+      <HintPath>..\SadSDK\TargetData\bin\Debug\Target.dll</HintPath>
+    </Reference>
+    <Reference Include="TargetFileIO">
+      <HintPath>..\SadSDK\TargetFile\bin\Debug\TargetFileIO.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
