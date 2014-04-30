@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,9 +89,11 @@ namespace SadCL.MissileLauncher
 
 			double pDifference = phi - currentPhi;
 			double tDifference = theta - currentTheta;
-			
+
+			Debug.WriteLine(String.Format("\nPhi: {0}\ntheta: {1}\npDiff: {2}\ntDiff: {3}\ncurrentPhi: {4}\ncurrentTheta: {5}\n",phi,theta,pDifference,tDifference,currentPhi,currentTheta));
+
 			this.moveBy(pDifference, tDifference);				
-			
+
 			currentPhi = phi;
 			currentTheta = theta;
         }

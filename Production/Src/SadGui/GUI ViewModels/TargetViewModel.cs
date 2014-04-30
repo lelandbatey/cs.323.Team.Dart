@@ -8,7 +8,7 @@ using TargetBase;
 
 namespace SadCLGUI.ViewModels
 {
-    public class TargetViewModel : ViewModels.ViewModelBase
+    public class TargetViewModel : ViewModelBase
     {
 		//private Target.Target m_target;
 		private TargetBase.Target m_target;

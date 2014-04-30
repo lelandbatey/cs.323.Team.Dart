@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,8 +53,17 @@ namespace SadCL.MissileLauncher
 			double Theta = (Math.PI / 2) - Math.Acos(z / r); // We subtract from pi/2 because the launcher can only rotate 270 degrees, which is 90 less than 360. 90 degrees is pi/2
 			double Phi = Math.Atan2(y, x);
 
-			Theta = horizontalToTick(Theta);
-			Phi = verticalToTick(Phi);
+			Theta = radToDeg(Theta);
+			Phi = radToDeg(Phi);
+
+			Debug.WriteLine(Theta);
+			Debug.WriteLine(Phi);
+
+			Phi = horizontalToTick(Phi);
+			Theta = verticalToTick(Theta);
+
+			Debug.WriteLine(Theta);
+			Debug.WriteLine(Phi);
 
 			MissileTurret.move(Phi, Theta);
 			MissileTurret.fire();
@@ -65,11 +75,12 @@ namespace SadCL.MissileLauncher
 		}
 
 		double verticalToTick(double degrees) {
-			return degrees * 15.5555555;
+			return (degrees * 15.5555555);
 		}
 
 		double horizontalToTick(double degrees) {
-			return horizontalToTickRel(degrees) + 1000; // The plus 1000 is to compensate for the extra amount the launcher *could* turn
+			return ((degrees * 22.2222222) + 1000);
+			//return (horizontalToTickRel(degrees) + 1000); // The plus 1000 is to compensate for the extra amount the launcher *could* turn
 		}
 
 		double horizontalToTickRel(double degrees) {

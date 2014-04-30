@@ -66,5 +66,10 @@
             >
             Kill
         </Button>
+        <Button
+            Grid.Row="2"
+            Grid.Column="2"
+            Margin="20"
+            Command="{Binding Path=ResetCommand}">Reset</Button>
     </Grid>
 </UserControl>

@@ -17,12 +17,19 @@ namespace SadCLGUI.ViewModels
         private MissileControlViewModel m_selectedLauncher;
         private MenuBarViewModel menubar;
         private TargetBriefListViewModel brieflist;
+		private ServerConnectionViewModel serverCon;
 
         public MainWindowViewModel(List<Target.Target> RawList) {
             MissileTurret = new MissileControlViewModel(this);
             BriefList = new TargetBriefListViewModel(this);
             MenuBar = new MenuBarViewModel();
+			ServerConnection = new ServerConnectionViewModel(this);
         }
+
+		public ServerConnectionViewModel ServerConnection {
+			get { return serverCon; }
+			set { serverCon = value; }
+		}
 
         public MenuBarViewModel MenuBar {
             get {
@@ -72,6 +79,25 @@ namespace SadCLGUI.ViewModels
 			} else {
 				MessageBox.Show("Can't fulfill operation :(");
 			}
+		}
+
+		public void setTargets(List<TargetBase.Target> targList) {
+			BriefList.rebuildTargetsViewList(targList);
+		}
+
+		public void killTargets(List<TargetBase.Target> tList) {
+			MissileLauncherManager launcher = MissileTurret.GetLauncher();
+			launcher.reset();
+			//launcher.killCoords(0, 0, 0);
+			launcher.killCoords(1, 1, 0);
+
+			foreach (var targ in tList) {
+				if (targ.status == 0) {
+					launcher.killCoords(targ.x, targ.y, targ.z);
+				}
+			}
+			
+		
 		}
 
     }

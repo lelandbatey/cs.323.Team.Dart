@@ -10,6 +10,9 @@
             <ColumnDefinition Width="33*"></ColumnDefinition>
             <ColumnDefinition Width="33*"></ColumnDefinition>
             <ColumnDefinition Width="33*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock
             Grid.Column="0"
@@ -31,6 +34,27 @@
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
             Text="{Binding Status}"
+            />
+        <TextBlock
+            Grid.Column="3"
+            Margin="5"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Text="{Binding X}"
+            />
+        <TextBlock
+            Grid.Column="4"
+            Margin="5"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Text="{Binding Y}"
+            />
+        <TextBlock
+            Grid.Column="5"
+            Margin="5"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Text="{Binding Z}"
             />
     </Grid>
 </UserControl>

@@ -55,5 +55,11 @@ namespace TargetFileIO
 			int replaceIndex = masterList.FindIndex(s => s.name == name);
 			masterList[replaceIndex].hit++;
 		}
+		public void setMasterList(List<Target> inList) {
+			masterList.Clear();
+			foreach (var item in inList) {
+				masterList.Add(item);
+			}
+		}
 	}
 }

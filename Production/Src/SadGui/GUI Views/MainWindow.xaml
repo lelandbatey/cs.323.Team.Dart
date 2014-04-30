@@ -33,13 +33,27 @@
             Grid.Row="1"
             Grid.Column="2"
             DataContext="{Binding BriefList}"
-            />
+            BorderBrush="Gray"/>
         
-        <!--<myWindows:Server_View
-            Grid.Row="1"
-            Grid.Column="2"
+        <Grid
+            Grid.Column="1"
+            Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Border
+                BorderBrush="LightGray"
+                BorderThickness="1">
+                <myWindows:Server_View
+                    Grid.Column="0"
+                    DataContext="{Binding ServerConnection}"
+                    Margin="3,0,3,3"/>
+            </Border>
             
-            />-->
+        </Grid>
+        
+        
     </Grid>
 
 </Window>

@@ -90,10 +90,13 @@ namespace SadCLGUI.ViewModels
 
 		// Given a list of targets, rebuilds the observable collection with them
 		// Rather ugly
-		void rebuildTargetsViewList(List<TargetBase.Target> targList) {
+		public void rebuildTargetsViewList(List<TargetBase.Target> targList) {
 			clearViewTargetsList();
 			foreach (var item in targList) {
 				Targets.Add(new TargetViewModel(item));
+			}
+			if (tMan.getAll().Count == 0) {
+				tMan.setMasterList(targList);// Exists so that the master list will be rebuilt from the given list. Useful when receiving an external list (such as from the server				
 			}
 			FileIsLoaded = true;
 		}
