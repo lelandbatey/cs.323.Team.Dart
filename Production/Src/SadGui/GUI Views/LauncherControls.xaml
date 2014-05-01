@@ -22,6 +22,7 @@
             Grid.Row="1"
             Grid.Column="1"
             Margin="5"
+            FontSize="32"
             Command="{Binding Path=FireCommand}"
             >
             Fire
@@ -30,6 +31,7 @@
             Grid.Row="1"
             Grid.Column="0"
             Margin="5"
+            FontSize="32"
             Command="{Binding Path=LeftCommand}"
             >
             Left
@@ -38,6 +40,7 @@
             Grid.Row="1"
             Grid.Column="2"
             Margin="5"
+            FontSize="32"
             Command="{Binding Path=RightCommand}"
             >
             Right
@@ -46,6 +49,7 @@
             Grid.Row="0"
             Grid.Column="1"
             Margin="5"
+            FontSize="32"
             Command="{Binding Path=UpCommand}"
             >
             Up
@@ -54,6 +58,7 @@
             Grid.Row="2"
             Grid.Column="1"
             Margin="5"
+            FontSize="28"
             Command="{Binding Path=DownCommand}"
             >
             Down
@@ -62,6 +67,7 @@
             Grid.Row="2"
             Grid.Column="0"
             Margin="5"
+            FontSize="32"
             Command="{Binding Path=KillCommand}"
             >
             Kill
@@ -70,6 +76,13 @@
             Grid.Row="2"
             Grid.Column="2"
             Margin="20"
+            FontSize="16"
             Command="{Binding Path=ResetCommand}">Reset</Button>
+        <Button
+            Grid.Row="0"
+            Grid.Column="2"
+            Margin="5"
+            FontSize="24"
+            Command="{Binding Path=ReloadCommand}">Reload</Button>
     </Grid>
 </UserControl>

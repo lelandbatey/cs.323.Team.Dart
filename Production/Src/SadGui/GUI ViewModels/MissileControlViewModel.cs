@@ -27,6 +27,7 @@ namespace SadCLGUI.ViewModels
             DownCommand = new LauncherCommand(moveDown);
             KillCommand = new DelegateCommand(kill);
 			ResetCommand = new DelegateCommand(reset);
+            ReloadCommand = new LauncherCommand(reload);
         }
 
 		// Needed for our autonomous mode.
@@ -54,6 +55,9 @@ namespace SadCLGUI.ViewModels
 		public void reset() {
 			m_launcher.reset();
 		}
+        public void reload() {
+            m_launcher.reload();
+        }
 
         public ICommand FireCommand { get; set; }
         public ICommand LeftCommand { get; set; }
@@ -62,5 +66,6 @@ namespace SadCLGUI.ViewModels
         public ICommand DownCommand { get; set; }
         public ICommand KillCommand { get; set; }
 		public ICommand ResetCommand { get; set; }
+        public ICommand ReloadCommand { get; set; }
     }
 }
