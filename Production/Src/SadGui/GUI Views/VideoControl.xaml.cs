@@ -24,19 +24,18 @@ namespace SadCLGUI.GUI_Views
 	{
 		public VideoControl() {
 			InitializeComponent();
-
-			//EventHandler StartButton_Click
-			//{
-			//    VideoControlViewModel.Singleton.Start(image);
-			//}
 		}
 
+		// It's not *nice* that we have this in the codebehind, but it's about the minimum we 
+		// could figure out how to get away with. We have to send the image to the view model 
+		// somehow, so this is how we figured we'd do it.
+		
 		private void StopButton_Click(object sender, RoutedEventArgs e) {
-			VideoControlViewModel.Singleton.StopVideo();
+			VideoControlViewModel.Instance.StopVideo();
 		}
 
 		private void StartButton_Click(object sender, RoutedEventArgs e) {
-			VideoControlViewModel.Singleton.Start(image);
+			VideoControlViewModel.Instance.Start(image);
 		}
 	}
 }
