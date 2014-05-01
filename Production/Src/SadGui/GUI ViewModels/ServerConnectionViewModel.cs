@@ -73,8 +73,13 @@ namespace SadCLGUI.ViewModels
 
 		private void startGame() {
 			if (SelectedGameMode!=null) {
-				m_gameserver.StartGame(SelectedGameMode);
-				MainWindowVM.killTargets(m_gameserver.RetrieveTargetList(SelectedGameMode).ToList());
+                try {
+                    m_gameserver.StartGame(SelectedGameMode);
+                    MainWindowVM.killTargets(m_gameserver.RetrieveTargetList(SelectedGameMode).ToList());
+                }
+                catch (NullReferenceException excpt) {
+                    MessageBox.Show("Error:  You must first connect to a server.");
+                }
 			} else {
 				MessageBox.Show("Error: You must select a game mode.");
 			}

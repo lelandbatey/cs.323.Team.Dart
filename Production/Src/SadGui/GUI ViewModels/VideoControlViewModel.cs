@@ -107,12 +107,20 @@ namespace SadCLGUI.ViewModels
 						// that belong to A. Doing this, we can get around the threading 
 						// restrictions, but in a safe way.
 
-						External_Dispatcher.Invoke(
+                        try {
+                            External_Dispatcher.Invoke(
 							// This way of doing an anonymous function is taken from this StackOverflow answer:
 							// http://stackoverflow.com/a/9732853/1712696
 							(Action)(() => {
 								m_image.Source = (BitmapToBitMapImage(currentCameraFrame.ToBitmap()));
 							}));
+                        }
+                        catch { 
+                                //Concern!
+                                //A specific exception was thrown here, but it disappeared before I could
+                                //write it down.  Exception wasn't reproduceable.
+                            MessageBox.Show("Error: Exception thrown for External_Dispatcher.Invoke in VideoControlViewModel.");
+                        }
 						System.GC.Collect();
 					}
 					Thread.Sleep(2000/120);

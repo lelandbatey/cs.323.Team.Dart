@@ -84,8 +84,14 @@ namespace SadCLGUI.ViewModels
 			// This exists because it's a common opperation, and makes it so you 
 			// don't have to call the list of targets by name. Might be too much 
 			// abstraction, but we're just gonna do this anyway lolololol
-			Targets.Clear();
-			FileIsLoaded = false;
+            try {
+                Targets.Clear();
+                FileIsLoaded = false;
+            }
+            catch {
+                MessageBox.Show("Error:  Targets failed to clear.");
+            }
+			
 		}
 
 		// Given a list of targets, rebuilds the observable collection with them
