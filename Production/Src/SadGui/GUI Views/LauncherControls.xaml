@@ -34,7 +34,7 @@
             FontSize="32"
             Command="{Binding Path=LeftCommand}"
             >
-            Left
+            ◀
         </Button>
         <Button
             Grid.Row="1"
@@ -43,7 +43,7 @@
             FontSize="32"
             Command="{Binding Path=RightCommand}"
             >
-            Right
+            ▶
         </Button>
         <Button
             Grid.Row="0"
@@ -52,7 +52,7 @@
             FontSize="32"
             Command="{Binding Path=UpCommand}"
             >
-            Up
+            ▲
         </Button>
         <Button
             Grid.Row="2"
@@ -61,7 +61,7 @@
             FontSize="28"
             Command="{Binding Path=DownCommand}"
             >
-            Down
+            ▼
         </Button>
         <Button
             Grid.Row="2"
