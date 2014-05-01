@@ -19,12 +19,12 @@ namespace SadCLGUI.ViewModels
 			
 			// Done to allow for mediator-type behaviour
 			MainWindowVM = MWVM;
-
-            FireCommand = new DelegateCommand(Fire);
-            LeftCommand = new DelegateCommand(moveLeft);
-            RightCommand = new DelegateCommand(moveRight);
-            UpCommand = new DelegateCommand(moveUp);
-            DownCommand = new DelegateCommand(moveDown);
+            
+            FireCommand = new LauncherCommand(Fire);
+            LeftCommand = new LauncherCommand(moveLeft);
+            RightCommand = new LauncherCommand(moveRight);
+            UpCommand = new LauncherCommand(moveUp);
+            DownCommand = new LauncherCommand(moveDown);
             KillCommand = new DelegateCommand(kill);
 			ResetCommand = new DelegateCommand(reset);
         }

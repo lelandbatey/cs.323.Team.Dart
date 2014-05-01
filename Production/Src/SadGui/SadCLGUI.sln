@@ -5,7 +5,17 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissileLauncherWPF", "MissileLauncherWPF.csproj", "{9B86CBC7-D02B-4E70-9700-4CE2782B4F72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameServerCommunicator", "TargetServerCommunicator\GameServerCommunicator.csproj", "{7A445AA6-73A5-4F33-BE56-55B9BA9D8857}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TargetData", "TargetData", "{78D97FEB-0472-45CC-9434-FCE069B4CBCE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TargetFile", "TargetFile", "{3729A724-D0FD-4707-B0E7-B26E2A120A27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GameServerCom", "GameServerCom", "{FEEF2EF3-0F6E-4C9B-B037-A1D852A1B6AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TargetFileIO", "..\SadSDK\TargetFile\TargetFileIO.csproj", "{9A14C90F-4C8B-45DF-BEED-AE866ED72406}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TargetBase", "..\SadSDK\TargetData\TargetBase.csproj", "{4871EA7A-419C-4B5A-A998-58A6E9CB635C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameServerCommunicator", "..\SadSDK\GameServerCom\GameServerCommunicator.csproj", "{7A445AA6-73A5-4F33-BE56-55B9BA9D8857}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +27,14 @@ Global
 		{9B86CBC7-D02B-4E70-9700-4CE2782B4F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B86CBC7-D02B-4E70-9700-4CE2782B4F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B86CBC7-D02B-4E70-9700-4CE2782B4F72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A14C90F-4C8B-45DF-BEED-AE866ED72406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A14C90F-4C8B-45DF-BEED-AE866ED72406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A14C90F-4C8B-45DF-BEED-AE866ED72406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A14C90F-4C8B-45DF-BEED-AE866ED72406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4871EA7A-419C-4B5A-A998-58A6E9CB635C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4871EA7A-419C-4B5A-A998-58A6E9CB635C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4871EA7A-419C-4B5A-A998-58A6E9CB635C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4871EA7A-419C-4B5A-A998-58A6E9CB635C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A445AA6-73A5-4F33-BE56-55B9BA9D8857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7A445AA6-73A5-4F33-BE56-55B9BA9D8857}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A445AA6-73A5-4F33-BE56-55B9BA9D8857}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -24,5 +42,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4871EA7A-419C-4B5A-A998-58A6E9CB635C} = {78D97FEB-0472-45CC-9434-FCE069B4CBCE}
+		{9A14C90F-4C8B-45DF-BEED-AE866ED72406} = {3729A724-D0FD-4707-B0E7-B26E2A120A27}
+		{7A445AA6-73A5-4F33-BE56-55B9BA9D8857} = {FEEF2EF3-0F6E-4C9B-B037-A1D852A1B6AE}
 	EndGlobalSection
 EndGlobal

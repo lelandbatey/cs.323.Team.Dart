@@ -110,6 +110,8 @@
       <DependentUpon>LauncherControls.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUI ViewModels\ViewModelBase.cs" />
+    <Compile Include="LauncherCommand.cs" />
+    <Compile Include="TaskQueue.cs" />
     <Page Include="GUI Views\LauncherControls.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
