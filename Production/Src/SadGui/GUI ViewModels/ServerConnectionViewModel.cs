@@ -32,6 +32,7 @@ namespace SadCLGUI.ViewModels
 		public ServerConnectionViewModel(SadCLGUI.ViewModels.MainWindowViewModel MWVM) {
 			connectToServer = new DelegateCommand((Action)connect);
 			StartGame = new DelegateCommand((Action)startGame);
+			StopGame = new DelegateCommand((Action)stopGame);
 			ServerPort = "3000";
 			ServerIP = "0.0.0.0";
 			TeamName = "Team Dart";
@@ -82,6 +83,15 @@ namespace SadCLGUI.ViewModels
                 }
 			} else {
 				MessageBox.Show("Error: You must select a game mode.");
+			}
+		}
+
+		private void stopGame() {
+			try {
+				m_gameserver.StopRunningGame();
+			}
+			catch (Exception e) {
+				MessageBox.Show(String.Format("Error: Not connected to server.\n{0}", e.Message));
 			}
 		}
 
