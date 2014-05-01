@@ -60,6 +60,7 @@ namespace SadCLGUI.ViewModels
 				m_gameserver = GameServerFactory.Create(GameServerType.Mock, teamName, serverIP, Convert.ToInt32(serverPort));
 				gameModes = m_gameserver.RetrieveGameList();
 				m_gameserver.StopRunningGame();
+				GameModes.Clear();
 				foreach (var item in gameModes) {
 					GameModes.Add(item);
 				}
