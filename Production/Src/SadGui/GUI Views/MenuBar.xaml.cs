@@ -27,12 +27,12 @@ namespace SadCLGUI.GUI_Views
         }
         private void Open_Click(object sender, RoutedEventArgs e)
         {
-            FileDialog fDlg = new OpenFileDialog();
+            //FileDialog fDlg = new OpenFileDialog();
  
-            if (fDlg.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
-                string FilePath = fDlg.FileName;
-                tMan.load(FilePath);
-            }
+            //if (fDlg.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+            //    string FilePath = fDlg.FileName;
+            //    tMan.load(FilePath);
+            //}
         }
     }
 }
