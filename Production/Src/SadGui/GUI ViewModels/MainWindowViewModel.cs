@@ -87,13 +87,24 @@ namespace SadCLGUI.ViewModels
 
 		public void killTargets(List<TargetBase.Target> tList) {
 			MissileLauncherManager launcher = MissileTurret.GetLauncher();
-			launcher.reset();
+
+			TaskQueue.Add_Task(() => {
+				launcher.reset();
+			});
 			//launcher.killCoords(0, 0, 0);
-			launcher.killCoords(1, 1, 0);
+			//launcher.killCoords(1, 1, 0);
 
 			foreach (var targ in tList) {
 				if (targ.status == 0) {
-					launcher.killCoords(targ.x, targ.y, targ.z);
+					
+					// Whereas before we would just blindly execute the killCoord command,
+					// this makes an action out of it, and passes that action to the scheduler.
+					// The scheduler then executes this code in it's own thread.
+					TaskQueue.Add_Task(() => {
+						launcher.killCoords(targ.x, targ.y, targ.z);
+					});
+					
+					// launcher.killCoords(targ.x, targ.y, targ.z);
 				}
 			}
 			
