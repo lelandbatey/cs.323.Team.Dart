@@ -57,7 +57,7 @@ namespace SadCLGUI.ViewModels
 
 		private void connect() {
 			try {
-				m_gameserver = GameServerFactory.Create(GameServerType.Mock, teamName, serverIP, Convert.ToInt32(serverPort));
+				m_gameserver = GameServerFactory.Create(GameServerType.WebClient, teamName, serverIP, Convert.ToInt32(serverPort));
 				gameModes = m_gameserver.RetrieveGameList();
 				m_gameserver.StopRunningGame();
 				GameModes.Clear();
