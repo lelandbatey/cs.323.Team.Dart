@@ -8,7 +8,7 @@ using SadCL.MissileLauncher;
 using SadCLGUI.ViewModels;
 using System.Windows;
 using TweetSharp;
-using TwitterMachine;
+
 
 namespace SadCLGUI.ViewModels
 {
