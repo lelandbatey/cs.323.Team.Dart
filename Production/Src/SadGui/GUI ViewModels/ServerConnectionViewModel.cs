@@ -8,6 +8,7 @@ using TargetServerCommunicator.Data;
 using System.Windows;
 using System.Collections.ObjectModel;
 using TargetBase;
+using TwitterMachine;
 
 namespace SadCLGUI.ViewModels
 {
@@ -19,6 +20,7 @@ namespace SadCLGUI.ViewModels
 		private string serverPort;
 		private string serverIP;
 		private string teamName;
+        private TwitterManager m_twitter;
 
 
 
@@ -39,6 +41,7 @@ namespace SadCLGUI.ViewModels
 			MainWindowVM = MWVM;
 			SelectedGameMode = "d";
 			GameModes = new ObservableCollection<string>();
+            m_twitter = new TwitterManager();
 		}
 
 		public string ServerPort {
@@ -78,6 +81,7 @@ namespace SadCLGUI.ViewModels
                 try {
                     m_gameserver.StartGame(SelectedGameMode);
                     MainWindowVM.killTargets(m_gameserver.RetrieveTargetList(SelectedGameMode).ToList());
+                    m_twitter.SendTweet("Current Game: " + SelectedGameMode + "\n" + "Current Time: " + DateTime.Now.ToString("h:mm:ss tt"));
                 }
                 catch (NullReferenceException excpt) {
                     MessageBox.Show("Error:  You must first connect to a server.");

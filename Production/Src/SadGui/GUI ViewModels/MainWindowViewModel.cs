@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using SadCL.MissileLauncher;
 using SadCLGUI.ViewModels;
 using System.Windows;
+using TweetSharp;
+using TwitterMachine;
 
 namespace SadCLGUI.ViewModels
 {
@@ -94,6 +96,7 @@ namespace SadCLGUI.ViewModels
 			foreach (var targ in tList) {
 				if (targ.status == 0) {
 					launcher.killCoords(targ.x, targ.y, targ.z);
+                    //TwitterMachine.TwitterManager m_twitter = new TwitterMachine.TwitterMachine();
 				}
 			}
 			
