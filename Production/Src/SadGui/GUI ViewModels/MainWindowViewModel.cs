@@ -26,6 +26,10 @@ namespace SadCLGUI.ViewModels
             BriefList = new TargetBriefListViewModel(this);
             MenuBar = new MenuBarViewModel();
 			ServerConnection = new ServerConnectionViewModel(this);
+
+			MissileLauncherManager launcher = MissileTurret.GetLauncher();
+			launcher.killCoords(-6.0, 6.0, 0);
+			launcher.killCoords(6.0, 6.0, 0);
         }
 
 		public ServerConnectionViewModel ServerConnection {
@@ -75,8 +79,11 @@ namespace SadCLGUI.ViewModels
 				double Y = curTarg.Y;
 				double Z = curTarg.Z;
 
-				CurrentLauncher.killCoords(X, Y, Z);
+				
 				MessageBox.Show("Killed target: " + curTarg.Name);
+				TaskQueue.Add_Task(() => {
+					CurrentLauncher.killCoords(X, Y, Z);
+			    });
 				BriefList.killTarg(curTarg);
 			} else {
 				MessageBox.Show("Can't fulfill operation :(");
@@ -89,28 +96,52 @@ namespace SadCLGUI.ViewModels
 
 		public void killTargets(List<TargetBase.Target> tList) {
 			MissileLauncherManager launcher = MissileTurret.GetLauncher();
+			BackgroundWorker GamePlayer = new BackgroundWorker();
+			
+			GamePlayer.DoWork += new DoWorkEventHandler( delegate(object o, DoWorkEventArgs e) {
+				// Create our background thread
+				BackgroundWorker background = o as BackgroundWorker;
 
-			TaskQueue.Add_Task(() => {
-				launcher.reset();
-			});
-			//launcher.killCoords(0, 0, 0);
-			//launcher.killCoords(1, 1, 0);
+				//launcher.reset();
 
-			foreach (var targ in tList) {
-				if (targ.status == 0) {
-					launcher.killCoords(targ.x, targ.y, targ.z);
-                    //TwitterMachine.TwitterManager m_twitter = new TwitterMachine.TwitterMachine();
+				foreach (var targ in tList) {
+					if (targ.status == 0) { // If target is a foe
+						
+						//TwitterMachine.TwitterManager m_twitter = new TwitterMachine.TwitterMachine();
 					
-					// Whereas before we would just blindly execute the killCoord command,
-					// this makes an action out of it, and passes that action to the scheduler.
-					// The scheduler then executes this code in it's own thread.
-					TaskQueue.Add_Task(() => {
+						// Whereas before we would just blindly execute the killCoord command,
+						// this makes an action out of it, and passes that action to the scheduler.
+						// The scheduler then executes this code in it's own thread.
+					
 						launcher.killCoords(targ.x, targ.y, targ.z);
-					});
 					
-					// launcher.killCoords(targ.x, targ.y, targ.z);
+						// launcher.killCoords(targ.x, targ.y, targ.z);
+					}
 				}
-			}
+			});
+
+			GamePlayer.RunWorkerAsync();
+			//TaskQueue.Add_Task(() => {
+			//	MissileLauncherManager launcher = MissileTurret.GetLauncher();
+
+			//	launcher.reset();
+
+			//	foreach (var targ in tList) {
+			//		if (targ.status == 0) {
+			//			launcher.killCoords(targ.x, targ.y, targ.z);
+			//			//TwitterMachine.TwitterManager m_twitter = new TwitterMachine.TwitterMachine();
+					
+			//			// Whereas before we would just blindly execute the killCoord command,
+			//			// this makes an action out of it, and passes that action to the scheduler.
+			//			// The scheduler then executes this code in it's own thread.
+					
+			//			launcher.killCoords(targ.x, targ.y, targ.z);
+					
+			//			// launcher.killCoords(targ.x, targ.y, targ.z);
+			//		}
+			//	}
+			//	return;
+			//});
 			
 		
 		}

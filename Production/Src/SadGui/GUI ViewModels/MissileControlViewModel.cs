@@ -25,7 +25,7 @@ namespace SadCLGUI.ViewModels
             RightCommand = new LauncherCommand(moveRight);
             UpCommand = new LauncherCommand(moveUp);
             DownCommand = new LauncherCommand(moveDown);
-            KillCommand = new LauncherCommand(kill);
+            KillCommand = new DelegateCommand(kill);
 			ResetCommand = new LauncherCommand(reset);
             ReloadCommand = new LauncherCommand(reload);
         }

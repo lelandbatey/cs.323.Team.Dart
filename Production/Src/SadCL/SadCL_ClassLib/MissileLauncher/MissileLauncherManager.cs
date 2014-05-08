@@ -10,6 +10,8 @@ namespace SadCL.MissileLauncher
     public class MissileLauncherManager
     {
         private IMissileLauncher MissileTurret = MissileLauncherFactory.create_Launcher(LauncherTypes.DreamCheeky);
+
+		private const double HORIZ_RATIO = (5670.0 / 270.0);
         
         public void fire()
         {
@@ -79,12 +81,12 @@ namespace SadCL.MissileLauncher
 		}
 
 		double horizontalToTick(double degrees) {
-			return ((degrees * 22.2222222) + 1000);
+			return ((degrees * HORIZ_RATIO) + 1000);
 			//return (horizontalToTickRel(degrees) + 1000); // The plus 1000 is to compensate for the extra amount the launcher *could* turn
 		}
 
 		double horizontalToTickRel(double degrees) {
-			return (degrees * 22.2222222);
+			return (degrees * HORIZ_RATIO);
 		}
 	}
 }

@@ -20,7 +20,8 @@ namespace SadCLGUI.ViewModels
 		private string serverPort;
 		private string serverIP;
 		private string teamName;
-        
+		private string selectedGameMode;
+
 
 
 		public ObservableCollection<string> GameModes { get; set; }
@@ -28,14 +29,22 @@ namespace SadCLGUI.ViewModels
 		public DelegateCommand connectToServer {get; set;}
 		public DelegateCommand StartGame { get; set; }
 		public DelegateCommand StopGame { get; set; }
-		public string SelectedGameMode {get; set;}
+		public string SelectedGameMode {
+			get { return selectedGameMode; }
+			set {
+				if (isConnected == true) {
+					MainWindowVM.setTargets(m_gameserver.RetrieveTargetList(value).ToList());
+				}
+				selectedGameMode = value;
+			}
+		}
 
 		public ServerConnectionViewModel(SadCLGUI.ViewModels.MainWindowViewModel MWVM) {
 			connectToServer = new DelegateCommand((Action)connect);
 			StartGame = new DelegateCommand((Action)startGame);
 			StopGame = new DelegateCommand((Action)stopGame);
 			ServerPort = "3000";
-			ServerIP = "0.0.0.0";
+			ServerIP = "10.0.0.1";
 			TeamName = "Team Dart";
 			MainWindowVM = MWVM;
 			SelectedGameMode = "d";
@@ -59,16 +68,15 @@ namespace SadCLGUI.ViewModels
 
 		private void connect() {
 			try {
-				m_gameserver = GameServerFactory.Create(GameServerType.WebClient, teamName, serverIP, Convert.ToInt32(serverPort));
+				m_gameserver = GameServerFactory.Create(GameServerType.Mock, teamName, serverIP, Convert.ToInt32(serverPort));
 				gameModes = m_gameserver.RetrieveGameList();
-				m_gameserver.StopRunningGame();
+				//m_gameserver.StopRunningGame();
 				GameModes.Clear();
 				foreach (var item in gameModes) {
 					GameModes.Add(item);
 				}
-				//GameModes = ObservableCollection<string>(gameModes);
 				isConnected = true;
-				MainWindowVM.setTargets(m_gameserver.RetrieveTargetList(SelectedGameMode).ToList());
+				//MainWindowVM.setTargets(m_gameserver.RetrieveTargetList(SelectedGameMode).ToList());
 			}
 			catch (Exception e) {
 				MessageBox.Show(e.Message);
@@ -76,8 +84,9 @@ namespace SadCLGUI.ViewModels
 		}
 
 		private void startGame() {
-			if (SelectedGameMode!=null) {
+			if (SelectedGameMode!=null && isConnected==true) {
                 try {
+
                     m_gameserver.StartGame(SelectedGameMode);
                     MainWindowVM.killTargets(m_gameserver.RetrieveTargetList(SelectedGameMode).ToList());
                     

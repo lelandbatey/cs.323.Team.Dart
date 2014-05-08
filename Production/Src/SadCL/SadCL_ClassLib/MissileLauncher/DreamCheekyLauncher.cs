@@ -46,8 +46,8 @@ namespace SadCL.MissileLauncher
         public double currentPhi {
             get { return disPhi; }
             private set {
-                if (value >= 6000) {
-                    disPhi = 6000;
+                if (value >= 5670) {
+                    disPhi = 5670;
                 } else if (value <= 0) {
                     disPhi = 0;
                 } else {
@@ -73,11 +73,14 @@ namespace SadCL.MissileLauncher
         public DreamCheekyLauncher(string passedName) {
             launcherName = passedName;
             launcherAmmo = (int)DreamAmmoCount.MaxAmmo;
+			//move(5600, 0);
+			//moveBy(-5600, 0);
+
         }
 
         public void fire() {
             if (launcherAmmo == (int)DreamAmmoCount.EmptyAmmo) {
-                System.Console.WriteLine("We're out of ammunition!");
+                throw new IndexOutOfRangeException("We're out of ammunition!");
             } else {
                 command_Fire();
                 --launcherAmmo;
@@ -134,8 +137,8 @@ namespace SadCL.MissileLauncher
         public void reset() {
 			//System.Console.WriteLine("Please wait while we return to origin.");
             moveBy(6000, 700);
-            moveBy(-3000, -700);
-            currentPhi = 3000;
+            moveBy(-2835, -650);
+            currentPhi = 2835;
             currentTheta = 0;
 			//System.Console.WriteLine("Reset Complete!");
         }

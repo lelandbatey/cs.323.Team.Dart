@@ -88,8 +88,9 @@ namespace SadCLGUI.ViewModels
                 Targets.Clear();
                 FileIsLoaded = false;
             }
-            catch {
-                MessageBox.Show("Error:  Targets failed to clear.");
+            catch (Exception e) {
+                MessageBox.Show("Error:  Targets failed to clear."+e.Message);
+				throw;
             }
 			
 		}
